@@ -1,0 +1,71 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
+
+.nav-group {
+    display: flex;
+    gap: .5rem;
+    flex-direction: row;
+    width: auto;
+    
+
+    .nav-item {
+        border: $button-outline;
+        display: flex;
+        width: 3rem;
+        height: 3rem;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6rem;
+        text-align: center;
+        transition: width 500ms;
+        text-decoration: none;
+
+
+        &.work svg {fill: $blue}
+        &.person svg {fill: $purple}
+        &.resume svg {fill: $yellow}
+        &.contact svg {fill: $red}
+
+        svg, p {display: inline-block;}
+
+        p {
+            //padding-left: .5rem;
+            opacity: 0;
+            color: $text-secondary;
+            font-size: .9rem;
+            width: 0px;
+            height: 0px;
+            overflow: hidden;
+        }
+
+        &:hover {
+            width: 11rem;
+            p{
+                opacity: 1;
+                width: initial;
+                height: initial;
+                padding-left: .5rem;
+                animation: fadeIn 500ms ease-in;
+            }
+        }
+
+
+    }
+
+}
+
+
+
+#homeIcon {
+    max-width: 3rem;
+}

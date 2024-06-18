@@ -1,0 +1,65 @@
+#work-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem 0;
+}
+
+.work-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    .card {
+        flex: 1;
+        min-width: 24rem;
+        border-radius: 1.5rem;
+        padding: 1rem;
+        padding-bottom: 1.5rem;
+        background-color: $text-primary;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        &:nth-of-type(1){
+            min-width: 100%;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 360px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 1rem;
+
+            &.pricing{background-image: url('../img/seats.jpg');}
+        }
+        
+        .card-btm{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 0 1rem;
+
+            .btn-container {    
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+
+                button {
+                    background: $green;
+                    display: flex;
+                    padding: .75rem 1.5rem;
+                    align-items: center;
+                    gap: 0.625rem;
+                    color: $white;
+                    border-radius: .125rem;
+                    border: none;
+                }
+            }
+        }
+    }
+}

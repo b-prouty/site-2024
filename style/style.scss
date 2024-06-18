@@ -1,0 +1,162 @@
+$text-primary: #262421cd;
+$text-secondary: #262421a9;
+$blue: #45C5EB;
+$purple: #CB8BD0;
+$yellow: #E2C541;
+$red: #ED6262;
+$green: #209320;
+$button-outline: 1px solid #262421a9;
+$white: #F2EFEB;
+$wrap-width: 1100px;
+
+@font-face { font-family: KENOKY; src: url('KENOKY-Light.ttf'); } 
+@font-face { font-family: KENOKY;  src: url('KENOKY-Light.ttf');}
+
+body, * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    color: $text-primary;
+    font-family: Helvetica;
+    font-weight: 100;
+}
+
+.wht-bg{ background-color: $white;}
+
+.drk-bg {
+    background-color: $text-primary;
+    color: $white;
+}
+
+h1,h2{
+    font-family: KENOKY;
+    font-weight: 100;
+}
+
+h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+h2 {font-size: 2rem;}
+
+p {
+    font-family: Helvetica;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; /* 1.5rem */
+}
+
+.overline {
+    color: $text-secondary;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+img {max-width: 100%;}
+
+button {
+    border: $button-outline;
+    border-radius: .5rem;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .75rem 1rem;
+    color: $text-secondary;
+    transition: background-color 500ms, color 500ms, border 500ms;
+
+    &.work {
+        svg {fill: $blue}
+
+        &:hover{
+            background-color: $blue;
+            color: $white;
+            border: 1px solid $blue;
+
+            svg {fill: $white}
+        }
+    }
+    &.person {
+        svg {fill: $purple}
+
+        &:hover{
+            background-color: $purple;
+            color: $white;
+            border: 1px solid $purple;
+
+            svg {fill: $white}
+        }
+    }
+    &.resume {
+        svg {fill: $yellow}
+
+        &:hover{
+            background-color: $yellow;
+            color: $white;
+            border: 1px solid $yellow;
+
+            svg {fill: $white}
+        }
+    }
+    &.contact {
+        svg {fill: $red}
+
+        &:hover{
+            background-color: $red;
+            color: $white;
+            border: 1px solid $red;
+            
+            svg {fill: $white}
+        }
+    }
+}
+
+.wrapper {
+    width: 100%;
+    max-width: $wrap-width;
+    margin: auto;
+}
+
+#pageTransition, #pageEnter {
+    height: 0px;
+    position: absolute;
+    bottom: 200vh;
+    left: 0;
+    z-index: 1000;
+    transition: 1000ms ease-in;
+}
+
+#pageEnter {
+    width: 100vw ;
+    bottom: 0;
+    height: 100vh ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.trans-up {
+    width: 100vw !important;
+    height: 100vh !important;
+    bottom: 0 !important;
+}
+
+.trans-down {
+    width: 100vw !important;
+    height: 0px !important;
+    bottom: 200vh !important;
+    opacity: 0 !important;
+}
+
+@import '_nav.scss';
+@import '_home.scss';
+@import '_work.scss';
