@@ -1,7 +1,7 @@
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 1rem;
 }
 
 @keyframes fadeIn {
@@ -29,12 +29,43 @@ nav {
         text-align: center;
         transition: width 500ms;
         text-decoration: none;
+        cursor: pointer;
 
 
         &.work svg {fill: $blue}
         &.person svg {fill: $purple}
         &.resume svg {fill: $yellow}
         &.contact svg {fill: $red}
+
+        &.work.active{
+             background: $blue;
+             border: 1px solid $blue;
+             p {color: $white !important;}
+
+            svg {fill: $white}
+        }
+        &.person.active{
+            background: $purple;
+            border: 1px solid $purple;
+            p {color: $white !important;}
+
+            svg {fill: $white}
+        }
+        &.resume.active{
+             background: $yellow;
+             border: 1px solid $yellow;
+             p {color: $white !important;}
+
+            svg {fill: $white}
+        }
+        &.contact.active{
+            background: $red;
+            border: 1px solid $red;
+            p {color: $white !important;}
+
+            svg {fill: $white}
+        }
+
 
         svg, p {display: inline-block;}
 
@@ -48,16 +79,6 @@ nav {
             overflow: hidden;
         }
 
-        &:hover {
-            width: 11rem;
-            p{
-                opacity: 1;
-                width: initial;
-                height: initial;
-                padding-left: .5rem;
-                animation: fadeIn 500ms ease-in;
-            }
-        }
 
 
     }
@@ -65,7 +86,29 @@ nav {
 }
 
 
-
 #homeIcon {
     max-width: 3rem;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    nav { padding: 1rem 2rem; }
+    .nav-group {
+        .nav-item {
+            &:hover {
+                width: 11rem;
+    
+                p {
+                    opacity: 1;
+                    width: initial;
+                    height: initial;
+                    padding-left: .5rem;
+                    animation: fadeIn 500ms ease-in;
+                }
+            }
+    
+        }
+    
+    }
+    
 }

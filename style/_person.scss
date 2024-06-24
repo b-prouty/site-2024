@@ -1,0 +1,57 @@
+#person-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 1rem;
+}
+
+.person-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    align-self: stretch;
+    padding: 2rem;
+
+    .left, .right {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .left {
+        width: 25rem;
+        
+        img {
+            width: 100%;
+            border-radius: 1.5rem;
+        }
+    }
+
+    .right { 
+        width: 100%;
+
+        img {
+            width: 100%;
+            border-radius: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .person-section { 
+        flex-direction: column;
+
+        &:nth-last-of-type(2){
+            flex-direction: column-reverse;
+        }
+
+        .left {
+            width: 100%;
+        }
+
+        .left img, .right img{
+            width: 75%;
+        }
+    }
+    
+}

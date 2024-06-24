@@ -42,3 +42,13 @@
 
     button {background-color: $white;}
 }
+
+@media screen and (max-width: 768px) {
+    #homeImg{
+        max-width: 12rem;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+    }
+}

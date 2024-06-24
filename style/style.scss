@@ -125,23 +125,37 @@ button {
     margin: auto;
 }
 
+// PAGE TRANSITIONS
+
+@keyframes appear {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
 #pageTransition, #pageEnter {
     height: 0px;
     position: absolute;
-    bottom: 200vh;
     left: 0;
     z-index: 1000;
-    transition: 1000ms ease-in;
+    transition: bottom 1000ms ease-in;
+}
+
+#pageTransition {
+    bottom: 200vh;
 }
 
 #pageEnter {
-    width: 100vw ;
+    min-width: 100vw;
     bottom: 0;
-    height: 100vh ;
+    min-height: 100vh ;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 1;
+    // opacity: 1;
+
+    h1{
+        animation: appear 500ms ease-in;
+    }
 }
 
 .trans-up {
@@ -154,9 +168,15 @@ button {
     width: 100vw !important;
     height: 0px !important;
     bottom: 200vh !important;
-    opacity: 0 !important;
+    // opacity: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {font-size: 3rem}
+    h2 {font-size: 1.75rem}
 }
 
 @import '_nav.scss';
 @import '_home.scss';
 @import '_work.scss';
+@import '_person.scss';
