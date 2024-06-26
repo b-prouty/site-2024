@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluonlive | Brian Prouty</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="drk-bg project">
+  <div id="pageEnter" style="background-color: #262421;">
+    <h1>Loading...</h1>
+  </div>
+
+  <nav>
+    <div id="homeIcon" onclick="pageTrans('#F2EFEB','index');"><img src="img/youProfile 1.png"
+        alt="Image of Brian Prouty"></div>
+    <div class="nav-group">
+      <div class="nav-item work" title="Recent Work" onclick="pageTrans('#45C5EB','work');">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10 2.87158H14C14.5304 2.87158 15.0391 3.0823 15.4142 3.45737C15.7893 3.83244 16 4.34115 16 4.87158V6.87158H20C20.5304 6.87158 21.0391 7.0823 21.4142 7.45737C21.7893 7.83244 22 8.34115 22 8.87158V19.8716C22 20.402 21.7893 20.9107 21.4142 21.2858C21.0391 21.6609 20.5304 21.8716 20 21.8716H4C3.46957 21.8716 2.96086 21.6609 2.58579 21.2858C2.21071 20.9107 2 20.402 2 19.8716V8.87158C2 7.76158 2.89 6.87158 4 6.87158H8V4.87158C8 3.76158 8.89 2.87158 10 2.87158ZM14 6.87158V4.87158H10V6.87158H14Z" />
+        </svg>
+        <p>Recent Work</p>
+      </div>
+      <div class="nav-item person active" title="Brian the person" onclick="pageTrans('#CB8BD0','person');">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 4.87158C13.0609 4.87158 14.0783 5.29301 14.8284 6.04315C15.5786 6.7933 16 7.81072 16 8.87158C16 9.93245 15.5786 10.9499 14.8284 11.7C14.0783 12.4502 13.0609 12.8716 12 12.8716C10.9391 12.8716 9.92172 12.4502 9.17157 11.7C8.42143 10.9499 8 9.93245 8 8.87158C8 7.81072 8.42143 6.7933 9.17157 6.04315C9.92172 5.29301 10.9391 4.87158 12 4.87158ZM12 14.8716C16.42 14.8716 20 16.6616 20 18.8716V20.8716H4V18.8716C4 16.6616 7.58 14.8716 12 14.8716Z" />
+        </svg>
+        <p>Brian the Person</p>
+      </div>
+      <div class="nav-item resume" title="resume" onclick="pageTrans('#E2C541', 'resume');">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19 3.87158H5C3.9 3.87158 3 4.77158 3 5.87158V19.8716C3 20.9716 3.9 21.8716 5 21.8716H19C20.1 21.8716 21 20.9716 21 19.8716V5.87158C21 4.77158 20.1 3.87158 19 3.87158ZM7 7.87158H9V9.87158H7V7.87158ZM7 11.8716H9V13.8716H7V11.8716ZM7 15.8716H9V17.8716H7V15.8716ZM17 17.8716H11V15.8716H17V17.8716ZM17 13.8716H11V11.8716H17V13.8716ZM17 9.87158H11V7.87158H17V9.87158Z" />
+        </svg>
+        <p>Resume</p>
+      </div>
+      <div class="nav-item contact" title="contact" onclick="pageTrans('#ED6262','contact');">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M23 17.8716C23 21.1816 20.31 23.8716 17 23.8716V22.3716C19.5 22.3716 21.5 20.3716 21.5 17.8716H23ZM0.999995 7.87158C0.999995 4.56158 3.69 1.87158 7 1.87158V3.37158C4.5 3.37158 2.49999 5.37158 2.49999 7.87158H0.999995ZM8 5.19158L3.41 9.79158C0.189995 13.0116 0.189995 18.2416 3.41 21.4616C6.63 24.6816 11.86 24.6816 15.08 21.4616L22.15 14.3716C22.64 13.9016 22.64 13.1116 22.15 12.6216C22.0339 12.5052 21.8959 12.4128 21.7441 12.3498C21.5922 12.2868 21.4294 12.2543 21.265 12.2543C21.1006 12.2543 20.9378 12.2868 20.7859 12.3498C20.634 12.4128 20.4961 12.5052 20.38 12.6216L15.96 17.0416L15.25 16.3316L21.79 9.79158C22.28 9.30158 22.28 8.51158 21.79 8.02158C21.3 7.53158 20.5 7.53158 20 8.02158L14.19 13.8716L13.5 13.1416L20.37 6.25158C20.86 5.76158 20.86 4.97158 20.37 4.48158C19.88 3.99158 19.09 3.99158 18.6 4.48158L11.71 11.3716L11 10.6716L16.5 5.19158C17 4.70158 17 3.91158 16.5 3.42158C16 2.93158 15.22 2.93158 14.73 3.42158L7.11 11.0416C7.70726 11.811 8.00328 12.7718 7.94252 13.7439C7.88176 14.716 7.46841 15.6326 6.78 16.3216L6.07 15.6116C6.6318 15.0491 6.94736 14.2866 6.94736 13.4916C6.94736 12.6966 6.6318 11.9341 6.07 11.3716L5.72 11.0216L9.79 6.95158C10.28 6.46158 10.28 5.67158 9.79 5.18158C9.29 4.70158 8.5 4.70158 8 5.19158Z" />
+        </svg>
+        <p>Contact</p>
+      </div>
+    </div>
+  </nav>
+
+  <section class="project-header ratic">
+    <img src="img/ratic-trans.png" alt="web application design mockups">
+  </section>
+  <section class="grid-container section project-head">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell" data-aos="fade-up" data-aos-duration="1000">
+          <h2>RATIC</h2>
+          <h3>Real Advantage Title Insurance Company - Web Enhancements</h3>
+
+          <div class="heady-flexy">
+            <div class="text-content">
+              <p class="overline">Overview</p>
+              <p>Real Advantage Title Insurance Company (RATIC) is a child company to Orange Coast Title. The web
+                application they had before me was old not only needed a design refresh but also needed the added
+                functionality of being able to work with companies from outside the "family of companies".</p>
+              <p>The goal of this project was to identify any usability issues with the initial release as well as add
+                the ability to handle outside users to create and find Cover Protection Letters (CPLs).
+              </p>
+            </div>
+
+            <div class="my-role">
+              <p class="overline">My role</p>
+              <p>
+                <b>UI/UX and Front-End Development</b> <br>
+                User Research, Interaction, Visual Design, Prototyping & Testing, and Front-end development
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="background section two">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell" data-aos="fade-up" data-aos-duration="1000">
+          <h2>
+            Background
+          </h2>
+          <p>Before, working with internal clients was very straight-forward but now that the company was working
+            towards opening up the service to the third party clients, we needed to consider all the different processes
+            that potential customers already implement in their everyday workflow. </p>
+
+          <p>We needed to do this in a way where the user-experience did not feel confusing or over-crowded or else we
+            would jeopardize the possibility of the user getting frustrated and going back to something they were
+            already familiar with. Another problem we faced was a way for Administrators to oversee new “Entities” being
+            added from both internal companies and new third-party companies.</p>
+
+          <p> Users of the system had very little complaints with the overall functionality of the sight but did
+            complain about some usability issues, such as not being able to find previously made CPLs, that we decided
+            to address.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid-container full section">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell" data-aos="fade-up" data-aos-duration="1000">
+          <h2>
+            Pain points and new functionality
+          </h2>
+          <p>I conducted research interviews with some of our primary users to uncover any pain points they experienced
+            with the active version.</p>
+
+          <p><b>Top pain points identified:</b></p>
+          <ul>
+            <li>Not being able to find previously made CPLs</li>
+            <li>Not being able to read the forms fields that were required </li>
+            <li>There was too many steps to get to creating a CPL (96% of users were only there to create)</li>
+            <li>User's had to enter the same information over and over again (i.e. name, company, company address, etc)
+            </li>
+            <li>It was very hard to create these reports in a mobile view as the website was not responsive.</li>
+          </ul>
+
+          <p>After discussion with stakeholders, the acceptance criteria for the new version of the site would need to
+            cover.</p>
+
+          <p><b>New functionality would include:</b></p>
+          <ul>
+            <li>Ability to add new outside entities to the system.</li>
+            <li>Each entity would contain an array Issuing Agent Offices, and each Issuing Agent Office contains the
+              users associated with that office</li>
+            <li>Tiered user ranking where each user would be either a User, Admin, or Super Admin.</li>
+            <ul>
+              <li><b>Users</b> have no control over assigning offices, what office they or others are associated wit.
+              </li>
+              <li><b>Admin</b> are able to Manage all of the Issuing Agent Offices and their users <em>within</em> their
+                entity.</li>
+              <li><b>Super Admin</b> are able to control all Entities, Issuing Agent Offices, and Users. Super admin was
+                limited mainly to the Development team and stakeholders of the company.</li>
+            </ul>
+            <li>Reference Libraries containing title insurance information, rate estimate calculators, and a way to
+              manage the content of their account, and if they are an admin member, the site.</li>
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="grid-container section">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell">
+          <h2 data-aos="fade-up" data-aos-duration="1000">
+            Final solutions
+          </h2>
+
+          <p data-aos="fade-up" data-aos-duration="1000"> I worked towards addressing these pain points listed above by
+            coming up with these solutions: </p>
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <ul>
+              <li>Making previously made CPL's its own page with the ability to search keywords</li>
+              <li>Creating standardized in line validations for each required field while creating CPLs as well as
+                across the application</li>
+              <li>Making creating a CPL the very first thing the user see upon login as 96% of the users were there to
+                create them and logout.</li>
+              <li>Storing information for the user so they did not have to enter the same information over and over
+                again.</li>
+              <li>Making the entire site mobile responsive so they could create and find reports on the go.</li>
+            </ul>
+          </div>
+
+          <div class="solutions bluonlive" data-aos="fade-up" data-aos-duration="1000">
+            <img src="img/ratic/flow-02.png" alt="View of the model profile">
+            <img src="img/ratic/flow-03.png" alt="View of the model profile">
+            <img src="img/ratic/flow-01.png" alt="View of the model profile">
+            <div class="flexy">
+              <img src="img/ratic/flow-04.png" alt="View of the model profile">
+              <img src="img/ratic/flow-05.png" alt="View of the model profile">
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="grid-container full section project-results">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell">
+          <h2 data-aos="fade-up" data-aos-duration="1000">Results</h2>
+          <div class="results">
+            <div class="result" data-aos="fade-up" data-aos-duration="1000">
+              <h2>Smooth onboarding</h2>
+              <h3>of 3rd party companies</h3>
+            </div>
+
+            <div class="result" data-aos="fade-up" data-aos-duration="1100">
+              <h2>Increased efficiency</h2>
+              <h3>to create new CPLs</h3>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section_to-pin" class="grid-container full section section_to-pin four">
+    <div id="section_pin" class="section_pin">
+      <div class="content_wrapper">
+        <h1>More Projects</h1>
+      </div>
+      <div id="image_wrapper_1" class="image_wrapper image_wrapper_1">
+        <div class="flexy">
+          <h2>Bluon Orders 2.0</h2>
+        </div>
+        <img class="image" src="img/2.0-grey.png" alt="Lil' Image" />
+        <a href="bluon2.html" class="button">See case study</a>
+      </div>
+      <div id="image_wrapper_2" class="image_wrapper image_wrapper_2">
+        <div class="flexy">
+          <h2>Bluonlive</h2>
+        </div>
+        <img class="image" src="img/bluonlive-grey.png" alt="Lil' Image" />
+        <a href="bluonlive.html" class="button">See case study</a>
+      </div>
+      <div id="image_wrapper_3" class="image_wrapper image_wrapper_3">
+        <div class="flexy">
+          <h2>Basecamp</h2>
+        </div>
+        <img class="image" src="img/Basecamp-grey.png" alt="Lil' Image" />
+        <a href="basecamp.html" class="button">See case study</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid-container full section contact-section">
+
+    <h1 data-aos="fade-up" data-aos-duration="1000">Let's work together</h1>
+    <br><br>
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <p>Email</p>
+      <a href="mailto:brian@brianrouty.com" class="button">brian@brianprouty.com</a>
+    </div>
+
+  </div>
+
+  <div id="pageTransition"></div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

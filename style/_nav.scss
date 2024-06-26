@@ -4,18 +4,34 @@ nav {
     padding: 1rem;
 }
 
+.drk-bg {
+    .nav-group .nav-item {border: 1px solid rgba($color: $white, $alpha: 0.5);}
+
+    nav p {
+        color: $white !important;
+    }
+}
+
 @keyframes fadeIn {
-    0% {opacity: 0;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
- } 
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 .nav-group {
     display: flex;
     gap: .5rem;
     flex-direction: row;
     width: auto;
-    
+
 
     .nav-item {
         border: $button-outline;
@@ -32,42 +48,79 @@ nav {
         cursor: pointer;
 
 
-        &.work svg {fill: $blue}
-        &.person svg {fill: $purple}
-        &.resume svg {fill: $yellow}
-        &.contact svg {fill: $red}
-
-        &.work.active{
-             background: $blue;
-             border: 1px solid $blue;
-             p {color: $white !important;}
-
-            svg {fill: $white}
+        &.work svg {
+            fill: $blue
         }
-        &.person.active{
+
+        &.person svg {
+            fill: $purple
+        }
+
+        &.resume svg {
+            fill: $yellow
+        }
+
+        &.contact svg {
+            fill: $red
+        }
+
+        &.work.active {
+            background: $blue;
+            border: 1px solid $blue;
+
+            p {
+                color: $white !important;
+            }
+
+            svg {
+                fill: $white
+            }
+        }
+
+        &.person.active {
             background: $purple;
             border: 1px solid $purple;
-            p {color: $white !important;}
 
-            svg {fill: $white}
-        }
-        &.resume.active{
-             background: $yellow;
-             border: 1px solid $yellow;
-             p {color: $white !important;}
+            p {
+                color: $white !important;
+            }
 
-            svg {fill: $white}
+            svg {
+                fill: $white
+            }
         }
-        &.contact.active{
+
+        &.resume.active {
+            background: $yellow;
+            border: 1px solid $yellow;
+
+            p {
+                color: $white !important;
+            }
+
+            svg {
+                fill: $white
+            }
+        }
+
+        &.contact.active {
             background: $red;
             border: 1px solid $red;
-            p {color: $white !important;}
 
-            svg {fill: $white}
+            p {
+                color: $white !important;
+            }
+
+            svg {
+                fill: $white
+            }
         }
 
 
-        svg, p {display: inline-block;}
+        svg,
+        p {
+            display: inline-block;
+        }
 
         p {
             //padding-left: .5rem;
@@ -77,9 +130,8 @@ nav {
             width: 0px;
             height: 0px;
             overflow: hidden;
+            margin: 0;
         }
-
-
 
     }
 
@@ -92,12 +144,15 @@ nav {
 }
 
 @media screen and (min-width: 768px) {
-    nav { padding: 1rem 2rem; }
+    nav {
+        padding: 1rem 2rem;
+    }
+
     .nav-group {
         .nav-item {
             &:hover {
                 width: 11rem;
-    
+
                 p {
                     opacity: 1;
                     width: initial;
@@ -106,9 +161,9 @@ nav {
                     animation: fadeIn 500ms ease-in;
                 }
             }
-    
+
         }
-    
+
     }
-    
+
 }
