@@ -35,6 +35,7 @@ function includeHTML() {
 
 function enterPage() {
     pageEnter.classList.add('trans-down');
+    
 }
 
 function pageTrans(color, href) {
@@ -49,9 +50,14 @@ function pageTrans(color, href) {
 
 window.onload = function () {
     includeHTML();
-    
+    window.scrollTo(0, 0);
+
     setTimeout(() => {
         enterPage();
+        const body = document.body;
+        body.style.height = 'initial';
+        body.style.overflowX = 'hidden';
+        body.style.overflowY = 'scroll';
     }, 1000);
 };
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RATIC | Brian Prouty</title>
+  <title>Bluonlive | Brian Prouty</title>
   <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -48,33 +48,34 @@
     </div>
   </nav>
 
-  <h1>CPL Software</h1>
-  <section class="project-header ratic">
-    <img src="img/ratic-trans.png" alt="web application design mockups">
+  <h1>B2B Order Management</h1>
+  <section class="project-header blive">
+    <img src="img/bluonlive-trans.png" alt="Mobile application design mockups">
   </section>
   <section class="grid-container section project-head">
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
         <div class="cell" data-aos="fade-up" data-aos-duration="1000">
-          <h2>RATIC</h2>
-          <h3>Real Advantage Title Insurance Company - Web Enhancements</h3>
+          <h2>Bluonlive</h2>
+          <h3>Bluon web application redesign</h3>
 
           <div class="heady-flexy">
             <div class="text-content">
               <p class="overline">Overview</p>
-              <p>Real Advantage Title Insurance Company (RATIC) is a child company to Orange Coast Title. The web
-                application they had before me was old not only needed a design refresh but also needed the added
-                functionality of being able to work with companies from outside the "family of companies".</p>
-              <p>The goal of this project was to identify any usability issues with the initial release as well as add
-                the ability to handle outside users to create and find Cover Protection Letters (CPLs).
+              <p>Bluonlive is a counterpart to the mobile application that Bluon offers, so naturally when the redesign
+                of the mobile marketplace came about (<a class="project-link" href="bluon2.html">See related case study here</a>) the product
+                team determined that there were some enhancements that needed to be made to the order management system
+                on the supplier end as well.</p>
+              <p>The goal of this project was to identify any usability issues with the initial release of the order
+                management system and add feature sets that users had been asking for for quite sometime.
               </p>
             </div>
 
             <div class="my-role">
               <p class="overline">My role</p>
               <p>
-                <b>UI/UX and Front-End Development</b> <br>
-                User Research, Interaction, Visual Design, Prototyping & Testing, and Front-end development
+                <b>Interface & Experience Designer</b> <br>
+                User Research, Interaction, Visual Design, Prototyping & Testing, and Handoff
               </p>
             </div>
           </div>
@@ -91,18 +92,16 @@
           <h2>
             Background
           </h2>
-          <p>Before, working with internal clients was very straight-forward but now that the company was working
-            towards opening up the service to the third party clients, we needed to consider all the different processes
-            that potential customers already implement in their everyday workflow. </p>
+          <p>Bluonlive had been around long before I started at Bluon. Starting as database access tool to give
+            suppliers a way to find cross references for commonly searched parts, it slowly evolved into an order
+            management system. The system allowed app users to send a list of parts they needed on a job and the
+            supplier to check the availability and pricing of those items. With this slow evolution, the product became
+            the definition of <b>feature creep</b>. </p>
 
-          <p>We needed to do this in a way where the user-experience did not feel confusing or over-crowded or else we
-            would jeopardize the possibility of the user getting frustrated and going back to something they were
-            already familiar with. Another problem we faced was a way for Administrators to oversee new “Entities” being
-            added from both internal companies and new third-party companies.</p>
-
-          <p> Users of the system had very little complaints with the overall functionality of the sight but did
-            complain about some usability issues, such as not being able to find previously made CPLs, that we decided
-            to address.
+          <p> Users of the platform had several complaints about the old system but the one that stood out the most was
+            the inability to figure out what to do and when to do it. The workflow was broken up into 3 different tabs
+            with no clear direction on where to go next. This would result in users 'punting' on doing the work in the
+            system all together causing mass frustration amongst the mobile users sending their orders.
           </p>
         </div>
       </div>
@@ -114,46 +113,61 @@
       <div class="grid-x grid-padding-x">
         <div class="cell" data-aos="fade-up" data-aos-duration="1000">
           <h2>
-            Pain points and new functionality
+            What users said
           </h2>
-          <p>I conducted research interviews with some of our primary users to uncover any pain points they experienced
-            with the active version.</p>
+          <p>I conducted research interviews with our primary users (HVAC supplier counter-staff) to uncover any pain
+            points
+            that they were experiencing with the active version of the web application. </p>
 
-          <p><b>Top pain points identified:</b></p>
-          <ul>
-            <li>Not being able to find previously made CPLs</li>
-            <li>Not being able to read the forms fields that were required </li>
-            <li>There was too many steps to get to creating a CPL (96% of users were only there to create)</li>
-            <li>User's had to enter the same information over and over again (i.e. name, company, company address, etc)
+          <p><b>These were the top pain points they identified:</b></p>
+          <ol>
+            <li>Not sure where to find orders that had already been sent back to the field technicians</li>
+            <li>Supply shops are chaotic places - Counter staff can't just sit at a computer all day to wait for orders
+              to come in when they have orders right in front of them </li>
+            <li>HVAC is an essentially cash-less industry. 95% of sales are charged to accounts and counter-staff need a
+              way to verify online buyers being associated with those stores. </li>
+            <li>Users would have to enter the price in their ERP system AND Bluonlive which is creating double the work.
             </li>
-            <li>It was very hard to create these reports in a mobile view as the website was not responsive.</li>
-          </ul>
-
-          <p>After discussion with stakeholders, the acceptance criteria for the new version of the site would need to
-            cover.</p>
-
-          <p><b>New functionality would include:</b></p>
-          <ul>
-            <li>Ability to add new outside entities to the system.</li>
-            <li>Each entity would contain an array Issuing Agent Offices, and each Issuing Agent Office contains the
-              users associated with that office</li>
-            <li>Tiered user ranking where each user would be either a User, Admin, or Super Admin.</li>
-            <ul>
-              <li><b>Users</b> have no control over assigning offices, what office they or others are associated wit.
-              </li>
-              <li><b>Admin</b> are able to Manage all of the Issuing Agent Offices and their users <em>within</em> their
-                entity.</li>
-              <li><b>Super Admin</b> are able to control all Entities, Issuing Agent Offices, and Users. Super admin was
-                limited mainly to the Development team and stakeholders of the company.</li>
-            </ul>
-            <li>Reference Libraries containing title insurance information, rate estimate calculators, and a way to
-              manage the content of their account, and if they are an admin member, the site.</li>
-
-          </ul>
+            <li>Users would have to type in their name every time to claim an order.</li>
+          </ol>
         </div>
 
       </div>
     </div>
+    </div>
+  </section>
+
+  <section class="grid-container full section grey">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell" data-aos="fade-up" data-aos-duration="1000">
+          <h2>
+            Experience mapping and wire-framing
+          </h2>
+
+          
+
+          <p>After talking with users I found a good place to start is mapping out the desired experience in order to
+            address their pain points. While mapping out the experience I wanted to be sure to include actions both
+            internal (<span style="color: #0b99ff; font-weight: 900;">blue</span>) and external (<span
+              style="color: #ffa629; font-weight: 900;">orange</span>) to the web app experience. </p>
+
+          <div style="padding: 4rem 0;">
+            <h3>Journey map</h3>
+            <img src="img/bluonlive-process.png" alt="Screenshot of Figjam user journey map">
+          </div>
+
+         <h3>Wireframes</h3>
+          
+
+          <div class="image-vert-flex">
+            <img src="img/bluonlive/wireframes-01.png" alt="wireframe">
+            <img src="img/bluonlive/wireframes-02.png" alt="wireframe">
+            <img src="img/bluonlive/wireframes-03.png" alt="wireframe">
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -165,31 +179,29 @@
             Final solutions
           </h2>
 
-          <p data-aos="fade-up" data-aos-duration="1000"> I worked towards addressing these pain points listed above by
-            coming up with these solutions: </p>
+          <p data-aos="fade-up" data-aos-duration="1000">Based on the above problems identified, I worked towards
+            addressing these pains by coming up with these solutions: </p>
           <div data-aos="fade-up" data-aos-duration="1000">
             <ul>
-              <li>Making previously made CPL's its own page with the ability to search keywords</li>
-              <li>Creating standardized in line validations for each required field while creating CPLs as well as
-                across the application</li>
-              <li>Making creating a CPL the very first thing the user see upon login as 96% of the users were there to
-                create them and logout.</li>
-              <li>Storing information for the user so they did not have to enter the same information over and over
-                again.</li>
-              <li>Making the entire site mobile responsive so they could create and find reports on the go.</li>
+              <li>All orders, incoming requests and approved quotes, are shown on one page mitigating addressing the pain
+                point of user not being sure where to find out what to do next.</li>
+              <li>Visual and Audible notification trigger when there is a new task. </li>
+              <li>New customers have a banner fixed to the bottom of their order cards to prompt the user to verify
+                whether or not the customer is tied to the company they claim.</li>
+              <li>There is no more double entry for the user, just enter the total and send the quote off.</li>
+              <li>Users select their name as opposed to typing it in every time to claim the order.</li>
             </ul>
           </div>
 
           <div class="solutions bluonlive" data-aos="fade-up" data-aos-duration="1000">
-            <img src="img/ratic/flow-02.png" alt="View of the model profile">
-            <img src="img/ratic/flow-03.png" alt="View of the model profile">
-            <img src="img/ratic/flow-01.png" alt="View of the model profile">
-            <div class="flexy">
-              <img src="img/ratic/flow-04.png" alt="View of the model profile">
-              <img src="img/ratic/flow-05.png" alt="View of the model profile">
-            </div>
-
-
+            <img src="img/bluonlive//flow-01.png" alt="View of the model profile">
+            <img src="img/bluonlive//flow-02.png" alt="View of the model profile">
+            <img src="img/bluonlive//flow-03.png" alt="View of the model profile">
+            <img src="img/bluonlive//flow-04.png" alt="View of the model profile">
+            <img src="img/bluonlive//flow-05.png" alt="View of the model profile">
+            <img src="img/bluonlive//flow-06.png" alt="View of the model profile">
+            <img src="img/bluonlive//flow-07.png" alt="View of the model profile">
+            <img src="img/bluonlive/flow-08.png"  alt="View of the model profile">
           </div>
 
         </div>
@@ -206,49 +218,27 @@
           <h2 data-aos="fade-up" data-aos-duration="1000">Results</h2>
           <div class="results">
             <div class="result" data-aos="fade-up" data-aos-duration="1000">
-              <h2>Smooth onboarding</h2>
-              <h3>of 3rd party companies</h3>
+              <h2>Less confusion</h2>
+              <h3>finding incoming and approved orders</h3>
             </div>
 
             <div class="result" data-aos="fade-up" data-aos-duration="1100">
-              <h2>Increased efficiency</h2>
-              <h3>to create new CPLs</h3>
+              <h2>37% decrease</h2>
+              <h3>in denied requests due to company linking</h3>
             </div>
-
+            <div class="result" data-aos="fade-up" data-aos-duration="1000">
+              <h2>34% decrease</h2>
+              <h3>in average turnaround time</h3>
+            </div>
+            <div class="result" data-aos="fade-up" data-aos-duration="1100">
+              <h2>225% increase</h2>
+              <h3>request to order conversions</h3>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- <section id="section_to-pin" class="grid-container full section section_to-pin four">
-    <div id="section_pin" class="section_pin">
-      <div class="content_wrapper">
-        <h1>More Projects</h1>
-      </div>
-      <div id="image_wrapper_1" class="image_wrapper image_wrapper_1">
-        <div class="flexy">
-          <h2>Bluon Orders 2.0</h2>
-        </div>
-        <img class="image" src="img/2.0-grey.png" alt="Lil' Image" />
-        <a href="bluon2.html" class="button">See case study</a>
-      </div>
-      <div id="image_wrapper_2" class="image_wrapper image_wrapper_2">
-        <div class="flexy">
-          <h2>Bluonlive</h2>
-        </div>
-        <img class="image" src="img/bluonlive-grey.png" alt="Lil' Image" />
-        <a href="bluonlive.html" class="button">See case study</a>
-      </div>
-      <div id="image_wrapper_3" class="image_wrapper image_wrapper_3">
-        <div class="flexy">
-          <h2>Basecamp</h2>
-        </div>
-        <img class="image" src="img/Basecamp-grey.png" alt="Lil' Image" />
-        <a href="basecamp.html" class="button">See case study</a>
-      </div>
-    </div>
-  </section> -->
 
   <div class="grid-container full section contact-section">
 

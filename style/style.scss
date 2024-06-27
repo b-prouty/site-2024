@@ -22,7 +22,8 @@ body, * {
 
 body {
     width: 100%;
-    overflow-x: hidden;
+    height: 100vh;
+    overflow: hidden;
     color: $text-primary;
     font-family: Helvetica;
     font-weight: 100;
@@ -97,7 +98,7 @@ button {
 
 #pageTransition, #pageEnter {
     height: 0px;
-    position: absolute;
+    position: fixed;
     left: 0;
     z-index: 1000;
     transition: bottom 1000ms ease-in;
@@ -108,9 +109,9 @@ button {
 }
 
 #pageEnter {
-    min-width: 100vw;
+    min-width: 100%;
     bottom: 0;
-    min-height: 100vh ;
+    min-height: 100% ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,8 +123,8 @@ button {
 }
 
 .trans-up {
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 100% !important;
+    height: 100% !important;
     bottom: 0 !important;
 }
 
@@ -144,3 +145,4 @@ button {
 @import '_work.scss';
 @import '_person.scss';
 @import '_project.scss';
+@import '_resume.scss';

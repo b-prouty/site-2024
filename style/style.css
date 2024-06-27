@@ -14,7 +14,8 @@ body, * {
 
 body {
   width: 100%;
-  overflow-x: hidden;
+  height: 100vh;
+  overflow: hidden;
   color: rgba(38, 36, 33, 0.8039215686);
   font-family: Helvetica;
   font-weight: 100;
@@ -96,7 +97,7 @@ button {
 }
 #pageTransition, #pageEnter {
   height: 0px;
-  position: absolute;
+  position: fixed;
   left: 0;
   z-index: 1000;
   transition: bottom 1000ms ease-in;
@@ -107,9 +108,9 @@ button {
 }
 
 #pageEnter {
-  min-width: 100vw;
+  min-width: 100%;
   bottom: 0;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,8 +120,8 @@ button {
 }
 
 .trans-up {
-  width: 100vw !important;
-  height: 100vh !important;
+  width: 100% !important;
+  height: 100% !important;
   bottom: 0 !important;
 }
 
@@ -310,6 +311,7 @@ nav {
 }
 .home-buttons button {
   transition: transform 500ms;
+  cursor: pointer;
 }
 .home-buttons button.work {
   background-color: #45C5EB;
@@ -501,7 +503,17 @@ nav {
   }
 }
 .project {
-  padding-bottom: 4rem;
+  padding: 2rem;
+  padding-bottom: 6rem;
+}
+.project .project-link {
+  color: #209320;
+}
+.project h1 {
+  max-width: 1100px;
+  margin: auto;
+  padding-bottom: 2rem;
+  text-transform: capitalize;
 }
 .project section {
   max-width: 1100px;
@@ -523,6 +535,7 @@ nav {
   color: #F2EFEB;
   max-width: 1100px;
   margin: auto;
+  margin-bottom: 6rem;
 }
 .project .contact-section a {
   color: #F2EFEB;
@@ -540,7 +553,15 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  flex-direction: row;
+}
+.project .heady-flexy img {
+  max-width: 600px;
+}
+.project .heady-flexy div {
+  width: 100%;
+}
+.project .heady-flexy .my-role {
+  max-width: 24rem;
 }
 .project .project-header {
   width: 100%;
@@ -594,7 +615,7 @@ nav {
 }
 
 .solutions.bluonlive img {
-  max-width: 30rem;
+  max-width: 29rem;
 }
 
 .solutions.bluonlive .flexy {
@@ -632,6 +653,18 @@ li {
   line-height: 200%;
 }
 
+.image-vert-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 1rem;
+}
+.image-vert-flex img {
+  max-width: 500px;
+  border-radius: 1rem;
+}
+
 @media screen and (min-width: 768px) {
   .results {
     flex-direction: row;
@@ -640,5 +673,112 @@ li {
   .results .result {
     flex: 1;
     min-width: 30rem;
+  }
+  .heady-flexy,
+  .flexy {
+    flex-direction: row !important;
+  }
+}
+#resume-content {
+  padding: 0 4rem;
+}
+#resume-content h1 {
+  margin-bottom: 3rem;
+}
+
+.resume-content {
+  display: flex;
+  gap: 6rem;
+  padding-bottom: 6rem;
+}
+.resume-content h3,
+.resume-content h4,
+.resume-content h5 {
+  font-weight: 500;
+}
+.resume-content .resume-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.resume-content .resume-section .education,
+.resume-content .resume-section .skills {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.resume-content .resume-section .education .skill-column,
+.resume-content .resume-section .skills .skill-column {
+  display: flex;
+  gap: 4rem;
+}
+.resume-content .resume-section .education .skill-column .skill-row,
+.resume-content .resume-section .skills .skill-column .skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.resume-content .resume-section .education .skill-column .skill-row .skill-group,
+.resume-content .resume-section .skills .skill-column .skill-row .skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.resume-content .resume-section .education .skill-column .skill-row .skill-group ul,
+.resume-content .resume-section .skills .skill-column .skill-row .skill-group ul {
+  margin: 0;
+}
+.resume-content .resume-section .education .skill-column .skill-row .skill-group li,
+.resume-content .resume-section .skills .skill-column .skill-row .skill-group li {
+  line-height: 160%;
+  list-style: none;
+}
+.resume-content .resume-section .education h3 {
+  margin-bottom: 1rem;
+}
+.resume-content .resume-section .work-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.resume-content .resume-section .work-experience .job {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.resume-content .resume-section .work-experience .job .title {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.resume-content .resume-section .work-experience .job .title h3 {
+  width: 100%;
+}
+.resume-content .resume-section .work-experience .job .title h4 {
+  min-width: 8rem;
+}
+.resume-content .resume-section .work-experience .job .title img {
+  width: 32px;
+  height: 32px;
+}
+.resume-content .resume-section .work-experience .job .experience {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 48px;
+}
+
+@media screen and (max-width: 900px) {
+  #resume-content {
+    padding: 2rem;
+  }
+  .resume-content {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .resume-content .resume-section .work-experience .job .experience {
+    padding: 0;
   }
 }/*# sourceMappingURL=style.css.map */

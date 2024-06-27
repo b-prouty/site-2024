@@ -45,6 +45,7 @@
 
     button {
         transition: transform 500ms;
+        cursor: pointer;
 
         &.work {
             background-color: $blue;
