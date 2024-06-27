@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basecamp | Brian Prouty</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="drk-bg project">
+  <div id="pageEnter" style="background-color: #262421;">
+    <h1>Loading...</h1>
+  </div>
+
+  <nav>
+    <div id="homeIcon" onclick="pageTrans('#F2EFEB','index');"><img src="img/youProfile 1.png"
+        alt="Image of Brian Prouty"></div>
+    <div class="nav-group">
+      <div class="nav-item work" title="Recent Work" onclick="pageTrans('#45C5EB','work');">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10 2.87158H14C14.5304 2.87158 15.0391 3.0823 15.4142 3.45737C15.7893 3.83244 16 4.34115 16 4.87158V6.87158H20C20.5304 6.87158 21.0391 7.0823 21.4142 7.45737C21.7893 7.83244 22 8.34115 22 8.87158V19.8716C22 20.402 21.7893 20.9107 21.4142 21.2858C21.0391 21.6609 20.5304 21.8716 20 21.8716H4C3.46957 21.8716 2.96086 21.6609 2.58579 21.2858C2.21071 20.9107 2 20.402 2 19.8716V8.87158C2 7.76158 2.89 6.87158 4 6.87158H8V4.87158C8 3.76158 8.89 2.87158 10 2.87158ZM14 6.87158V4.87158H10V6.87158H14Z" />
+        </svg>
+        <p>Recent Work</p>
+      </div>
+      <div class="nav-item person" title="Brian the person" onclick="pageTrans('#CB8BD0','person');">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 4.87158C13.0609 4.87158 14.0783 5.29301 14.8284 6.04315C15.5786 6.7933 16 7.81072 16 8.87158C16 9.93245 15.5786 10.9499 14.8284 11.7C14.0783 12.4502 13.0609 12.8716 12 12.8716C10.9391 12.8716 9.92172 12.4502 9.17157 11.7C8.42143 10.9499 8 9.93245 8 8.87158C8 7.81072 8.42143 6.7933 9.17157 6.04315C9.92172 5.29301 10.9391 4.87158 12 4.87158ZM12 14.8716C16.42 14.8716 20 16.6616 20 18.8716V20.8716H4V18.8716C4 16.6616 7.58 14.8716 12 14.8716Z" />
+        </svg>
+        <p>Brian the Person</p>
+      </div>
+      <div class="nav-item resume" title="resume" onclick="pageTrans('#E2C541', 'resume');">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19 3.87158H5C3.9 3.87158 3 4.77158 3 5.87158V19.8716C3 20.9716 3.9 21.8716 5 21.8716H19C20.1 21.8716 21 20.9716 21 19.8716V5.87158C21 4.77158 20.1 3.87158 19 3.87158ZM7 7.87158H9V9.87158H7V7.87158ZM7 11.8716H9V13.8716H7V11.8716ZM7 15.8716H9V17.8716H7V15.8716ZM17 17.8716H11V15.8716H17V17.8716ZM17 13.8716H11V11.8716H17V13.8716ZM17 9.87158H11V7.87158H17V9.87158Z" />
+        </svg>
+        <p>Resume</p>
+      </div>
+      <div class="nav-item contact" title="contact" onclick="pageTrans('#ED6262','contact');">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M23 17.8716C23 21.1816 20.31 23.8716 17 23.8716V22.3716C19.5 22.3716 21.5 20.3716 21.5 17.8716H23ZM0.999995 7.87158C0.999995 4.56158 3.69 1.87158 7 1.87158V3.37158C4.5 3.37158 2.49999 5.37158 2.49999 7.87158H0.999995ZM8 5.19158L3.41 9.79158C0.189995 13.0116 0.189995 18.2416 3.41 21.4616C6.63 24.6816 11.86 24.6816 15.08 21.4616L22.15 14.3716C22.64 13.9016 22.64 13.1116 22.15 12.6216C22.0339 12.5052 21.8959 12.4128 21.7441 12.3498C21.5922 12.2868 21.4294 12.2543 21.265 12.2543C21.1006 12.2543 20.9378 12.2868 20.7859 12.3498C20.634 12.4128 20.4961 12.5052 20.38 12.6216L15.96 17.0416L15.25 16.3316L21.79 9.79158C22.28 9.30158 22.28 8.51158 21.79 8.02158C21.3 7.53158 20.5 7.53158 20 8.02158L14.19 13.8716L13.5 13.1416L20.37 6.25158C20.86 5.76158 20.86 4.97158 20.37 4.48158C19.88 3.99158 19.09 3.99158 18.6 4.48158L11.71 11.3716L11 10.6716L16.5 5.19158C17 4.70158 17 3.91158 16.5 3.42158C16 2.93158 15.22 2.93158 14.73 3.42158L7.11 11.0416C7.70726 11.811 8.00328 12.7718 7.94252 13.7439C7.88176 14.716 7.46841 15.6326 6.78 16.3216L6.07 15.6116C6.6318 15.0491 6.94736 14.2866 6.94736 13.4916C6.94736 12.6966 6.6318 11.9341 6.07 11.3716L5.72 11.0216L9.79 6.95158C10.28 6.46158 10.28 5.67158 9.79 5.18158C9.29 4.70158 8.5 4.70158 8 5.19158Z" />
+        </svg>
+        <p>Contact</p>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Pricing Structure</h1>
+  <section class="project-header pricing">
+    <img src="img/pricing-trans.png" alt="web and mobile application design mockups">
+  </section>
+  <section class="grid-container section project-head">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell" data-aos="fade-up" data-aos-duration="1000">
+          <h2>Transitioning to Seat Based Pricing</h2>
+          <h3>Adding pricing flexibility to a product built to save HVAC companies time and money.</h3>
+
+          <div class="heady-flexy">
+            <div class="text-content">
+              <p class="overline">Overview</p>
+              <p>As the Senior UX/UI Designer at Bluon, I was tasked with leading the redesign of our SaaS product's pricing structure. Our company decided to shift from a price bucket based pricing model to a seat based pricing model. This change was aimed at aligning our pricing strategy more closely with user value and driving revenue growth. The project involved multiple challenges, including effectively communicating the pricing changes, addressing the needs of both legacy and new users, navigating stakeholder preferences, and reducing friction in the sign-up flow.</p>
+            </div>
+
+            <div class="my-role">
+              <p class="overline">My role</p>
+              <p>
+                <b>Head of Product Design & Project Lead</b> <br>
+                Team management and Interaction & Visual Design, Cross-team collaboration
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="background section two">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell" data-aos="fade-up" data-aos-duration="1000">
+          <h2>
+            Project Objectives
+          </h2>
+          <ul>
+            <li>Communicate the new seat-based pricing structure clearly to users. </li>
+            <li>Ensure a smooth transition for legacy users from the old pricing model to the new one. </li>
+            <li>Balance stakeholder desires for usage-based pricing with the decision to implement seat-based pricing. </li>
+            <li>Minimize friction in the sign-up flow to maintain and enhance user acquisition. </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="background section two">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell" data-aos="fade-up" data-aos-duration="1000">
+          <h2>
+            Challenges & Solutions
+          </h2>
+          <div class="cs-set">
+            <div class="challenge">
+              <div class="overline">Challenge</div>
+              <p>Explaining the new seat-based pricing model in a way that was easy for users to understand and accept.</p>
+            </div>
+            <div class="solution">
+              <div class="overline">Solution</div>
+              <p>We implemented a multi-channel communication strategy. This included:</p>
+              <ul>
+                <li><b>In-App Notifications:</b> Informative pop-ups were designed to notify existing users about the upcoming changes well in advance.</li>
+                <li><b>Email Campaigns:</b> Detailed emails were sent out, highlighting the benefits of the new pricing structure and how it would affect their billing.</li>
+              </ul>
+  
+              <p>The design of these communications focused on clarity and simplicity, using visuals and examples to illustrate the new pricing model.</p>
+            </div>
+          </div>
+          
+          <div class="cs-set">
+            <div class="challenge">
+              <div class="overline">Challenge</div>
+              <p>Ensuring that legacy users were transitioned smoothly to the new pricing model without disrupting their current usage or causing dissatisfaction.</p>
+            </div>
+            <div class="solution">
+              <div class="overline">Solution</div>
+              <p>We provided legacy users with a grandfathering option, where they could continue with their current pricing for a specified period before transitioning to the new model. Additionally, a dedicated support team was made available to assist users with any concerns during the transition.</p>
+
+              <p>We also made sure that each legacy customer got a one-on-one phone call with our team to easily understand how the transition would affect them, including cost comparisons and seat allocation management.</p>
+            </div>
+          </div>
+
+          <div class="cs-set">
+            <div class="challenge">
+              <div class="overline">Challenge</div>
+              <p>Navigating the preference from some stakeholders for a usage-based pricing model instead of a seat-based one.</p>
+            </div>
+            <div class="solution">
+              <div class="overline">Solution</div>
+              <p>To address stakeholder concerns, we conducted extensive user research and competitive analysis to demonstrate the advantages of seat-based pricing. We highlighted that seat-based pricing was more predictable and easier for users to understand and manage.</p>
+
+              <p>In our design presentations, we showcased the potential revenue impact and user satisfaction improvements with seat-based pricing, gaining buy-in from key stakeholders by aligning our UX strategy with business goals.</p>
+            </div>
+          </div>
+          
+          <div class="cs-set">
+            <div class="challenge">
+              <div class="overline">Challenge</div>
+              <p>Minimizing friction in the sign-up flow to ensure high conversion rates.</p>
+            </div>
+            <div class="solution">
+              <div class="overline">Solution</div>
+              <p>We redesigned the sign-up flow with a focus on simplicity and clarity. Key changes included:</p>
+              <ul>
+                <li><b>Streamlined Form Design:</b> Reducing the number of fields in the sign-up form to the essential minimum, and implementing smart defaults and auto-fill options. </li>
+                <li><b>Pricing Transparency:</b> Adding our pricing as soon as their info was entered to help users under stand our pricing structure, reducing the amount of page bounces trying to compare rates. </li>
+                <li><b>Clear Value Proposition:</b> Highlighting the benefits of the pricing model prominently on the checkout page to reinforce the value users would receive. </li>
+              </ul>
+
+              <p>We also introduced A/B testing to continuously optimize the sign-up flow based on user behavior and feedback.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="grid-container section">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell">
+          <h2 data-aos="fade-up" data-aos-duration="1000">
+            Screenshots
+          </h2>
+
+          
+          </div>
+
+          <div class="solutions bluonlive" data-aos="fade-up" data-aos-duration="1000">
+            <img src="img/pricing/flow-01.png" alt="View of the model profile">
+            <img src="img/pricing/flow-02.png" alt="View of the model profile">
+            <img src="img/pricing/flow-03.png" alt="View of the model profile">
+            <img src="img/pricing/flow-04.png" alt="View of the model profile">
+            <img src="img/pricing/flow-05.png" alt="View of the model profile">
+            <img src="img/pricing/flow-06.png" alt="View of the model profile">
+            <img src="img/pricing/flow-07.png" alt="View of the model profile">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="grid-container full section project-results">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell">
+          <h2 data-aos="fade-up" data-aos-duration="1000">Outcomes &amp; Results</h2>
+          <!-- <p data-aos="fade-up" data-aos-duration="1000">The redesign of the pricing structure and sign-up flow yielded positive results:</p>
+          <div data-aos="fade-up" data-aos-duration="1000"> -->
+            <!-- <ul> -->
+              <!-- <li>Increased User Satisfaction: </li> -->
+              <!-- <li>Smooth Transition: Over 90% of legacy users transitioned to the new pricing model without issues, thanks to the grandfathering option and support provided.</li> -->
+              <!-- <li>Stakeholder Alignment: Stakeholders were satisfied with the seat-based pricing model after seeing the positive impact on user acquisition and retention.</li>
+              <li>Higher Conversion Rates: The optimized sign-up flow resulted in a 15% increase in sign-up completion rates.</li> -->
+            <!-- </ul> -->
+          <div class="results">
+            <div class="result" data-aos="fade-up" data-aos-duration="1000">
+              <h2>Increased User Satisfaction</h2>
+              <h3>User feedback indicated a clear understanding of the new pricing model, with minimal complaints during the transition period.</h3>
+            </div>
+
+            <div class="result" data-aos="fade-up" data-aos-duration="1100">
+              <h2>Smooth Transition</h2>
+              <h3>Legacy users transitioned to the new pricing model without issues, thanks to the grandfathering option and support provided.</h3>
+            </div>
+
+            <div class="result" data-aos="fade-up" data-aos-duration="1100">
+              <h2>Stakeholder Alignment</h2>
+              <h3>Stakeholders were satisfied with the seat-based pricing model after seeing the positive impact on user acquisition and retention.</h3>
+            </div>
+
+            <div class="result" data-aos="fade-up" data-aos-duration="1100">
+              <h2>Higher Conversion Rates</h2>
+              <h3>The optimized sign-up flow resulted in a 15% increase in sign-up completion rates.</h3>
+            </div>
+            
+          </div>
+
+          <p>The project was a success, demonstrating the critical role of UX/UI design in navigating complex pricing changes and enhancing user experience. By focusing on clear communication, user-centric design, and continuous optimization, we were able to achieve a smooth transition and drive business growth. This case study underscores the importance of aligning design strategies with business objectives and user needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <div class="grid-container full section contact-section">
+
+    <h1 data-aos="fade-up" data-aos-duration="1000">Let's work together</h1>
+    <br><br>
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <p>Email</p>
+      <a href="mailto:brian@brianprouty.com" class="button">brian@brianprouty.com</a>
+    </div>
+
+  </div>
+
+  <div id="pageTransition"></div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

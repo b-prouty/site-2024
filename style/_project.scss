@@ -1,10 +1,12 @@
 .project {
-    padding: 2rem;
+    padding: 0 2rem;
     padding-bottom: 6rem;
 
     .project-link {
         color: $green ;
     }
+
+    .overline {color: rgba($color: $white, $alpha: 0.75);}
 
     h1 {
         max-width: 1100px;
@@ -12,6 +14,8 @@
         padding-bottom: 2rem;
         text-transform: capitalize;
     }
+
+    h2 {padding-bottom: 1rem;}
 
     section {
         max-width: 1100px;
@@ -28,6 +32,27 @@
         p {
             margin: 1rem 0;
         }
+    }
+
+    .cs-set {
+        padding: 2rem 0;
+        display: flex;
+        gap: 2rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid  rgba($color: $white, $alpha: 0.25);
+        flex-direction: column;
+
+        &:last-of-type{border-bottom: none;}
+
+        .challenge,
+        .solution {
+            width: 100%;
+        }
+
+        .challenge {max-width: 16rem;}
+
+        .challenge .overline {color: $red;}
+        .solution .overline {color: $green;}
     }
 
     .contact-section {
@@ -111,7 +136,7 @@
         }
 
         img {
-            max-width: 300px;
+            max-height: 300px;
         }
     }
 }
@@ -204,4 +229,6 @@ li {
     .flexy {
         flex-direction: row !important;
     }
+
+    .cs-set {flex-direction: row !important;}
 }

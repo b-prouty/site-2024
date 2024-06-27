@@ -503,17 +503,23 @@ nav {
   }
 }
 .project {
-  padding: 2rem;
+  padding: 0 2rem;
   padding-bottom: 6rem;
 }
 .project .project-link {
   color: #209320;
+}
+.project .overline {
+  color: rgba(242, 239, 235, 0.75);
 }
 .project h1 {
   max-width: 1100px;
   margin: auto;
   padding-bottom: 2rem;
   text-transform: capitalize;
+}
+.project h2 {
+  padding-bottom: 1rem;
 }
 .project section {
   max-width: 1100px;
@@ -526,6 +532,30 @@ nav {
 }
 .project section p {
   margin: 1rem 0;
+}
+.project .cs-set {
+  padding: 2rem 0;
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(242, 239, 235, 0.25);
+  flex-direction: column;
+}
+.project .cs-set:last-of-type {
+  border-bottom: none;
+}
+.project .cs-set .challenge,
+.project .cs-set .solution {
+  width: 100%;
+}
+.project .cs-set .challenge {
+  max-width: 16rem;
+}
+.project .cs-set .challenge .overline {
+  color: #ED6262;
+}
+.project .cs-set .solution .overline {
+  color: #209320;
 }
 .project .contact-section {
   background-color: rgba(0, 0, 0, 0.5);
@@ -590,7 +620,7 @@ nav {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/rooftop.jpeg");
 }
 .project .project-header img {
-  max-width: 300px;
+  max-height: 300px;
 }
 
 .solutions {
@@ -676,6 +706,9 @@ li {
   }
   .heady-flexy,
   .flexy {
+    flex-direction: row !important;
+  }
+  .cs-set {
     flex-direction: row !important;
   }
 }
