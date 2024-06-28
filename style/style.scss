@@ -247,6 +247,11 @@ button {
 @media screen and (max-width: 768px) {
     h1 {font-size: 3rem}
     h2 {font-size: 1.75rem}
+}
+
+@media screen and (max-width: 1000px) {
+    h1 {font-size: 3rem}
+    h2 {font-size: 1.75rem}
 
     .footer-buttons {
         flex-direction: column;

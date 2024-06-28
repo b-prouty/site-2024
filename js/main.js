@@ -50,6 +50,8 @@ function pageTrans(color, href) {
 
 window.onload = function () {
     includeHTML();
+    AOS.init();
+
     window.scrollTo(0, 0);
 
     setTimeout(() => {

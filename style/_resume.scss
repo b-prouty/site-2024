@@ -112,3 +112,12 @@
         }
     }
 }
+
+@media screen and (max-width: 400px) {
+    .resume-content .resume-section .work-experience .job .title {
+        display: flex;
+        gap: 0.25rem;
+        align-items: start;
+        flex-direction: column;
+    }
+}

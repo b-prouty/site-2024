@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian the Person</title>
     <link rel="stylesheet" href="style/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="wht-bg">
@@ -49,11 +50,11 @@
     </nav>
 
     <section id="resume-content" class="wrapper">
-        <h1>Resume</h1>
+        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400">Resume</h1>
         <div class="resume-content">
             <div class="resume-section">
                 <h2>Recent Experience</h2>
-                <div class="work-experience">
+                <div class="work-experience" data-aos="fade-up" data-aos-duration="1000">
                     <div class="job">
                         <div class="title">
                             <img src="img/bluon.png" alt="Bluon Logo">
@@ -102,7 +103,7 @@
                 </div>
             </div>
             <div class="resume-section">
-                <div class="education">
+                <div class="education" data-aos="fade-up" data-aos-duration="1000">
                     <h2>Education</h2>
                     <div>
                         <h3>California State University, Fullerton</h3>
@@ -110,7 +111,7 @@
                         <p>Graphic Design. Concentration of UI/UX Design.</p>
                     </div>
                 </div>
-                <div class="skills">
+                <div class="skills" data-aos="fade-up" data-aos-duration="1000">
                     <h2>Skills</h2>
                     <div class="skill-column">
                         <div class="skill-row">
@@ -178,7 +179,7 @@
 
     </section>
 
-    <div class="footer-buttons">
+    <div class="footer-buttons" data-aos="fade-up" data-aos-duration="1000">
         <button class="button work" onclick="pageTrans('#45C5EB','work');">
             <!-- SVG icon -->
             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -212,9 +213,11 @@
             <p>Contact</p>
         </button>
     </div>
-    
+
     <div id="pageTransition"></div>
-    <script src="js/main.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="js/main.js"></script>
 </body>
 
 </html>

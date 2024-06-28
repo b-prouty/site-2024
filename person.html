@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian the Person</title>
     <link rel="stylesheet" href="style/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="wht-bg">
@@ -48,8 +49,8 @@
     </nav>
 
     <section id="person-content" class="wrapper">
-        <h1>Brian the Person</h1>
-        <div class="person-section">
+        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400">Brian the Person</h1>
+        <div class="person-section" data-aos="fade-up" data-aos-duration="1000" >
             <div class="left">
                 <img src="img/briantheperson.jpeg" alt="Brian Prouty (the guy)">
             </div>
@@ -60,7 +61,7 @@
                 <p>Outside the professional realm, I am an avid traveler and outdoor enthusiast, often found exploring the rugged terrains of Southern California's mountain ranges and deserts. Whether camping under the stars, hiking through scenic trails, or off-roading across desert landscapes, these experiences not only provide a refreshing escape but also inspire my creative process. Evenings spent around a campfire with friends, sharing stories and forging meaningful connections, add depth to my empathetic approach to design, ensuring that every user interaction feels personal and impactful.</p>
             </div>
         </div>
-        <div class="person-section">
+        <div class="person-section" data-aos="fade-up" data-aos-duration="1000" >
             <div class="left">
                 <h2>Off Roading</h2>
                 <p>Spending time off-roading feeds my creative energy and allows me to connect with people I might not otherwise meet. The thrill of navigating challenging terrains and discovering hidden gems in Southern California's deserts and mountains invigorates my mind, offering fresh perspectives that translate into innovative design solutions. Off-roading trips are also a unique opportunity to bond with fellow adventurers, fostering connections with a diverse group of individuals who share a passion for exploration and adventure. These interactions broaden my understanding of different user experiences and needs, ultimately enhancing my ability to create more inclusive and engaging designs.</p>
@@ -69,7 +70,7 @@
                 <img src="img/offroad.jpeg" alt="Picture of a silver truck offroading in southern california">
             </div>
         </div>
-        <div class="person-section">
+        <div class="person-section" data-aos="fade-up" data-aos-duration="1000" >
             <div class="left">
                 <img src="img/hiking.jpeg" alt="Picture of Grand Canyon national park">
             </div>
@@ -80,7 +81,7 @@
         </div>
     </section>
 
-    <div class="footer-buttons">
+    <div class="footer-buttons" data-aos="fade-up" data-aos-duration="1000" >
         <button class="button work" onclick="pageTrans('#45C5EB','work');">
             <!-- SVG icon -->
             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,9 +115,11 @@
             <p>Contact</p>
         </button>
     </div>
-    
+
     <div id="pageTransition"></div>
-    <script src="js/main.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -102,6 +102,22 @@
 @media screen and (max-width: 768px) {
     .work-cards .card { 
         min-width: 100%;
+        padding: 1.5rem;
+        padding-bottom: 2rem;
+
+        .card-img {height: 14rem;}
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .work-cards .card { 
+        min-width: 100%;
+        padding: 1rem;
+        padding-bottom: 2rem;
+        
+        .card-btm {
+            flex-direction: column;
+        }
 
         .card-img {height: 14rem;}
     }

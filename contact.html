@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian the Person</title>
     <link rel="stylesheet" href="style/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="wht-bg">
@@ -48,7 +49,7 @@
     </nav>
 
     <section id="contact-content" class="wrapper">
-        <div class="content-center">
+        <div class="content-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500">
             <h1>Contact</h1>
             <div class="contact-section">
                 <h2>Email</h2>
@@ -60,7 +61,7 @@
             </div>
         </div>
         
-        <div class="footer-buttons">
+        <div class="footer-buttons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1550">
             <button class="button work" onclick="pageTrans('#45C5EB','work');">
                 <!-- SVG icon -->
                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +100,9 @@
 
    
     <div id="pageTransition"></div>
-    <script src="js/main.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="js/main.js"></script>
 </body>
 
 </html>
