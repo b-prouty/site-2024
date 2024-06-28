@@ -131,12 +131,101 @@ button {
   bottom: 200vh !important;
 }
 
+.home-buttons, .footer-buttons {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+.home-buttons button, .footer-buttons button {
+  transition: transform 500ms;
+  cursor: pointer;
+}
+.home-buttons button.work, .footer-buttons button.work {
+  background-color: #45C5EB;
+  color: #F2EFEB;
+  border: 1px solid #45C5EB;
+}
+.home-buttons button.work svg, .footer-buttons button.work svg {
+  fill: #F2EFEB;
+}
+.home-buttons button.person, .footer-buttons button.person {
+  background-color: #CB8BD0;
+  color: #F2EFEB;
+  border: 1px solid #CB8BD0;
+}
+.home-buttons button.person svg, .footer-buttons button.person svg {
+  fill: #F2EFEB;
+}
+.home-buttons button.resume, .footer-buttons button.resume {
+  background-color: #d7bc3f;
+  color: #F2EFEB;
+  border: 1px solid #d7bc3f;
+}
+.home-buttons button.resume svg, .footer-buttons button.resume svg {
+  fill: #F2EFEB;
+}
+.home-buttons button.contact, .footer-buttons button.contact {
+  background-color: #ED6262;
+  color: #F2EFEB;
+  border: 1px solid #ED6262;
+}
+.home-buttons button.contact svg, .footer-buttons button.contact svg {
+  fill: #F2EFEB;
+}
+.home-buttons button:hover, .footer-buttons button:hover {
+  transform: rotate(2deg);
+}
+
+.footer-buttons {
+  color: rgba(38, 36, 33, 0.8039215686);
+  padding: 4rem;
+}
+.footer-buttons button {
+  cursor: pointer;
+  background-color: transparent !important;
+  border: 1px solid rgba(38, 36, 33, 0.2) !important;
+}
+.footer-buttons button.work {
+  color: rgba(38, 36, 33, 0.8039215686);
+}
+.footer-buttons button.work svg {
+  fill: #45C5EB;
+}
+.footer-buttons button.person {
+  color: rgba(38, 36, 33, 0.8039215686);
+}
+.footer-buttons button.person svg {
+  fill: #CB8BD0;
+}
+.footer-buttons button.resume {
+  color: rgba(38, 36, 33, 0.8039215686);
+}
+.footer-buttons button.resume svg {
+  fill: #d7bc3f;
+}
+.footer-buttons button.contact {
+  color: rgba(38, 36, 33, 0.8039215686);
+}
+.footer-buttons button.contact svg {
+  fill: #ED6262;
+}
+
+.drk-bg .footer-buttons button {
+  color: #F2EFEB !important;
+  border: 1px solid rgba(242, 239, 235, 0.2) !important;
+}
+
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 3rem;
   }
   h2 {
     font-size: 1.75rem;
+  }
+  .footer-buttons {
+    flex-direction: column;
   }
 }
 nav {
@@ -300,53 +389,6 @@ nav {
 .home-bottom {
   padding: 2rem;
   border-radius: 0.5rem;
-}
-
-.home-buttons {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem;
-}
-.home-buttons button {
-  transition: transform 500ms;
-  cursor: pointer;
-}
-.home-buttons button.work {
-  background-color: #45C5EB;
-  color: #F2EFEB;
-  border: 1px solid #45C5EB;
-}
-.home-buttons button.work svg {
-  fill: #F2EFEB;
-}
-.home-buttons button.person {
-  background-color: #CB8BD0;
-  color: #F2EFEB;
-  border: 1px solid #CB8BD0;
-}
-.home-buttons button.person svg {
-  fill: #F2EFEB;
-}
-.home-buttons button.resume {
-  background-color: #d7bc3f;
-  color: #F2EFEB;
-  border: 1px solid #d7bc3f;
-}
-.home-buttons button.resume svg {
-  fill: #F2EFEB;
-}
-.home-buttons button.contact {
-  background-color: #ED6262;
-  color: #F2EFEB;
-  border: 1px solid #ED6262;
-}
-.home-buttons button.contact svg {
-  fill: #F2EFEB;
-}
-.home-buttons button:hover {
-  transform: rotate(2deg);
 }
 
 @media screen and (max-width: 768px) {
@@ -813,5 +855,38 @@ li {
   }
   .resume-content .resume-section .work-experience .job .experience {
     padding: 0;
+  }
+}
+#contact-content {
+  min-height: calc(100vh - 83px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem;
+  max-width: 100%;
+}
+#contact-content .content-center {
+  background-color: #ED6262;
+  color: #F2EFEB;
+  padding: 4rem;
+  padding-bottom: 6rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#contact-content .content-center a {
+  color: #F2EFEB;
+  margin-top: 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  #contact-content {
+    padding: 4rem;
   }
 }/*# sourceMappingURL=style.css.map */

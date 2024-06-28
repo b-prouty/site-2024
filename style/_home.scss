@@ -34,67 +34,6 @@
     // background-color: rgba($color: $green, $alpha: 0.15);
 }
 
-.home-buttons {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: .5rem;
-    padding: 1rem;
-    //margin-top: 1rem;
-
-
-    button {
-        transition: transform 500ms;
-        cursor: pointer;
-
-        &.work {
-            background-color: $blue;
-            color: $white;
-            border: 1px solid $blue;
-
-            svg {
-                fill: $white
-            }
-        }
-
-        &.person {
-            background-color: $purple;
-            color: $white;
-            border: 1px solid $purple;
-
-            svg {
-                fill: $white
-            }
-        }
-
-        &.resume {
-            background-color: $yellow;
-            color: $white;
-            border: 1px solid $yellow;
-
-            svg {
-                fill: $white
-            }
-        }
-
-        &.contact {
-            background-color: $red;
-            color: $white;
-            border: 1px solid $red;
-
-            svg {
-                fill: $white
-            }
-        }
-
-        &:hover {
-            transform: rotate(2deg);
-        }
-    }
-
-   
-}
-
 @media screen and (max-width: 768px) {
     #homeImg {
         max-width: 12rem;

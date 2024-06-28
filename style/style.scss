@@ -135,9 +135,126 @@ button {
     // opacity: 0 !important;
 }
 
+.home-buttons, .footer-buttons {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: 1rem;
+    //margin-top: 1rem;
+
+
+    button {
+        transition: transform 500ms;
+        cursor: pointer;
+
+        &.work {
+            background-color: $blue;
+            color: $white;
+            border: 1px solid $blue;
+
+            svg {
+                fill: $white
+            }
+        }
+
+        &.person {
+            background-color: $purple;
+            color: $white;
+            border: 1px solid $purple;
+
+            svg {
+                fill: $white
+            }
+        }
+
+        &.resume {
+            background-color: $yellow;
+            color: $white;
+            border: 1px solid $yellow;
+
+            svg {
+                fill: $white
+            }
+        }
+
+        &.contact {
+            background-color: $red;
+            color: $white;
+            border: 1px solid $red;
+
+            svg {
+                fill: $white
+            }
+        }
+
+        &:hover {
+            transform: rotate(2deg);
+        }
+    }
+
+   
+}
+
+.footer-buttons {
+    color: $text-primary;
+    padding: 4rem;
+
+    button {
+        cursor: pointer;
+        background-color: transparent !important;
+        border: 1px solid rgba($color: $text-primary, $alpha: 0.2) !important;
+
+        &.work {
+            color: $text-primary;
+
+            svg {
+                fill: $blue
+            }
+        }
+
+        &.person {
+            color: $text-primary;
+
+            svg {
+                fill: $purple
+            }
+        }
+
+        &.resume {
+            color: $text-primary;
+
+            svg {
+                fill: $yellow
+            }
+        }
+
+        &.contact {
+            color: $text-primary;
+
+            svg {
+                fill: $red
+            }
+        }
+    }
+}
+
+.drk-bg .footer-buttons button{
+    color: $white !important;
+    border: 1px solid rgba($color: $white, $alpha: 0.2) !important;
+}
+
 @media screen and (max-width: 768px) {
     h1 {font-size: 3rem}
     h2 {font-size: 1.75rem}
+
+    .footer-buttons {
+        flex-direction: column;
+        
+        // button {
+        //     justify-content: center;
+        // }
+    }
 }
 
 @import '_nav.scss';
@@ -146,3 +263,4 @@ button {
 @import '_person.scss';
 @import '_project.scss';
 @import '_resume.scss';
+@import '_contact.scss';
