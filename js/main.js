@@ -48,11 +48,17 @@ function pageTrans(color, href) {
 
 }
 
-window.onload = function () {
+window.onpageshow = function () {
     includeHTML();
     AOS.init();
-
     window.scrollTo(0, 0);
+
+    if(pageTransition.classList.contains('trans-up')){
+        // console.log('should be working')
+        pageTransition.classList.remove('trans-up');
+    } else {
+        // console.log('nope')
+    }
 
     setTimeout(() => {
         enterPage();
@@ -62,4 +68,6 @@ window.onload = function () {
         body.style.overflowY = 'scroll';
     }, 1000);
 };
+
+
 

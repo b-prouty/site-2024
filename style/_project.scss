@@ -35,12 +35,11 @@
     }
 
     .cs-set {
-        padding: 2rem 0;
         display: flex;
-        gap: 2rem;
-        padding-bottom: 3rem;
+        gap: 0rem;
         border-bottom: 1px solid  rgba($color: $white, $alpha: 0.25);
         flex-direction: column;
+        padding: 2rem 0;
 
         &:last-of-type{border-bottom: none;}
 
@@ -49,10 +48,15 @@
             width: 100%;
         }
 
-        .challenge {max-width: 16rem;}
+        .challenge p {font-weight: 900;}
 
         .challenge .overline {color: $red;}
         .solution .overline {color: $green;}
+
+        .challenge,
+        .solution {
+            .overline {display: none;}
+        }
     }
 
     .contact-section {
@@ -230,5 +234,23 @@ li {
         flex-direction: row !important;
     }
 
-    .cs-set {flex-direction: row !important;}
+    .cs-set {
+        flex-direction: row !important;
+        gap: 2rem;
+        padding: 0rem !important;
+
+        .challenge,
+        .solution {
+            padding: 2rem 0;
+            padding-bottom: 3rem;
+
+            .overline {display: block !important; }
+        }
+
+        .challenge {
+            max-width: 16rem;
+            border-right: 1px solid grey;
+        }
+        .solution { padding-left: 2rem; }
+    }
 }

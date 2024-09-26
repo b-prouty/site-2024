@@ -11,8 +11,9 @@ $white: #F2EFEB;
 $dark: #262421;
 $wrap-width: 1100px;
 
-@font-face { font-family: KENOKY; src: url('KENOKY-Light.ttf'); } 
-@font-face { font-family: KENOKY;  src: url('KENOKY-Light.ttf');}
+@font-face { font-family: KENOKY; src: url('KENOKY-Light.woff'); } 
+@font-face { font-family: KENOKY;  src: url('KENOKY-Light.woff');}
+
 
 body, * {
     box-sizing: border-box;
@@ -269,3 +270,4 @@ button {
 @import '_project.scss';
 @import '_resume.scss';
 @import '_contact.scss';
+@import '_slider.scss';
