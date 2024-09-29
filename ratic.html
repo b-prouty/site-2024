@@ -16,6 +16,7 @@
   <title>RATIC | Brian Prouty</title>
   <link rel="stylesheet" href="style/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body class="drk-bg project">
@@ -58,152 +59,139 @@
     </div>
   </nav>
 
-  <h1>CPL Software</h1>
-  <section class="project-header ratic">
-    <img src="img/ratic-trans.png" alt="web application design mockups">
+  
+  <section>
+    <h1>CPL Software</h1>
+    <h3>Web application overhaul with added functionality</h3>
   </section>
   <section class="grid-container section project-head">
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="cell" data-aos="fade-up" data-aos-duration="1000">
-          <h2>RATIC</h2>
-          <h3>Real Advantage Title Insurance Company - Web Enhancements</h3>
-
-          <div class="heady-flexy">
-            <div class="text-content">
-              <p class="overline">Overview</p>
-              <p>Real Advantage Title Insurance Company (RATIC) is a child company to Orange Coast Title. The web
-                application they had before me was old not only needed a design refresh but also needed the added
-                functionality of being able to work with companies from outside the "family of companies".</p>
-              <p>The goal of this project was to identify any usability issues with the initial release as well as add
-                the ability to handle outside users to create and find Cover Protection Letters (CPLs).
-              </p>
-            </div>
-
-            <div class="my-role">
-              <p class="overline">My role</p>
-              <p>
-                <b>UI/UX and Front-End Development</b> <br>
-                User Research, Interaction, Visual Design, Prototyping & Testing, and Front-end development
-              </p>
-            </div>
-          </div>
-
-        </div>
+    <div class="heady-flexy">
+      <div class="text-content">
+        <p class="overline">Overview</p>
+        <p>Real Advantage Title Insurance Company (RATIC) is a child company to Orange Coast Title. The web
+          application they had before me was old not only needed a design refresh but also needed the added
+          functionality of being able to work with companies from outside the "family of companies".</p>
+        <p>The goal of this project was to identify any usability issues with the initial release as well as add
+          the ability to handle outside users to create and find Cover Protection Letters (CPLs).
+        </p>
+      </div>
+  
+      <div class="my-role">
+        <p class="overline">My role</p>
+        <p>
+          <b>UI/UX and Front-End Development</b> <br>
+          User Research, Interaction, Visual Design, Prototyping & Testing, and Front-end development
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="background section two">
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="cell" data-aos="fade-up" data-aos-duration="1000">
-          <h2>
-            Background
-          </h2>
-          <p>Before, working with internal clients was very straight-forward but now that the company was working
-            towards opening up the service to the third party clients, we needed to consider all the different processes
-            that potential customers already implement in their everyday workflow. </p>
-
-          <p>We needed to do this in a way where the user-experience did not feel confusing or over-crowded or else we
-            would jeopardize the possibility of the user getting frustrated and going back to something they were
-            already familiar with. Another problem we faced was a way for Administrators to oversee new “Entities” being
-            added from both internal companies and new third-party companies.</p>
-
-          <p> Users of the system had very little complaints with the overall functionality of the sight but did
-            complain about some usability issues, such as not being able to find previously made CPLs, that we decided
-            to address.
-          </p>
-        </div>
-      </div>
-    </div>
+  <section class="background section two" data-aos="fade-up" data-aos-duration="1000">
+    <h2>
+      Background
+    </h2>
+    <p>Before, working with internal clients was very straight-forward but now that the company was working
+      towards opening up the service to the third party clients, we needed to consider all the different processes
+      that potential customers already implement in their everyday workflow. </p>
+  
+    <p>We needed to do this in a way where the user-experience did not feel confusing or over-crowded or else we
+      would jeopardize the possibility of the user getting frustrated and going back to something they were
+      already familiar with. Another problem we faced was a way for Administrators to oversee new “Entities” being
+      added from both internal companies and new third-party companies.</p>
+  
+    <p> Users of the system had very little complaints with the overall functionality of the sight but did
+      complain about some usability issues, such as not being able to find previously made CPLs, that we decided
+      to address.
+    </p>
   </section>
 
-  <section class="grid-container full section">
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="cell" data-aos="fade-up" data-aos-duration="1000">
-          <h2>
-            Pain points and new functionality
-          </h2>
-          <p>I conducted research interviews with some of our primary users to uncover any pain points they experienced
-            with the active version.</p>
-
-          <p><b>Top pain points identified:</b></p>
-          <ul>
-            <li>Not being able to find previously made CPLs</li>
-            <li>Not being able to read the forms fields that were required </li>
-            <li>There was too many steps to get to creating a CPL (96% of users were only there to create)</li>
-            <li>User's had to enter the same information over and over again (i.e. name, company, company address, etc)
-            </li>
-            <li>It was very hard to create these reports in a mobile view as the website was not responsive.</li>
-          </ul>
-
-          <p>After discussion with stakeholders, the acceptance criteria for the new version of the site would need to
-            cover.</p>
-
-          <p><b>New functionality would include:</b></p>
-          <ul>
-            <li>Ability to add new outside entities to the system.</li>
-            <li>Each entity would contain an array Issuing Agent Offices, and each Issuing Agent Office contains the
-              users associated with that office</li>
-            <li>Tiered user ranking where each user would be either a User, Admin, or Super Admin.</li>
-            <ul>
-              <li><b>Users</b> have no control over assigning offices, what office they or others are associated wit.
-              </li>
-              <li><b>Admin</b> are able to Manage all of the Issuing Agent Offices and their users <em>within</em> their
-                entity.</li>
-              <li><b>Super Admin</b> are able to control all Entities, Issuing Agent Offices, and Users. Super admin was
-                limited mainly to the Development team and stakeholders of the company.</li>
-            </ul>
-            <li>Reference Libraries containing title insurance information, rate estimate calculators, and a way to
-              manage the content of their account, and if they are an admin member, the site.</li>
-
-          </ul>
-        </div>
-
-      </div>
-    </div>
+  <section class="grid-container full section" data-aos="fade-up" data-aos-duration="1000">
+    <h2>
+      Pain points and new functionality
+    </h2>
+    <p>I conducted research interviews with some of our primary users to uncover any pain points they experienced
+      with the active version.</p>
+  
+    <p><b>Top pain points identified:</b></p>
+    <ul>
+      <li>Not being able to find previously made CPLs</li>
+      <li>Not being able to read the forms fields that were required </li>
+      <li>There was too many steps to get to creating a CPL (96% of users were only there to create)</li>
+      <li>User's had to enter the same information over and over again (i.e. name, company, company address, etc)
+      </li>
+      <li>It was very hard to create these reports in a mobile view as the website was not responsive.</li>
+    </ul>
+  
+    <p>After discussion with stakeholders, the acceptance criteria for the new version of the site would need to
+      cover.</p>
+  
+    <p><b>New functionality would include:</b></p>
+    <ul>
+      <li>Ability to add new outside entities to the system.</li>
+      <li>Each entity would contain an array Issuing Agent Offices, and each Issuing Agent Office contains the
+        users associated with that office</li>
+      <li>Tiered user ranking where each user would be either a User, Admin, or Super Admin.</li>
+      <ul>
+        <li><b>Users</b> have no control over assigning offices, what office they or others are associated wit.
+        </li>
+        <li><b>Admin</b> are able to Manage all of the Issuing Agent Offices and their users <em>within</em> their
+          entity.</li>
+        <li><b>Super Admin</b> are able to control all Entities, Issuing Agent Offices, and Users. Super admin was
+          limited mainly to the Development team and stakeholders of the company.</li>
+      </ul>
+      <li>Reference Libraries containing title insurance information, rate estimate calculators, and a way to
+        manage the content of their account, and if they are an admin member, the site.</li>
+  
+    </ul>
     </div>
   </section>
 
   <section class="grid-container section">
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="cell">
-          <h2 data-aos="fade-up" data-aos-duration="1000">
-            Final solutions
-          </h2>
+    <h2 data-aos="fade-up" data-aos-duration="1000">
+      Final solutions
+    </h2>
 
-          <p data-aos="fade-up" data-aos-duration="1000"> I worked towards addressing these pain points listed above by
-            coming up with these solutions: </p>
-          <div data-aos="fade-up" data-aos-duration="1000">
-            <ul>
-              <li>Making previously made CPL's its own page with the ability to search keywords</li>
-              <li>Creating standardized in line validations for each required field while creating CPLs as well as
-                across the application</li>
-              <li>Making creating a CPL the very first thing the user see upon login as 96% of the users were there to
-                create them and logout.</li>
-              <li>Storing information for the user so they did not have to enter the same information over and over
-                again.</li>
-              <li>Making the entire site mobile responsive so they could create and find reports on the go.</li>
-            </ul>
-          </div>
-
-          <div class="solutions bluonlive" data-aos="fade-up" data-aos-duration="1000">
-            <img src="img/ratic/flow-02.png" alt="View of the model profile">
-            <img src="img/ratic/flow-03.png" alt="View of the model profile">
-            <img src="img/ratic/flow-01.png" alt="View of the model profile">
-            <div class="flexy">
-              <img src="img/ratic/flow-04.png" alt="View of the model profile">
-              <img src="img/ratic/flow-05.png" alt="View of the model profile">
-            </div>
-
-
-          </div>
-
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper my-thumbs">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="img/ratic/flow-01.png" alt="View of the model profile">
+          <h4>RATIC Homepage</h4>
+          <p>We ensured the login section on the homepage is highly visible. During user interviews, many new users expressed difficulty in locating the login option so we fixed it. </p>
         </div>
+        <div class="swiper-slide">
+          <img src="img/ratic/flow-02.png" alt="View of the model profile">
+          <h4>Splash screen post login</h4>
+          <p>For efficiency, we made creating a CPL the first action users see upon logging in, as 56% of users primarily logged in just to create one and log out.</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="img/ratic/flow-03.png" alt="View of the model profile">
+          <h4>Edit Entities</h4>
+          <p>As a Super Admin, you have the ability to edit both parent entities and all associated child entities in one streamlined, easy-to-follow workflow.</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="img/ratic/flow-05.png" alt="View of the model profile">
+          <h4>CPL creation on Mobile</h4>
+          <p>We enhanced the CPL creation workflow by storing user information, eliminating the need to repeatedly enter the same details.</p>
+        </div>
+        <!-- <div class="swiper-slide">
+          <img src="img/ratic/flow-04.png" alt="View of the model profile">
+          <h4>Order info (pt. 2)</h4>
+          <p>Users can also add attachments such as quotes and invoices to provide to customers.</p>
+        </div> -->
+        
       </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    
+      <!-- If we need scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+      <!-- <swiper-container class="my-thumbs"> ... </swiper-container> -->
     </div>
   </section>
 
@@ -280,7 +268,9 @@
   <div id="pageTransition"></div>
   
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/slider.js"></script>
 </body>
 
 </html>
