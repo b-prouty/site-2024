@@ -1,5 +1,5 @@
 .project {
-    padding: 0 2rem;
+    // padding: 0 2rem;
     padding-bottom: 6rem;
 
     .project-link {
@@ -20,13 +20,13 @@
     section {
         max-width: 1100px;
         margin: auto;
-        padding: 4rem 0;
-        border-bottom: 1px solid $white;
+        padding: 4rem 2rem;
+        //border-bottom: 1px solid $white;
 
-        &:first-of-type,
-        &:last-of-type {
-            border-bottom: none;
-        }
+        // &:first-of-type,
+        // &:last-of-type {
+        //     border-bottom: none;
+        // }
 
 
         p {
@@ -67,6 +67,7 @@
         color: $white;
         max-width: 1100px;
         margin: auto;
+        gap: 0;
         margin-bottom: 6rem;
 
         a {
@@ -108,41 +109,11 @@
         // gap: 1rem;
     }
 
-    .project-header {
-        width: 100%;
-        height: 18rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &.pricing {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/seats.jpg');
-        }
-
-        &.blive {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/warehouse.jpeg');
-        }
-
-        &.basecamp {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/techsupport.jpeg');
-        }
-
-        &.ratic {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/house.jpeg)
-        }
-
-        &.bluon2 {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/rooftop.jpeg');
-        }
-
-        img {
-            max-height: 300px;
-        }
+    .project-head{
+        max-width: 1100px;
+        margin: auto;
     }
+
 }
 
 .solutions {
@@ -185,14 +156,15 @@
 .results {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 3rem 0;
+    gap: 1rem;
+    padding: 0rem 0;
 }
 
 .results .result {
-    border: 1px solid $white;
+    //border: 1px solid $white;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 2rem;
-    text-align: center;
+    text-align: left;
     border-radius: 1rem;
 }
 
@@ -215,6 +187,29 @@ li {
     img {
         max-width: 500px;
         border-radius: 1rem;
+    }
+}
+
+.project-static-images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    img {
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .flexy {
+        gap: 1rem;
+        width: 100%;
+        align-items: center;
+
+        img {
+            width: 50%;
+            border-radius: 1rem;
+            flex: 1;
+        }
     }
 }
 
@@ -241,15 +236,16 @@ li {
 
         .challenge,
         .solution {
-            padding: 2rem 0;
+            padding: 2rem;
             padding-bottom: 3rem;
 
             .overline {display: block !important; }
         }
 
         .challenge {
-            max-width: 16rem;
+            max-width: 20rem;
             border-right: 1px solid grey;
+            // padding: 2rem 1rem;
         }
         .solution { padding-left: 2rem; }
     }

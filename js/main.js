@@ -33,40 +33,40 @@ function includeHTML() {
     }
 }
 
-function enterPage() {
-    pageEnter.classList.add('trans-down');
+// function enterPage() {
+//     pageEnter.classList.add('trans-down');
     
-}
+// }
 
-function pageTrans(color, href) {
-    pageTransition.style.backgroundColor = color;
-    pageTransition.classList.add('trans-up');
+// function pageTrans(color, href) {
+//     pageTransition.style.backgroundColor = color;
+//     pageTransition.classList.add('trans-up');
 
-    setTimeout(() => {
-        window.location.href = href.toLowerCase() + ".html";
-    }, 1000);
+//     setTimeout(() => {
+//         window.location.href = href.toLowerCase() + ".html";
+//     }, 1000);
 
-}
+// }
 
 window.onpageshow = function () {
     includeHTML();
     AOS.init();
     window.scrollTo(0, 0);
 
-    if(pageTransition.classList.contains('trans-up')){
-        // console.log('should be working')
-        pageTransition.classList.remove('trans-up');
-    } else {
-        // console.log('nope')
-    }
+    // if(pageTransition.classList.contains('trans-up')){
+    //     // console.log('should be working')
+    //     pageTransition.classList.remove('trans-up');
+    // } else {
+    //     // console.log('nope')
+    // }
 
-    setTimeout(() => {
-        enterPage();
-        const body = document.body;
-        body.style.height = 'initial';
-        body.style.overflowX = 'hidden';
-        body.style.overflowY = 'scroll';
-    }, 1000);
+    // setTimeout(() => {
+    //     enterPage();
+    //     const body = document.body;
+    //     body.style.height = 'initial';
+    //     body.style.overflowX = 'hidden';
+    //     body.style.overflowY = 'scroll';
+    // }, 1000);
 };
 
 

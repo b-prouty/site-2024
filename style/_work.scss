@@ -73,11 +73,12 @@
                 justify-content: flex-end;
                 // width: 100%;
 
-                button {
+                a {
                     background: $green;
                     display: flex;
                     padding: .75rem 1rem;
                     align-items: center;
+                    text-decoration: none;
                     gap: 0.25rem;
                     color: $white;
                     border-radius: .25rem;
