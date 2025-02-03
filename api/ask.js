@@ -11,6 +11,9 @@ export default async function handler(req, res) {
     const { question } = req.body;
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
+    // Your existing code for loading data and endpoints
+    const brianData = JSON.parse(fs.readFileSync('./brian_data.json', 'utf-8'));
+
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo', // or 'gpt-4'
       messages: [
