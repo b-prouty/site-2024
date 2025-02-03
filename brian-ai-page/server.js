@@ -28,7 +28,7 @@ console.log('API Key:', process.env.OPENAI_API_KEY);
 const brianData = JSON.parse(fs.readFileSync('./brian_data.json', 'utf-8'));
 
 // Endpoint to handle user questions
-app.post('/ask', async (req, res) => {
+app.post('api/ask', async (req, res) => {
   const { question } = req.body;
 
   try {
