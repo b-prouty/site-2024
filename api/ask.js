@@ -2,15 +2,12 @@
 import { OpenAI } from 'openai';
 import path from 'path';
 import fs from 'fs';
-const fs = require('fs');
 
 export default async function handler(req, res) {
+  // 1) Build absolute path to brian_data.json
   const filePath = path.join(process.cwd(), 'pages', 'api', 'brian_data.json');
-  // Adjust the path segments if needed (see Note below).
-
   const brianData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-export default async function handler(req, res) {
   // Only allow POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -18,15 +15,18 @@ export default async function handler(req, res) {
 
   try {
     const { question } = req.body;
+
+    // 2) Initialize OpenAI with your API key
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-    // Your existing code for loading data and endpoints
-    // const brianData = JSON.parse(fs.readFileSync('./brian_data.json', 'utf-8'));
-
+    // 3) Create a chat completion
     const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo', // or 'gpt-4'
+      model: 'gpt-3.5-turbo', // or 'gpt-4' if you have access
       messages: [
-        { role: 'system', content: `You are an assistant who only answers questions based on the following data about Brian: ${JSON.stringify(brianData, null, 2)}` },
+        { 
+          role: 'system', 
+          content: `You are an assistant who only answers questions based on the following data about Brian: ${JSON.stringify(brianData, null, 2)}`
+        },
         { role: 'user', content: question },
       ],
       max_tokens: 200,
