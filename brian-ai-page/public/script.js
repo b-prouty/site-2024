@@ -33,11 +33,11 @@
         return;
       }
       
-    const response = await fetch('brian-ai-page/api/ask', {
+    const response = await fetch('/api/ask', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question }),
     });
     const data = await response.json();
-    console.log(data.answer);
+    console.log(data.answer); 
   }
