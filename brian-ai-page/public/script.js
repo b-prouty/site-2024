@@ -12,7 +12,7 @@ async function askBrian() {
     //   body: JSON.stringify({ question }),
     // });
 
-    const response = await fetch('public/api/ask', {
+    const response = await fetch('/api/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question }),
