@@ -4,8 +4,7 @@ import path from 'path';
 import fs from 'fs';
 
 export default async function handler(req, res) {
-  // 1) Build absolute path to brian_data.json
-  const filePath = path.join(process.cwd(), 'pages', 'api', 'brian_data.json');
+  const filePath = path.join(process.cwd(), 'api', 'brian_data.json');
   const brianData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
   // Only allow POST
