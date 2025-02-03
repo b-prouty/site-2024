@@ -12,12 +12,13 @@ async function askBrian() {
     //   body: JSON.stringify({ question }),
     // });
 
-    fetch('/api/ask', {
+    const response = await fetch('/api/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question }),
       })
   
     const data = await response.json();
+    console.log('Data:', data);
     document.getElementById('answer').innerText = data.answer || 'No answer available.';
   }
