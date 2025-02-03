@@ -39,5 +39,7 @@
       body: JSON.stringify({ question }),
     });
     const data = await response.json();
-    console.log(data.answer); 
+    // console.log(data.answer); 
+    console.log('Data:', data);
+    document.getElementById('answer').innerText = data.answer || 'No answer available.';
   }
