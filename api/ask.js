@@ -1,5 +1,6 @@
 // pages/api/ask.js
 import { OpenAI } from 'openai';
+const fs = require('fs');
 
 export default async function handler(req, res) {
   // Only allow POST
