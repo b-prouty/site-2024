@@ -7,7 +7,6 @@ export default async function handler(req, res) {
   const brianData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
   
-
   // Only allow POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
