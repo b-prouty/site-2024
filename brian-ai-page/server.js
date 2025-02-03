@@ -6,7 +6,7 @@ const cors = require('cors');
 require('dotenv').config();
 const { OpenAI } = require('openai');
 const openai = new OpenAI({
-  apiKey: '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',
+  apiKey: process.env.OPENAI_API_KEY,,
 });
 const fs = require('fs');
 
