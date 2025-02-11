@@ -8,6 +8,10 @@
     {
       "src": "public/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "site-2024/pages/api/brian_data.json",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -26,6 +30,10 @@
     {
       "src": "/style.css",
       "dest": "/public/style.css"
+    },
+    {
+      "src": "/brian_data.json",
+      "dest": "/site-2024/pages/api/brian_data.json"
     },
     {
       "src": "/(.*)",

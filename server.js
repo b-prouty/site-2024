@@ -18,12 +18,19 @@ app.use(cors());
 app.use(express.static('public'));
 
 // Load Brian's data
-const brianDataPath = path.join(process.cwd(), 'site-2024', 'pages', 'api', 'brian_data.json');
+const brianDataPath = path.join(__dirname, '..', 'site-2024', 'pages', 'api', 'brian_data.json');
+console.log('Attempting to load Brian data from:', brianDataPath);
+
 let brianData;
 try {
-    brianData = JSON.parse(fs.readFileSync(brianDataPath, 'utf-8'));
+    const rawData = fs.readFileSync(brianDataPath, 'utf-8');
+    console.log('Raw data loaded:', rawData);
+    brianData = JSON.parse(rawData);
+    console.log('Parsed Brian data:', brianData);
 } catch (error) {
     console.error('Error loading brian_data.json:', error);
+    console.error('Current working directory:', __dirname);
+    console.error('Directory contents:', fs.readdirSync(__dirname));
     brianData = {}; // Fallback to empty object if file can't be loaded
 }
 
