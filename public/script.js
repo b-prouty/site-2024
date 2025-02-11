@@ -1,4 +1,5 @@
 async function askBrian() {
+    toggleLoadingState(true);
     const question = document.getElementById('question').value;
 
     if (!question) {
@@ -22,8 +23,11 @@ async function askBrian() {
         document.querySelector('#answer').classList.add('chat-active');
         document.querySelector('.top-content').classList.add('chat-active');
         document.getElementById('answer').innerText = data.answer || 'No answer available.';
+        toggleLoadingState(false);
     } catch (error) {
         console.error('Error:', error);
         document.getElementById('answer').innerText = 'Sorry, there was an error processing your request.';
+        toggleLoadingState(false);
     }
+    
 } 
