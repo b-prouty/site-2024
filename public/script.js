@@ -50,7 +50,7 @@ async function askBrian() {
         document.querySelector('#conversation-container').appendChild(answerWrapper);
         
         // Add chat-active classes
-        document.querySelector('#answer').classList.add('chat-active');
+        // document.querySelector('#answer').classList.add('chat-active');
         document.querySelector('#conversation-container').classList.add('chat-active');
         document.querySelector('.top-content').classList.add('chat-active');
         
