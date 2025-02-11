@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 
 // Load environment variables
 require('dotenv').config();
@@ -28,7 +29,7 @@ console.log('API Key:', process.env.OPENAI_API_KEY);
 const brianData = JSON.parse(fs.readFileSync('./brian_data.json', 'utf-8'));
 
 // Endpoint to handle user questions
-app.post('api/ask', async (req, res) => {
+app.post('/ask', async (req, res) => {
   const { question } = req.body;
 
   try {
@@ -47,6 +48,11 @@ app.post('api/ask', async (req, res) => {
     console.error('Error with OpenAI API:', error);
     res.status(500).json({ error: 'Something went wrong with the OpenAI API.' });
   }
+});
+
+// Serve ai.html at the /ai route
+app.get('/ai', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'ai.html'));
 });
 
 // Start the server
