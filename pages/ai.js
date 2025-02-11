@@ -35,7 +35,7 @@ export default function AiPage() {
       <div className={styles.container}>
         <h1>Ask Brian</h1>
         <textarea id="question" placeholder="Type your question here..."></textarea>
-        <button onClick={() => askBrian()}>Ask</button>
+        <button onClick={() => window.askBrian()}>Ask</button>
         <div id="answer"></div>
       </div>
     </>
