@@ -7,7 +7,7 @@ async function askBrian() {
     }
     
     try {
-        const response = await fetch('/ask', {  // Remove the /api prefix
+        const response = await fetch('/ask', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ question }),
