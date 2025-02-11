@@ -6,7 +6,9 @@ const path = require('path');
 // Load environment variables
 require('dotenv').config();
 const { OpenAI } = require('openai');
-const openai = new OpenAI(process.env.OPENAI_API_KEY);
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
 const fs = require('fs');
 
 
@@ -32,7 +34,7 @@ app.post('/ask', async (req, res) => {
 
   try {
     const response = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: 'gpt-4',
       messages: [
         { role: 'system', content: `You are an assistant who only answers questions based on the following data about Brian: ${JSON.stringify(brianData, null, 2)}` },
         { role: 'user', content: question },
@@ -54,6 +56,6 @@ app.get('/ai', (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 5001; // Use a different port
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 
