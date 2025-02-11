@@ -33,7 +33,7 @@
         return;
       }
       
-      const response = await fetch('https://staging.brianprouty.com/ask', {  // Remove /api/ from the path
+      const response = await fetch('/api/ask', {  // Use relative path to access Next.js API route
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question }),
