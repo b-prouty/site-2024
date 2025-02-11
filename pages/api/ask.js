@@ -3,14 +3,12 @@ import path from 'path';
 import fs from 'fs';
 
 export default async function handler(req, res) {
-  const filePath = path.join(process.cwd(), 'api', 'brian_data.json'); // <— Important
-  const brianData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-
-  
-  // Only allow POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  const filePath = path.join(process.cwd(), 'api', 'brian_data.json'); // <— Important
+  const brianData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
   try {
     const { question } = req.body;

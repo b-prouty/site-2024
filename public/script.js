@@ -6,7 +6,7 @@ async function askBrian() {
         return;
       }
       
-      const response = await fetch('/api/ask', {  // Use relative path to access Next.js API route
+      const response = await fetch(window.location.origin + '/api/ask', {  // Use window.location.origin to get the correct base URL
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question }),
