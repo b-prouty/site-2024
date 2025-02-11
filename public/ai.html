@@ -37,17 +37,23 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
+    transition: height 500ms ease-in;
 }
 
 .top-content.chat-active {
     display: block;
     height: initial;
+    transition: height 500ms ease-in;
 }
 
 h1 {
     margin-bottom: 20px;
     text-align: center;
     text-transform: none;
+}
+
+.top-content.chat-active p {
+    display: none;
 }
 
 #answer {
