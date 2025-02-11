@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const { OpenAI } = require('openai');
-const fetch = require('node-fetch');
+const fs = require('fs');
 
 // Initialize OpenAI
 const openai = new OpenAI({
@@ -17,32 +17,20 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static('public'));
 
-// Function to fetch Brian's data
-async function getBrianData() {
+// Function to get Brian's data
+function getBrianData() {
     try {
-        // First try to read from the API endpoint
-        const response = await fetch('https://staging.brianprouty.com/api/brian_data');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
+        const dataPath = path.join(__dirname, 'public', 'brian_data.json');
+        console.log('Attempting to read from:', dataPath);
+        const rawData = fs.readFileSync(dataPath, 'utf8');
+        const data = JSON.parse(rawData);
         console.log('Successfully loaded Brian data:', data);
         return data;
     } catch (error) {
-        console.error('Error fetching Brian data:', error);
-        try {
-            // Fallback to direct file read if API fails
-            const fs = require('fs');
-            const path = require('path');
-            const dataPath = path.join(process.cwd(), 'site-2024', 'pages', 'api', 'brian_data.json');
-            const rawData = fs.readFileSync(dataPath, 'utf8');
-            const data = JSON.parse(rawData);
-            console.log('Successfully loaded Brian data from file:', data);
-            return data;
-        } catch (fallbackError) {
-            console.error('Error reading local file:', fallbackError);
-            return {};
-        }
+        console.error('Error reading brian_data.json:', error);
+        console.error('Current directory:', __dirname);
+        console.error('Directory contents:', fs.readdirSync(__dirname));
+        return {};
     }
 }
 
@@ -52,8 +40,7 @@ app.post('/ask', async (req, res) => {
         const { question } = req.body;
         console.log('Received question:', question);
         
-        // Fetch fresh data for each request
-        const brianData = await getBrianData();
+        const brianData = getBrianData();
         console.log('Using Brian data:', brianData);
         
         const systemPrompt = `You are an assistant who only answers questions based on the following data about Brian: ${JSON.stringify(brianData, null, 2)}. 
@@ -97,8 +84,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     // Test the data loading on startup
-    getBrianData().then(data => {
-        console.log('Initial Brian data load:', data);
-    });
+    const initialData = getBrianData();
+    console.log('Initial Brian data load:', initialData);
 });
 
