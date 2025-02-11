@@ -20,13 +20,29 @@ app.use(express.static('public'));
 // Function to fetch Brian's data
 async function getBrianData() {
     try {
-        const response = await fetch('https://staging.brianprouty.com/api/brian_data');  // Note: removed .json extension
+        // First try to read from the API endpoint
+        const response = await fetch('https://staging.brianprouty.com/api/brian_data');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
         console.log('Successfully loaded Brian data:', data);
         return data;
     } catch (error) {
         console.error('Error fetching Brian data:', error);
-        return {};
+        try {
+            // Fallback to direct file read if API fails
+            const fs = require('fs');
+            const path = require('path');
+            const dataPath = path.join(process.cwd(), 'site-2024', 'pages', 'api', 'brian_data.json');
+            const rawData = fs.readFileSync(dataPath, 'utf8');
+            const data = JSON.parse(rawData);
+            console.log('Successfully loaded Brian data from file:', data);
+            return data;
+        } catch (fallbackError) {
+            console.error('Error reading local file:', fallbackError);
+            return {};
+        }
     }
 }
 
