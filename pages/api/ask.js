@@ -10,6 +10,7 @@ export default async function handler(req, res) {
   const filePath = path.join(process.cwd(), 'api', 'brian_data.json'); // <— Important
   const brianData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   console.log('brianData', brianData);
+  debugger
 
   try {
     const { question } = req.body;
