@@ -20,7 +20,7 @@ app.use(express.static('public'));
 // Function to fetch Brian's data
 async function getBrianData() {
     try {
-        const response = await fetch('https://staging.brianprouty.com/brian_data.json');
+        const response = await fetch('https://staging.brianprouty.com/api/brian_data.json');
         const data = await response.json();
         console.log('Successfully loaded Brian data:', data);
         return data;
