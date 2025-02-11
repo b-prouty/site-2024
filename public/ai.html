@@ -25,7 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     width: 100%;
 }
@@ -36,7 +36,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: calc(100vh - 150px);
     transition: height 500ms ease-in;
 }
 
@@ -54,6 +54,56 @@ h1 {
 
 .top-content.chat-active p {
     display: none;
+}
+
+#conversation-container {
+    display: none;
+}
+
+#conversation-container.chat-active {
+    display: block;
+    height: calc(100vh - 250px);
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.question-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.question {
+    display: inline-block;
+    text-align: right;
+    max-width: 800px;
+    margin-bottom: 20px;
+    background-color: #262421;
+    color: #F2EFEB;
+    border-radius: 8rem;
+    padding: 2rem;
+    margin-left: auto;
+}
+
+.answer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    align-items: start;
+}
+
+.answer {
+    display: inline-block;
+    text-align: left;
+    max-width: 800px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 2rem;
+    padding: 2rem;
+
 }
 
 #answer {
@@ -159,8 +209,24 @@ button:disabled {
         <h1>Prouty.ai</h1>
         <p style="max-width: 500px;">Prouty.ai is only trained on information about Brian Prouty, a California based Product Designer with a background in Front-End Development and Graphic Design</p>
     </div>
-   
-    <div id="answer"></div>
+    <div id="conversation-container">
+        <div class="question-wrapper">
+            <div class="question">
+                <p>Tell me about brian</p>
+            </div>
+        </div>
+        <div class="answer-wrapper">
+            <div class="answer">
+                <p>Brian has professional experience as a Product Designer and as a Beginner Developer. He has worked for Company A and Company B. As a developer, he has skills in JavaScript, HTML, and CSS. His experience as a Product Designer spans 8 years. 
+    
+                He has skills in UX/UI Design, Prototyping, Figma, and Usability Testing. Some of his past projects include a Mobile App Redesign and an AI Webpage. 
+                
+                Brian's hobbies include Sightseeing, Coffee Tasting, and Traveling. He values Empathy, Collaboration, and Curiosity.</p>
+            </div>
+        </div>
+        
+        <div id="answer"></div>
+    </div>
   </div>
   <div class="input-container">
     <div class="textarea-wrapper">

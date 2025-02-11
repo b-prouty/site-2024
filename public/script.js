@@ -5,6 +5,20 @@ async function askBrian() {
     if (!question) {
         alert('Please enter a question.');
         return;
+    } else {
+        // Create new conversation element
+        const questionWrapper = document.createElement('div');
+        questionWrapper.className = 'question-wrapper';
+        
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+        
+        const questionText = document.createElement('p');
+        questionText.innerText = question;
+        
+        questionDiv.appendChild(questionText);
+        questionWrapper.appendChild(questionDiv);
+        document.querySelector('#conversation-container').appendChild(questionWrapper);
     }
     
     try {
@@ -20,9 +34,26 @@ async function askBrian() {
         
         const data = await response.json();
         console.log('Data:', data);
+        
+        // Create new conversation element
+        const answerWrapper = document.createElement('div');
+        answerWrapper.className = 'answer-wrapper';
+        
+        const answerDiv = document.createElement('div');
+        answerDiv.className = 'answer';
+        
+        const answerText = document.createElement('p');
+        answerText.innerText = data.answer || 'No answer available.';
+        
+        answerDiv.appendChild(answerText);
+        answerWrapper.appendChild(answerDiv);
+        document.querySelector('#conversation-container').appendChild(answerWrapper);
+        
+        // Add chat-active classes
         document.querySelector('#answer').classList.add('chat-active');
+        document.querySelector('#conversation-container').classList.add('chat-active');
         document.querySelector('.top-content').classList.add('chat-active');
-        document.getElementById('answer').innerText = data.answer || 'No answer available.';
+        
         toggleLoadingState(false);
     } catch (error) {
         console.error('Error:', error);
