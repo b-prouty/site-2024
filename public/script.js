@@ -19,6 +19,8 @@ async function askBrian() {
         
         const data = await response.json();
         console.log('Data:', data);
+        document.querySelector('#answer').classList.add('chat-active');
+        document.querySelector('.top-content').classList.add('chat-active');
         document.getElementById('answer').innerText = data.answer || 'No answer available.';
     } catch (error) {
         console.error('Error:', error);
