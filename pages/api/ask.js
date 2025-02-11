@@ -33,7 +33,10 @@ export default async function handler(req, res) {
     });
 
     const answer = response.choices[0].message.content;
-    return res.status(200).json({ answer });
+    return res.status(200).json({ 
+      answer,
+      isActive: true // Add this flag to indicate chat is active
+    });
   } catch (error) {
     console.error('API error:', error);
     return res.status(500).json({ error: 'OpenAI API error.' });
