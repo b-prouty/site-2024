@@ -20,7 +20,15 @@ async function askBrian() {
         questionWrapper.appendChild(questionDiv);
         document.querySelector('#conversation-container').appendChild(questionWrapper);
     }
+    // Create new conversation element
+    const answerWrapper = document.createElement('div');
+    answerWrapper.className = 'answer-wrapper';
     
+    const answerDiv = document.createElement('div');
+    answerDiv.className = 'answer';
+    
+    const answerText = document.createElement('p');
+
     try {
         const response = await fetch('/ask', {
             method: 'POST',
@@ -35,14 +43,7 @@ async function askBrian() {
         const data = await response.json();
         console.log('Data:', data);
         
-        // Create new conversation element
-        const answerWrapper = document.createElement('div');
-        answerWrapper.className = 'answer-wrapper';
         
-        const answerDiv = document.createElement('div');
-        answerDiv.className = 'answer';
-        
-        const answerText = document.createElement('p');
         answerText.innerText = data.answer || 'No answer available.';
         
         answerDiv.appendChild(answerText);
@@ -57,7 +58,11 @@ async function askBrian() {
         toggleLoadingState(false);
     } catch (error) {
         console.error('Error:', error);
-        document.getElementById('answer').innerText = 'Sorry, there was an error processing your request.';
+        answerText.innerText = 'Sorry, there was an error processing your request. Error:' + error;
+        answerDiv.classList.add('error');
+        answerDiv.appendChild(answerText);
+        answerWrapper.appendChild(answerDiv);
+        document.querySelector('#conversation-container').appendChild(answerWrapper);
         toggleLoadingState(false);
     }
     
