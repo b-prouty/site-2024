@@ -30,13 +30,22 @@ async function askBrian() {
     const answerText = document.createElement('p');
 
     try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+
         const response = await fetch('/ask', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ question }),
+            signal: controller.signal
         });
         
+        clearTimeout(timeoutId);
+        
         if (!response.ok) {
+            if (response.status === 504) {
+                throw new Error('The request timed out. Please try again.');
+            }
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
@@ -60,7 +69,7 @@ async function askBrian() {
         toggleLoadingState(false);
     } catch (error) {
         console.error('Error:', error);
-        answerText.innerText = 'Sorry, there was an error processing your request. Error:' + error;
+        answerText.innerText = 'Sorry, there was an error processing your request. Please try asking your question again.' + error;
         answerDiv.classList.add('error');
         answerDiv.appendChild(answerText);
         answerWrapper.appendChild(answerDiv);
