@@ -58,6 +58,12 @@ h1 {
 
 #conversation-container {
     display: none;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#conversation-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 #conversation-container.chat-active {

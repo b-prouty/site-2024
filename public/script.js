@@ -1,6 +1,7 @@
 async function askBrian() {
     toggleLoadingState(true);
     const question = document.getElementById('question').value;
+    const container = document.querySelector('#conversation-container');
 
     if (!question) {
         alert('Please enter a question.');
@@ -18,7 +19,8 @@ async function askBrian() {
         
         questionDiv.appendChild(questionText);
         questionWrapper.appendChild(questionDiv);
-        document.querySelector('#conversation-container').appendChild(questionWrapper);
+        container.appendChild(questionWrapper);
+        container.scrollTop = container.scrollHeight;
     }
     // Create new conversation element
     const answerWrapper = document.createElement('div');
@@ -57,7 +59,6 @@ async function askBrian() {
         
         answerDiv.appendChild(answerText);
         answerWrapper.appendChild(answerDiv);
-        const container = document.querySelector('#conversation-container');
         container.appendChild(answerWrapper);
         
         // Add chat-active classes
@@ -68,12 +69,15 @@ async function askBrian() {
         
         toggleLoadingState(false);
     } catch (error) {
+        const container = document.querySelector('#conversation-container');
+
         console.error('Error:', error);
-        answerText.innerText = 'Sorry, there was an error processing your request. Please try asking your question again.' + error;
+        answerText.innerText = 'Sorry, there was an error processing your request. Please try asking your question again. ' + error;
         answerDiv.classList.add('error');
         answerDiv.appendChild(answerText);
         answerWrapper.appendChild(answerDiv);
-        document.querySelector('#conversation-container').appendChild(answerWrapper);
+        container.appendChild(answerWrapper);
+        container.scrollTop = container.scrollHeight;
         toggleLoadingState(false);
     }
 
