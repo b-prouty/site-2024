@@ -1,26 +1,86 @@
 {
     "professional_experience": [
       {
-        "role": "Product Designer",
-        "companies": ["Company A", "Company B"],
-        "years_of_experience": 8
+        "role": ["Lead Product Designer"],
+        "company": "Bluon",
+        "duration": "September 2022 - Present",
+        "location": "Irvine, CA",
+        "description": [
+          "Led research initiatives, including but not limited to feedback groups, usability testing, user interviews, and analytical analysis to inform design decisions and improved user engagement.",
+          "Crafted user journey maps, prototypes, wireframes, and mockups, enabling teams to align on design solutions.",
+          "Led projects such as improving checkout flows, mobile application redesign, surveying app users, and overhauling order management and design systems.",
+          "Worked with the product management team to define and deliver on roadmap priorities.",
+          "Defined and managed a roadmap for improvements aimed at tackling UX debt and customer issues, prioritizing issues for upcoming sprints.",
+          "Facilitated collaborative meetings and design reviews, involving employees in guerrilla testing, and creating transparency into design projects through multiple company channels.",
+          "Developed several design systems - improving elements and components, refining design guidelines and principles, and coordinating with engineering and product partners."
+      ]
       },
       {
-        "role": "Beginner Developer",
-        "skills": ["JavaScript", "HTML", "CSS"]
+        "role": ["Product Designer", "Front-End Developer"],
+        "company": "Orange Coast Title Company",
+        "duration": "November 2019 - September 2022",
+        "location": "Santa Ana, CA",
+        "description": [
+          "Led design for a web product focused on providing tools to real-estate agents such as online property profiles, farming reports, financial calculators, and investment property resources.",
+          "Designed and Developed engaging brochure-style websites for over 25 to improve customer funneling and conversion.",
+          "Crafted engaging user experiences and interfaces utilizing Agile methodologies to drive iterative design improvements and ensure user-centered outcomes.",
+          "Collaborated with clients and internal teams, presenting new designs and features to ensure alignment with user needs and business objectives."
+      ]
       }
     ],
-    "hobbies": ["Sightseeing", "Coffee tasting", "Traveling"],
-    "skills": ["UX/UI Design", "Prototyping", "Figma", "Usability Testing"],
-    "values": ["Empathy", "Collaboration", "Curiosity"],
+    "hobbies": "Most of my hobbies revolve around exploring nature or new places. I have hiked and even backpacked in several different places, including but not limited to the Grand Canyon, the Grand Tetons, several different areas of Southern California's national forests, Oregon, Arizona, Vancouver, Texas, Nevada, and Washington . If not backpacking, I love a good car camping trip as well. Some of the best times — and hardest laughs — have been shared around a campfire. I wouldn't trade those experiences for anything. I also am a practicing photographer with most of my interest in landscape and architectural photography. I find photography to be another way to keep my skills in composition and design sharp. I am the guy you see on the trail that has about 10 lbs too much gear because, of course, I had to bring my tripod and 2 other lenses. Apart from my love of the outdoors, I also have a passion for cars, whether on the road or off. I can often be found under the hood wrenching, tinkering, cursing, cutting, you know… the normal stuff you do when working on cars. Along with the car obsession comes scouring Facebook Marketplace for parts (or new projects) or cruising around with my friends with early 2000s rock blaring through the speakers.  Lately, I have been focusing on weight training as well to keep me fit for whatever next adventure comes.  I am also the definition of a coffee snob. My girlfriend of over a decade (we'll call her wifey) and I have basically laid the foundation to our relationship at coffee shops, trying every one in and around the areas we have lived. If you're looking for some recommendations, hit me up!  Although I already have a lot of hobbies, I am always falling into something new (gotta love a good YouTube rabbit hole)… I mean… how else do you end up building your own AI trained only on things about you…?",
+    "skills": [
+      "Figma",
+      "Sketch",
+      "Adobe Creative Suite",
+      "Microsoft Office Suite",
+      "UX Research",
+      "User Interface Design",
+      "Interactive Prototypes",
+      "Wireframing",
+      "Storyboarding",
+      "Process Flows",
+      "Usability Testing",
+      "Data Analysis",
+      "User Interviews",
+      "Project Management",
+      "Agile Methodologies",
+      "Team Leadership",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "GitHub",
+      "UI/UX Design",
+      "User Research",
+      "User Testing",
+      "Prototyping"
+    ],
+    "values": ["Empathy", "Collaboration", "Curiosity", "Honesty", "Humor", "Passion", "Perseverance", "Resilience", "Resposibility", "Respect", "Teamwork", "Trust", "Work Ethic", "Efficiency"],
     "past_projects": [
       {
-        "name": "Mobile App Redesign",
-        "description": "Redesigned the UI/UX for a fintech app using Atomic Design principles."
+        "name": "Checkout Flow Improvements",
+        "description": "Reduced friction throughout checkout flows to drive higher conversion rates.",
+        "link" : "https://www.brianprouty.com/pricing.html"
       },
       {
-        "name": "AI Webpage",
-        "description": "Designed and implemented an AI-driven webpage to answer user queries."
+        "name": "B2B Order Management",
+        "description": "Redesign of web application to streamline order management and fulfillment processes.",
+        "link" : "https://www.brianprouty.com/bluonlive.html"
+      },
+      {
+        "name": "Tech Support Platform",
+        "description": "Mobile and web applications to deliver top-tier tech support for service workers.",
+        "link" : "https://www.brianprouty.com/basecamp.html"
+      },
+      {
+        "name": "CPL Software",
+        "description": "Designed a web application to expand the user base beyond internal companies, in addition to making the product more user-friendly.",
+        "link" : "https://www.brianprouty.com/ratic.html"
+      },
+      {
+        "name": "Mobile App Ordering",
+        "description": "Created an intuitive ordering process for a mobile application.",
+        "link" : "https://www.brianprouty.com/bluon2.html"
       }
     ]
   }

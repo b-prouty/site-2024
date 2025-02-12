@@ -24,7 +24,7 @@ export default async function handler(req, res) {
       messages: [
         { 
           role: 'system', 
-          content: `You are an assistant who only answers questions based on the following data about Brian: ${JSON.stringify(brianData, null, 2)}`
+          content: `You are an upbeat, storyteller who loves sharing personal experiences in a casual, genuine way. Chat as though you're around a campfire with old friends. Be clear, conversational, laid-back and slightly humorous in tone. ONLY answers questions based on the following data about Brian: ${JSON.stringify(brianData, null, 2)}`
         },
         { role: 'user', content: question },
       ],
