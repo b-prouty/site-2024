@@ -48,12 +48,14 @@ async function askBrian() {
         
         answerDiv.appendChild(answerText);
         answerWrapper.appendChild(answerDiv);
-        document.querySelector('#conversation-container').appendChild(answerWrapper);
+        const container = document.querySelector('#conversation-container');
+        container.appendChild(answerWrapper);
         
         // Add chat-active classes
-        // document.querySelector('#answer').classList.add('chat-active');
-        document.querySelector('#conversation-container').classList.add('chat-active');
+        container.classList.add('chat-active');
         document.querySelector('.top-content').classList.add('chat-active');
+
+        container.scrollTop = container.scrollHeight;
         
         toggleLoadingState(false);
     } catch (error) {
@@ -65,5 +67,7 @@ async function askBrian() {
         document.querySelector('#conversation-container').appendChild(answerWrapper);
         toggleLoadingState(false);
     }
+
+
     
 } 
