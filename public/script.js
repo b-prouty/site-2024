@@ -41,7 +41,7 @@ async function askBrian() {
 
     try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+        const timeoutId = setTimeout(() => controller.abort(), 30000); // Increased to 30 seconds
 
         const response = await fetch('/ask', {
             method: 'POST',
@@ -77,7 +77,16 @@ async function askBrian() {
         const container = document.querySelector('#conversation-container');
 
         console.error('Error:', error);
-        answerText.innerText = 'Sorry, there was an error processing your request. Please try asking your question again. ' + error;
+        let errorMessage = 'Sorry, there was an error processing your request. Please try asking your question again. ';
+        
+        // Add specific message for abort errors
+        if (error.name === 'AbortError') {
+            errorMessage += 'The request took too long to complete. Please try again.';
+        } else {
+            errorMessage += error.message;
+        }
+
+        answerText.innerText = errorMessage;
         answerDiv.classList.add('error');
         answerDiv.appendChild(answerText);
         answerWrapper.appendChild(answerDiv);
