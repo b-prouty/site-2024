@@ -2,11 +2,19 @@ async function askBrian() {
     toggleLoadingState(true);
     const question = document.getElementById('question').value;
     const container = document.querySelector('#conversation-container');
+    const topContent = document.querySelector('#top-content');
 
     if (!question) {
         alert('Please enter a question.');
         return;
     } else {
+        
+        if(!topContent.classList.contains('chat-active')) {
+            // Add chat-active classes
+            container.classList.add('chat-active');
+            topContent.classList.add('chat-active');
+        }
+
         // Create new conversation element
         const questionWrapper = document.createElement('div');
         questionWrapper.className = 'question-wrapper';
@@ -61,9 +69,6 @@ async function askBrian() {
         answerWrapper.appendChild(answerDiv);
         container.appendChild(answerWrapper);
         
-        // Add chat-active classes
-        container.classList.add('chat-active');
-        document.querySelector('.top-content').classList.add('chat-active');
 
         container.scrollTop = container.scrollHeight;
         

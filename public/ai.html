@@ -30,7 +30,7 @@ body {
     width: 100%;
 }
 
-.top-content {
+#top-content {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ body {
     transition: height 500ms ease-in;
 }
 
-.top-content.chat-active {
+#top-content.chat-active {
     display: block;
     height: 100px;
     transition: height 500ms ease-in;
@@ -52,12 +52,13 @@ h1 {
     text-transform: none;
 }
 
-.top-content.chat-active p {
+#top-content.chat-active p {
     display: none;
 }
 
 #conversation-container {
     display: none;
+    position: relative;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
@@ -71,6 +72,16 @@ h1 {
     height: calc(100vh - 250px);
     overflow-y: scroll;
     width: 100%;
+    padding-bottom: 2rem;
+}
+
+#thinking {
+    display: none;
+    gap: 1rem;
+    position: absolute;
+    bottom: 2rem;
+    left: .5rem;
+    transform: translate(0, -50%);
 }
 
 .question-wrapper {
@@ -201,12 +212,12 @@ button:disabled {
 </head>
 <body>
   <div class="container">
-    <div class="top-content">
+    <div id="top-content" class="chat-active">
         <p class="overline">Welcome to</p>
         <h1>Prouty.ai</h1>
         <p style="max-width: 500px;">Prouty.ai is only trained on information about Brian Prouty, a California based Product Designer with a background in Front-End Development and Graphic Design</p>
     </div>
-    <div id="conversation-container">
+    <div id="conversation-container" class="chat-active">
         <!-- <div class="question-wrapper">
             <div class="question">
                 <p>Tell me about brian</p>
@@ -221,6 +232,10 @@ button:disabled {
                 Brian's hobbies include Sightseeing, Coffee Tasting, and Traveling. He values Empathy, Collaboration, and Curiosity.</p>
             </div>
         </div> -->
+        <div id="thinking">
+            <div class="spinner"></div>
+            <p>Thinking...</p>
+        </div>
     </div>
   </div>
   <div class="input-container">
@@ -229,7 +244,7 @@ button:disabled {
       <button onclick="askBrian()" id="askButton">Ask</button>
     </div>
   </div>
-  <script src="script.js"></script>
+  
   <script>
     window.addEventListener('load', function() {
       document.getElementById('question').focus();
@@ -246,9 +261,12 @@ button:disabled {
     // Add this new function
     function toggleLoadingState(loading) {
       const button = document.getElementById('askButton');
+      const thinking = document.getElementById('thinking');
       button.disabled = loading;
       button.innerHTML = loading ? '<div class="spinner"></div>' : 'Ask';
+      thinking.style.display = loading ? 'flex' : 'none';
     }
   </script>
+  <script src="script.js"></script>
 </body>
 </html> 
