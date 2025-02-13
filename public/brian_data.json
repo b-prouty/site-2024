@@ -7,7 +7,9 @@
     "Website": "https://www.brianprouty.com",
     "professional_experience": [
       {
-        "role": ["Lead Product Designer"],
+        "role": [
+          "Lead Product Designer"
+        ],
         "company": "Bluon",
         "duration": "September 2022 - Present",
         "location": "Irvine, CA",
@@ -19,10 +21,13 @@
           "Defined and managed a roadmap for improvements aimed at tackling UX debt and customer issues, prioritizing issues for upcoming sprints.",
           "Facilitated collaborative meetings and design reviews, involving employees in guerrilla testing, and creating transparency into design projects through multiple company channels.",
           "Developed several design systems - improving elements and components, refining design guidelines and principles, and coordinating with engineering and product partners."
-      ]
+        ]
       },
       {
-        "role": ["Product Designer", "Front-End Developer"],
+        "role": [
+          "Product Designer",
+          "Front-End Developer"
+        ],
         "company": "Orange Coast Title Company",
         "duration": "November 2019 - September 2022",
         "location": "Santa Ana, CA",
@@ -31,7 +36,7 @@
           "Designed and Developed engaging brochure-style websites for over 25 to improve customer funneling and conversion.",
           "Crafted engaging user experiences and interfaces utilizing Agile methodologies to drive iterative design improvements and ensure user-centered outcomes.",
           "Collaborated with clients and internal teams, presenting new designs and features to ensure alignment with user needs and business objectives."
-      ]
+        ]
       }
     ],
     "skills": [
@@ -64,31 +69,53 @@
       {
         "name": "Checkout Flow Improvements",
         "description": "Reduced friction throughout checkout flows to drive higher conversion rates.",
-        "link" : "https://www.brianprouty.com/pricing.html"
+        "link": "https://www.brianprouty.com/pricing.html"
       },
       {
         "name": "B2B Order Management",
         "description": "Redesign of web application to streamline order management and fulfillment processes.",
-        "link" : "https://www.brianprouty.com/bluonlive.html"
+        "link": "https://www.brianprouty.com/bluonlive.html"
       },
       {
         "name": "Tech Support Platform",
         "description": "Mobile and web applications to deliver top-tier tech support for service workers.",
-        "link" : "https://www.brianprouty.com/basecamp.html"
+        "link": "https://www.brianprouty.com/basecamp.html"
       },
       {
         "name": "CPL Software",
         "description": "Designed a web application to expand the user base beyond internal companies, in addition to making the product more user-friendly.",
-        "link" : "https://www.brianprouty.com/ratic.html"
+        "link": "https://www.brianprouty.com/ratic.html"
       },
       {
         "name": "Mobile App Ordering",
         "description": "Created an intuitive ordering process for a mobile application.",
-        "link" : "https://www.brianprouty.com/bluon2.html"
+        "link": "https://www.brianprouty.com/bluon2.html"
       }
     ]
   },
-    
-    "hobbies": "Most of my hobbies revolve around exploring nature or new places. I have hiked and even backpacked in several different places, including but not limited to the Grand Canyon, the Grand Tetons, several different areas of Southern California's national forests, Oregon, Arizona, Vancouver, Texas, Nevada, and Washington . If not backpacking, I love a good car camping trip as well. Some of the best times — and hardest laughs — have been shared around a campfire. I wouldn't trade those experiences for anything. I also am a practicing photographer with most of my interest in landscape and architectural photography. I find photography to be another way to keep my skills in composition and design sharp. I am the guy you see on the trail that has about 10 lbs too much gear because, of course, I had to bring my tripod and 2 other lenses. Apart from my love of the outdoors, I also have a passion for cars, whether on the road or off. I can often be found under the hood wrenching, tinkering, cursing, cutting, you know… the normal stuff you do when working on cars. Along with the car obsession comes scouring Facebook Marketplace for parts (or new projects) or cruising around with my friends with early 2000s rock blaring through the speakers.  Lately, I have been focusing on weight training as well to keep me fit for whatever next adventure comes.  I am also the definition of a coffee snob. My girlfriend of over a decade (we'll call her wifey) and I have basically laid the foundation to our relationship at coffee shops, trying every one in and around the areas we have lived. If you're looking for some recommendations, hit me up!  Although I already have a lot of hobbies, I am always falling into something new (gotta love a good YouTube rabbit hole)… I mean… how else do you end up building your own AI trained only on things about you…?",
-    "values": ["Empathy", "Collaboration", "Curiosity", "Honesty", "Humor", "Passion", "Perseverance", "Resilience", "Resposibility", "Respect", "Teamwork", "Trust", "Work Ethic", "Efficiency"]
-  }
+  "design_process": {
+    "step1": "My ideal design process starts with building a strong foundational idea. I believe that in order to truly understand a feature or product, you need a clear and well-defined foundation that aligns with the overall objectives. The first step is defining what we're trying to achieve. This phase involves close collaboration with stakeholders to fully understand the business purpose behind the project. I don't see the initial idea as the final solution but rather as a framework that guides the design process. Key considerations at this stage include establishing a clear business goal, such as increasing user engagement, identifying how the project will contribute to achieving that goal, like providing a new service tailored to specific users, and determining how success will be measured and iterated upon, such as tracking daily and active users via Firebase Analytics or running A/B tests to compare different versions. From my experience, skipping this foundational step often leads to incomplete solutions that fail to fully address user or business needs. By focusing on a strong initial framework, we ensure that every design decision is intentional and backed by a clear purpose. This approach not only results in more effective and user-centered designs but also creates a scalable and iterative process that adapts to real-world usage and feedback.",
+    "step2": "Once the foundation is set, I like to break elements into visual groups while establishing the information architecture of the product. I typically do this by creating user journey maps, as I have found this to be the most effective way to structure the architecture. This approach allows me to account for external factors users may face, map out what they will encounter within the product, identify the data that needs to be shared, and anticipate potential pain points—all while staying in a low-fidelity environment. Additionally, this stage provides an opportunity to collaborate with product managers and development teams to address technical considerations early on, helping to resolve potential bugs before they become costly issues later in the process. By working through these details upfront, we can save both time and resources while ensuring a smoother development process.",
+    "step3": "Once everything is confirmed to be technically feasible and the user journey has been refined to minimize friction and pain points, we begin building high-fidelity designs. This is my favorite part of the process, as it truly starts to bring the product to life, although the previous steps are just as crucial to ensuring a successful feature or product. At this stage, my team and I focus on the visual components, refining every detail to create a polished and intuitive user experience. If it's a new product, we also establish a fully developed design system using the atomic design method to ensure consistency and scalability. Once high-fidelity designs are finalized and structured into clear, easy-to-follow flows, we typically create Figma prototypes to simulate interactions. These prototypes allow us to conduct usability testing, measure key metrics, and validate whether users can navigate the product as intended. This step is essential for identifying any remaining usability issues before development begins, ensuring a smoother handoff and a more user-friendly final product.",
+    "step4": "After my team and I finalize the designs, I make it a priority to host kickoff meetings with developers and any other teams involved in the project, such as internal operations, marketing, or customer support. These meetings ensure a smooth handoff and provide an additional checkpoint for developers to address any technical constraints, clarify expected behaviors, and align on implementation details. By fostering open communication at this stage, we minimize misunderstandings, streamline development, and ensure that the final product aligns with both the design vision and technical feasibility.",
+    "step5": "The forgotten step! Once the product is built and deployed, my team and I make it a priority to closely monitor both qualitative and quantitative feedback. This step is critical and ties back to why laying a solid foundation in step one is so important. Here, we evaluate whether the initial solution successfully meets the intended goals or if iterations are needed to improve outcomes. It's easy to overlook this phase when shifting focus to the next big feature or product, but continuous monitoring and iteration can have a significant impact on achieving business objectives. By tracking key metrics, gathering user feedback, and analyzing performance data, we ensure that the product continues to evolve and deliver value over time."
+  },
+  "leadership_style": "My goal as a leader and mentor is to empower designers to do their best work while ensuring consistency across our products. I often say that our jobs are some of the hardest because of the expectation to suddenly be creative within a set timeframe. To avoid putting designers on the spot with “be creative now” moments, I focus on creating an environment that fosters structured flexibility. Instead of forcing creativity on demand, I schedule regular check-ins with my team to align on deadlines, business goals, and stakeholder reviews. This approach provides the necessary structure to keep us on track while allowing designers the space they need to explore creative solutions without unnecessary pressure. To maintain consistency in both design and execution, I work closely with my team to build and maintain design systems, following the atomic design method. I also hold my team accountable for adhering to the systems we've put in place, ensuring cohesion across our products. At the same time, I strive to give my team as much ownership as possible over their work. While I take full accountability for everything that gets shipped to development, I've found that designers grow and learn faster when they feel a sense of ownership over their projects. Plus, every designer takes pride in their work, and I love seeing them confidently say, “Hell yeah, I did that!” Lastly, my door (or Zoom meeting room) is always open—whether it's to provide constructive feedback, problem-solve together, or even just chat about life (like dealing with a dog throwing up on the rug). I truly enjoy getting to know my team and helping each other grow. While I may be considered a boss to some, I learn just as much—if not more—from the talented people I work with every day.",
+  "hobbies": "Most of my hobbies revolve around exploring nature or new places. I have hiked and even backpacked in several different places, including but not limited to the Grand Canyon, the Grand Tetons, several different areas of Southern California's national forests, Oregon, Arizona, Vancouver, Texas, Nevada, and Washington . If not backpacking, I love a good car camping trip as well. Some of the best times — and hardest laughs — have been shared around a campfire. I wouldn't trade those experiences for anything. I also am a practicing photographer with most of my interest in landscape and architectural photography. I find photography to be another way to keep my skills in composition and design sharp. I am the guy you see on the trail that has about 10 lbs too much gear because, of course, I had to bring my tripod and 2 other lenses. Apart from my love of the outdoors, I also have a passion for cars, whether on the road or off. I can often be found under the hood wrenching, tinkering, cursing, cutting, you know… the normal stuff you do when working on cars. Along with the car obsession comes scouring Facebook Marketplace for parts (or new projects) or cruising around with my friends with early 2000s rock blaring through the speakers.  Lately, I have been focusing on weight training as well to keep me fit for whatever next adventure comes.  I am also the definition of a coffee snob. My girlfriend of over a decade (we'll call her wifey) and I have basically laid the foundation to our relationship at coffee shops, trying every one in and around the areas we have lived. If you're looking for some recommendations, hit me up!  Although I already have a lot of hobbies, I am always falling into something new (gotta love a good YouTube rabbit hole)… I mean… how else do you end up building your own AI trained only on things about you…?",
+  "values": [
+    "Empathy",
+    "Collaboration",
+    "Curiosity",
+    "Honesty",
+    "Humor",
+    "Passion",
+    "Perseverance",
+    "Resilience",
+    "Resposibility",
+    "Respect",
+    "Teamwork",
+    "Trust",
+    "Work Ethic",
+    "Efficiency"
+  ]
+}
