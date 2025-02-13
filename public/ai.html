@@ -75,7 +75,7 @@
       const thinking = document.getElementById('thinking');
       button.disabled = loading;
       button.innerHTML = loading ? '<div class="spinner"></div>' : 'Ask';
-      thinking.style.display = loading ? 'flex' : 'none';
+      thinking.style.top = loading ? '175px' : '-100px';
     }
 
     function askAbout(topic) {
