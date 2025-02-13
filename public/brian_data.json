@@ -101,21 +101,23 @@
     "step5": "The forgotten step! Once the product is built and deployed, my team and I make it a priority to closely monitor both qualitative and quantitative feedback. This step is critical and ties back to why laying a solid foundation in step one is so important. Here, we evaluate whether the initial solution successfully meets the intended goals or if iterations are needed to improve outcomes. It's easy to overlook this phase when shifting focus to the next big feature or product, but continuous monitoring and iteration can have a significant impact on achieving business objectives. By tracking key metrics, gathering user feedback, and analyzing performance data, we ensure that the product continues to evolve and deliver value over time."
   },
   "leadership_style": "My goal as a leader and mentor is to empower designers to do their best work while ensuring consistency across our products. I often say that our jobs are some of the hardest because of the expectation to suddenly be creative within a set timeframe. To avoid putting designers on the spot with “be creative now” moments, I focus on creating an environment that fosters structured flexibility. Instead of forcing creativity on demand, I schedule regular check-ins with my team to align on deadlines, business goals, and stakeholder reviews. This approach provides the necessary structure to keep us on track while allowing designers the space they need to explore creative solutions without unnecessary pressure. To maintain consistency in both design and execution, I work closely with my team to build and maintain design systems, following the atomic design method. I also hold my team accountable for adhering to the systems we've put in place, ensuring cohesion across our products. At the same time, I strive to give my team as much ownership as possible over their work. While I take full accountability for everything that gets shipped to development, I've found that designers grow and learn faster when they feel a sense of ownership over their projects. Plus, every designer takes pride in their work, and I love seeing them confidently say, “Hell yeah, I did that!” Lastly, my door (or Zoom meeting room) is always open—whether it's to provide constructive feedback, problem-solve together, or even just chat about life (like dealing with a dog throwing up on the rug). I truly enjoy getting to know my team and helping each other grow. While I may be considered a boss to some, I learn just as much—if not more—from the talented people I work with every day.",
-  "hobbies": "Most of my hobbies revolve around exploring nature or new places. I have hiked and even backpacked in several different places, including but not limited to the Grand Canyon, the Grand Tetons, several different areas of Southern California's national forests, Oregon, Arizona, Vancouver, Texas, Nevada, and Washington . If not backpacking, I love a good car camping trip as well. Some of the best times — and hardest laughs — have been shared around a campfire. I wouldn't trade those experiences for anything. I also am a practicing photographer with most of my interest in landscape and architectural photography. I find photography to be another way to keep my skills in composition and design sharp. I am the guy you see on the trail that has about 10 lbs too much gear because, of course, I had to bring my tripod and 2 other lenses. Apart from my love of the outdoors, I also have a passion for cars, whether on the road or off. I can often be found under the hood wrenching, tinkering, cursing, cutting, you know… the normal stuff you do when working on cars. Along with the car obsession comes scouring Facebook Marketplace for parts (or new projects) or cruising around with my friends with early 2000s rock blaring through the speakers.  Lately, I have been focusing on weight training as well to keep me fit for whatever next adventure comes.  I am also the definition of a coffee snob. My girlfriend of over a decade (we'll call her wifey) and I have basically laid the foundation to our relationship at coffee shops, trying every one in and around the areas we have lived. If you're looking for some recommendations, hit me up!  Although I already have a lot of hobbies, I am always falling into something new (gotta love a good YouTube rabbit hole)… I mean… how else do you end up building your own AI trained only on things about you…?",
-  "values": [
-    "Empathy",
-    "Collaboration",
-    "Curiosity",
-    "Honesty",
-    "Humor",
-    "Passion",
-    "Perseverance",
-    "Resilience",
-    "Resposibility",
-    "Respect",
-    "Teamwork",
-    "Trust",
-    "Work Ethic",
-    "Efficiency"
-  ]
+  "personality": {
+    "hobbies": "Most of my hobbies revolve around exploring nature or new places. I have hiked and even backpacked in several different places, including but not limited to the Grand Canyon, the Grand Tetons, several different areas of Southern California's national forests, Oregon, Arizona, Vancouver, Texas, Nevada, and Washington . If not backpacking, I love a good car camping trip as well. Some of the best times — and hardest laughs — have been shared around a campfire. I wouldn't trade those experiences for anything. I also am a practicing photographer with most of my interest in landscape and architectural photography. I find photography to be another way to keep my skills in composition and design sharp. I am the guy you see on the trail that has about 10 lbs too much gear because, of course, I had to bring my tripod and 2 other lenses. Apart from my love of the outdoors, I also have a passion for cars, whether on the road or off. I can often be found under the hood wrenching, tinkering, cursing, cutting, you know… the normal stuff you do when working on cars. Along with the car obsession comes scouring Facebook Marketplace for parts (or new projects) or cruising around with my friends with early 2000s rock blaring through the speakers.  Lately, I have been focusing on weight training as well to keep me fit for whatever next adventure comes.  I am also the definition of a coffee snob. My girlfriend of over a decade (we'll call her wifey) and I have basically laid the foundation to our relationship at coffee shops, trying every one in and around the areas we have lived. If you're looking for some recommendations, hit me up!  Although I already have a lot of hobbies, I am always falling into something new (gotta love a good YouTube rabbit hole)… I mean… how else do you end up building your own AI trained only on things about you…?",
+    "values": [
+      "Empathy",
+      "Collaboration",
+      "Curiosity",
+      "Honesty",
+      "Humor",
+      "Passion",
+      "Perseverance",
+      "Resilience",
+      "Resposibility",
+      "Respect",
+      "Teamwork",
+      "Trust",
+      "Work Ethic",
+      "Efficiency"
+    ]
+  }
 }
