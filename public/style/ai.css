@@ -89,7 +89,7 @@ h1 {
 }
 
 #thinking {
-    /* display: none; */
+    display: flex;
     gap: 1rem;
     position: fixed;
     bottom: 175px;
