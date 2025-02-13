@@ -5,217 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ask Brian</title>
   <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/ai.css">
   <style>
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #F2EFEB;
-}
-
-.container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-#top-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 150px);
-    transition: height 500ms ease-in;
-}
-
-#top-content.chat-active {
-    display: block;
-    height: 100px;
-    transition: height 500ms ease-in;
-}
-
-h1 {
-    margin-bottom: 20px;
-    text-align: center;
-    text-transform: none;
-}
-
-#top-content.chat-active p {
-    display: none;
-}
-
-#conversation-container {
-    display: none;
-    position: relative;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-}
-
-#conversation-container::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-}
-
-#conversation-container.chat-active {
-    display: block;
-    height: calc(100vh - 250px);
-    overflow-y: scroll;
-    width: 100%;
-    padding-bottom: 2rem;
-}
-
-#thinking {
-    display: none;
-    gap: 1rem;
-    position: absolute;
-    bottom: 2rem;
-    left: .5rem;
-    transform: translate(0, -50%);
-}
-
-.question-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 100%;
-}
-
-.question {
-    display: inline-block;
-    text-align: right;
-    max-width: 800px;
-    margin-bottom: 20px;
-    background-color: #262421;
-    color: #F2EFEB;
-    border-radius: 8rem;
-    padding: 2rem;
-    margin-left: auto;
-}
-
-.answer-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    align-items: start;
-}
-
-.answer {
-    display: inline-block;
-    text-align: left;
-    max-width: 800px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    color: #000;
-    border-radius: 2rem;
-    padding: 2rem;
-
-}
-
-.answer.error {
-    background-color: #fcd0d0;
-    color: #ED6262;
-}
-
-.input-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-}
-
-.textarea-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-#question {
-    width: 100%;
-    height: 100px;
-    padding: 12px;
-    padding-right: 5rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    resize: none;
-    font-size: 16px;
-    font-family: Helvetica;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 150%;
-}
-
-button {
-    position: absolute;
-    right: 1rem;
-    bottom: 12px;
-    width: auto;
-    height: 44px;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    font-weight: 100;
-    transition: background-color 0.3s ease;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-@media (min-width: 768px) {
-    .input-container {
-        padding: 20px calc((100% - 1200px) / 2);
-    }
-    .textarea-wrapper {
-    padding: 0 2rem;
-}
-button {
-    right: 3rem;
-}
-}
-
-/* Add these new styles */
-.spinner {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  border-left-color: #000;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.7;
-}
+  
   </style>
 </head>
 <body>
   <div class="container">
     <div id="top-content">
         <p class="overline">Welcome to</p>
-        <h1>Prouty.ai</h1>
-        <p style="max-width: 500px;">Prouty.ai is only trained on information about Brian Prouty, a California based Product Designer with a background in Front-End Development and Graphic Design</p>
+        <h1><span style="color: #209320;">Brian Prouty</span> A.I. </h1>
+        <h2>This A.I. is only trained on information about Brian Prouty</h2>
+        <h3>Brian is a California based Product Designer with a background in Front-End Development and Graphic Design</h3>
     </div>
     <div id="conversation-container">
         <!-- <div class="question-wrapper">
@@ -240,8 +41,18 @@ button:disabled {
   </div>
   <div class="input-container">
     <div class="textarea-wrapper">
-      <textarea id="question" placeholder="Type your question here..."></textarea>
+      <textarea id="question" placeholder="Or type your question here..."></textarea>
       <button onclick="askBrian()" id="askButton">Ask</button>
+    </div>
+    <div class="prompts">
+        <p class="chips-title">Tell me about Brian's:</p>
+        <div id="chips-container" class="chip-container">
+            <button class="chip" onclick="askAbout('Recent Projects')">Recent Projects</button>
+            <button class="chip" onclick="askAbout('Personality')">Personality</button>
+        <button class="chip" onclick="askAbout('Design Process')">Design Process</button>
+        <button class="chip" onclick="askAbout('Leadership Skills')">Leadership Skills</button>
+        <button class="chip" onclick="askAbout('Research Methods')">Research Methods</button>
+        <button class="chip" onclick="askAbout('Collaboration Approach')">Collaboration Approach</button>
     </div>
   </div>
   
@@ -265,6 +76,13 @@ button:disabled {
       button.disabled = loading;
       button.innerHTML = loading ? '<div class="spinner"></div>' : 'Ask';
       thinking.style.display = loading ? 'flex' : 'none';
+    }
+
+    function askAbout(topic) {
+        const questionInput = document.getElementById('question');
+        questionInput.value = `Tell me about Brian's ${topic}`;
+        askBrian();
+        questionInput.value = '';
     }
   </script>
   <script src="script.js"></script>

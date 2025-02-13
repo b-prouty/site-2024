@@ -1,4 +1,10 @@
 {
+  "Resume": {
+    "Name": "Brian Prouty",
+    "Email": "brian@brianprouty.com",
+    "Phone": "+1 (714) 580-4344",
+    "Location": "Irvine, CA",
+    "Website": "https://www.brianprouty.com",
     "professional_experience": [
       {
         "role": ["Lead Product Designer"],
@@ -28,7 +34,6 @@
       ]
       }
     ],
-    "hobbies": "Most of my hobbies revolve around exploring nature or new places. I have hiked and even backpacked in several different places, including but not limited to the Grand Canyon, the Grand Tetons, several different areas of Southern California's national forests, Oregon, Arizona, Vancouver, Texas, Nevada, and Washington . If not backpacking, I love a good car camping trip as well. Some of the best times — and hardest laughs — have been shared around a campfire. I wouldn't trade those experiences for anything. I also am a practicing photographer with most of my interest in landscape and architectural photography. I find photography to be another way to keep my skills in composition and design sharp. I am the guy you see on the trail that has about 10 lbs too much gear because, of course, I had to bring my tripod and 2 other lenses. Apart from my love of the outdoors, I also have a passion for cars, whether on the road or off. I can often be found under the hood wrenching, tinkering, cursing, cutting, you know… the normal stuff you do when working on cars. Along with the car obsession comes scouring Facebook Marketplace for parts (or new projects) or cruising around with my friends with early 2000s rock blaring through the speakers.  Lately, I have been focusing on weight training as well to keep me fit for whatever next adventure comes.  I am also the definition of a coffee snob. My girlfriend of over a decade (we'll call her wifey) and I have basically laid the foundation to our relationship at coffee shops, trying every one in and around the areas we have lived. If you're looking for some recommendations, hit me up!  Although I already have a lot of hobbies, I am always falling into something new (gotta love a good YouTube rabbit hole)… I mean… how else do you end up building your own AI trained only on things about you…?",
     "skills": [
       "Figma",
       "Sketch",
@@ -55,7 +60,6 @@
       "User Testing",
       "Prototyping"
     ],
-    "values": ["Empathy", "Collaboration", "Curiosity", "Honesty", "Humor", "Passion", "Perseverance", "Resilience", "Resposibility", "Respect", "Teamwork", "Trust", "Work Ethic", "Efficiency"],
     "past_projects": [
       {
         "name": "Checkout Flow Improvements",
@@ -83,4 +87,8 @@
         "link" : "https://www.brianprouty.com/bluon2.html"
       }
     ]
+  },
+    
+    "hobbies": "Most of my hobbies revolve around exploring nature or new places. I have hiked and even backpacked in several different places, including but not limited to the Grand Canyon, the Grand Tetons, several different areas of Southern California's national forests, Oregon, Arizona, Vancouver, Texas, Nevada, and Washington . If not backpacking, I love a good car camping trip as well. Some of the best times — and hardest laughs — have been shared around a campfire. I wouldn't trade those experiences for anything. I also am a practicing photographer with most of my interest in landscape and architectural photography. I find photography to be another way to keep my skills in composition and design sharp. I am the guy you see on the trail that has about 10 lbs too much gear because, of course, I had to bring my tripod and 2 other lenses. Apart from my love of the outdoors, I also have a passion for cars, whether on the road or off. I can often be found under the hood wrenching, tinkering, cursing, cutting, you know… the normal stuff you do when working on cars. Along with the car obsession comes scouring Facebook Marketplace for parts (or new projects) or cruising around with my friends with early 2000s rock blaring through the speakers.  Lately, I have been focusing on weight training as well to keep me fit for whatever next adventure comes.  I am also the definition of a coffee snob. My girlfriend of over a decade (we'll call her wifey) and I have basically laid the foundation to our relationship at coffee shops, trying every one in and around the areas we have lived. If you're looking for some recommendations, hit me up!  Although I already have a lot of hobbies, I am always falling into something new (gotta love a good YouTube rabbit hole)… I mean… how else do you end up building your own AI trained only on things about you…?",
+    "values": ["Empathy", "Collaboration", "Curiosity", "Honesty", "Humor", "Passion", "Perseverance", "Resilience", "Resposibility", "Respect", "Teamwork", "Trust", "Work Ethic", "Efficiency"]
   }
