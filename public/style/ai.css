@@ -36,6 +36,7 @@ body {
     display: block;
     height: 100px;
     transition: height 500ms ease-in;
+    border-bottom: 1px solid #c9c9c9;
 }
 
 h1 {
@@ -44,7 +45,9 @@ h1 {
     text-transform: none;
 }
 
-#top-content.chat-active p {
+#top-content.chat-active p,
+#top-content.chat-active h2,
+#top-content.chat-active h3 {
     display: none;
 }
 
@@ -81,7 +84,7 @@ h1 {
     height: calc(100vh - 250px);
     overflow-y: scroll;
     width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem 0;
 }
 
 #thinking {
