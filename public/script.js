@@ -62,7 +62,7 @@ async function askBrian() {
         }
         
         const data = await response.json();
-        console.log('Data:', data);
+        console.log(data);
         
         // Remove URL conversion since response is already HTML
         answerText.innerHTML = data.answer;
