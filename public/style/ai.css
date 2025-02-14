@@ -50,6 +50,7 @@ h1 {
 #top-content.chat-active h3 {
     display: none;
 }
+#top-content.chat-active p{ margin-top: -2rem;}
 
 #top-content h2 {
     margin-top: -1.25rem;
