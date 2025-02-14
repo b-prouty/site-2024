@@ -64,42 +64,18 @@ async function askBrian() {
         const data = await response.json();
         console.log('Data:', data);
         
-        // Split the answer text by spaces to find URLs
-        const words = data.answer.split(' ');
-        const answerFragment = document.createDocumentFragment();
+        // Convert URLs to clickable links with buttons
+        const formattedAnswer = data.answer.replace(
+            /(https?:\/\/[^\s]+)/gi,
+            (url) => `${url} <button class="link-button" onclick="window.open('${url}', '_blank')">🔗 Open Link</button>`
+        );
         
-        words.forEach(word => {
-            try {
-                // Check if the word is a URL
-                if (word.match(/^(http|https):\/\/[^\s]+$/i)) {
-                    // Create a button for the URL
-                    const linkButton = document.createElement('button');
-                    linkButton.className = 'link-button';
-                    linkButton.innerText = '🔗 Open Link';
-                    linkButton.onclick = () => window.open(word, '_blank');
-                    
-                    // Add the word and button
-                    answerFragment.appendChild(document.createTextNode(word + ' '));
-                    answerFragment.appendChild(linkButton);
-                    answerFragment.appendChild(document.createTextNode(' '));
-                } else {
-                    // Add regular word
-                    answerFragment.appendChild(document.createTextNode(word + ' '));
-                }
-            } catch (e) {
-                // If URL parsing fails, just add the word
-                answerFragment.appendChild(document.createTextNode(word + ' '));
-            }
-        });
-        
-        answerText.innerHTML = ''; // Clear existing content
-        answerText.appendChild(answerFragment);
+        answerText.innerHTML = formattedAnswer;
         
         answerDiv.appendChild(answerText);
         answerWrapper.appendChild(answerDiv);
         container.appendChild(answerWrapper);
         
-
         container.scrollTop = container.scrollHeight;
         
         toggleLoadingState(false);
@@ -124,7 +100,4 @@ async function askBrian() {
         container.scrollTop = container.scrollHeight;
         toggleLoadingState(false);
     }
-
-
-    
 } 

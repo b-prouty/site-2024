@@ -146,6 +146,22 @@ h1 {
     color: #ED6262;
 }
 
+.link-button {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 0 4px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+
+.link-button:hover {
+    background-color: #e0e0e0;
+}
+
 .input-container {
     position: fixed;
     bottom: 0;
