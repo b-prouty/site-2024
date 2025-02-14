@@ -39,8 +39,8 @@ async function askBrian() {
     const answerDiv = document.createElement('div');
     answerDiv.className = 'answer';
     
-    const answerText = document.createElement('p');
-
+    const answerText = document.createElement('div');
+    answerText.className = 'answer-text';
     try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 30000); // Increased to 30 seconds
