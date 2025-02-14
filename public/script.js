@@ -64,13 +64,8 @@ async function askBrian() {
         const data = await response.json();
         console.log('Data:', data);
         
-        // Convert URLs to clickable links with buttons
-        const formattedAnswer = data.answer.replace(
-            /(https?:\/\/[^\s]+)/gi,
-            (url) => `${url} <button class="link-button" onclick="window.open('${url}', '_blank')">🔗 Open Link</button>`
-        );
-        
-        answerText.innerHTML = formattedAnswer;
+        // Remove URL conversion since response is already HTML
+        answerText.innerHTML = data.answer;
         
         answerDiv.appendChild(answerText);
         answerWrapper.appendChild(answerDiv);

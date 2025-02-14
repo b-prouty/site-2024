@@ -138,7 +138,10 @@ h1 {
     color: #000;
     border-radius: 2rem;
     padding: 2rem;
+}
 
+.answer p {
+    line-height: 200%;
 }
 
 .answer.error {
@@ -155,13 +158,15 @@ h1 {
     right: initial;
     padding: 2px 8px;
     margin: 0 4px;
-    background-color: #f0f0f0;
-    color: #000;
+    background-color: transparent;
+    color: #209320;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 4rem;
     cursor: pointer;
     font-size: 0.75em;
     vertical-align: middle;
+    vertical-align: -webkit-baseline-middle;
+    margin-top: 10px;
 }
 
 .link-button:hover {
