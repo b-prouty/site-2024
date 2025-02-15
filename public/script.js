@@ -60,19 +60,41 @@ async function askBrian() {
             }
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
-        const data = await response.json();
-        console.log('Data:', data);
-        
-        // Parse markdown to HTML
-        answerText.innerHTML = marked.parse(data.answer);
-        
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let responseText = '';
+
         answerDiv.appendChild(answerText);
         answerWrapper.appendChild(answerDiv);
         container.appendChild(answerWrapper);
-        
-        container.scrollTop = container.scrollHeight;
-        
+
+        while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+
+            const chunk = decoder.decode(value);
+            const lines = chunk.split('\n');
+
+            for (const line of lines) {
+                if (line.startsWith('data: ')) {
+                    const data = line.slice(6);
+                    if (data === '[DONE]') continue;
+
+                    try {
+                        const { content } = JSON.parse(data);
+                        if (content) {
+                            responseText += content;
+                            answerText.innerHTML = marked.parse(responseText);
+                            container.scrollTop = container.scrollHeight;
+                        }
+                    } catch (e) {
+                        console.error('Error parsing chunk:', e);
+                    }
+                }
+            }
+        }
+
         toggleLoadingState(false);
     } catch (error) {
         const container = document.querySelector('#conversation-container');

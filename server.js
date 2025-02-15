@@ -45,8 +45,15 @@ app.post('/ask', async (req, res) => {
         
         const systemPrompt = `You are an assistant who only answers questions based on the following data about Brian: ${JSON.stringify(brianData, null, 2)}. 
         If the question cannot be answered using this data, please respond with "I don't have that information about Brian."`;
-        
-        const completion = await openai.chat.completions.create({
+
+        // Set headers for streaming
+        res.writeHead(200, {
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive'
+        });
+
+        const stream = await openai.chat.completions.create({
             model: "gpt-4",
             messages: [
                 { 
@@ -58,20 +65,25 @@ app.post('/ask', async (req, res) => {
                     content: question 
                 }
             ],
+            stream: true,
             temperature: 0.7,
             max_tokens: 500
         });
 
-        const answer = completion.choices[0].message.content;
-        console.log('Generated answer:', answer);
-        res.json({ answer });
+        for await (const chunk of stream) {
+            const content = chunk.choices[0]?.delta?.content || '';
+            if (content) {
+                res.write(`data: ${JSON.stringify({ content })}\n\n`);
+            }
+        }
+
+        res.write('data: [DONE]\n\n');
+        res.end();
         
     } catch (error) {
         console.error('Error in /ask endpoint:', error);
-        res.status(500).json({ 
-            error: 'Internal server error',
-            details: error.message 
-        });
+        res.write(`data: ${JSON.stringify({ error: 'Internal server error' })}\n\n`);
+        res.end();
     }
 });
 
