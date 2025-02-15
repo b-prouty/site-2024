@@ -62,10 +62,10 @@ async function askBrian() {
         }
         
         const data = await response.json();
-        console.log(data);
+        console.log('Data:', data);
         
-        // Remove URL conversion since response is already HTML
-        answerText.innerHTML = data.answer;
+        // Parse markdown to HTML
+        answerText.innerHTML = marked.parse(data.answer);
         
         answerDiv.appendChild(answerText);
         answerWrapper.appendChild(answerDiv);
