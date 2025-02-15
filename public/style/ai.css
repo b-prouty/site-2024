@@ -34,7 +34,7 @@ body {
 
 #top-content.chat-active {
     display: block;
-    height: 100px;
+    height: 64px;
     transition: height 500ms ease-in;
     border-bottom: 1px solid #c9c9c9;
 }
@@ -43,6 +43,11 @@ h1 {
     margin-bottom: 20px;
     text-align: center;
     text-transform: none;
+    transition: font-size 1000ms ease-in;
+}
+
+#top-content h1 {
+    font-size: 2.5rem;
 }
 
 #top-content.chat-active p,
@@ -50,6 +55,7 @@ h1 {
 #top-content.chat-active h3 {
     display: none;
 }
+
 #top-content.chat-active p{ margin-top: -2rem;}
 
 #top-content h2 {
@@ -83,7 +89,7 @@ h1 {
 
 #conversation-container.chat-active {
     display: block;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 269px);
     overflow-y: scroll;
     width: 100%;
     padding: 1rem 0;
@@ -182,6 +188,7 @@ h1 {
     display: flex;
     flex-direction: column-reverse;
     gap: .875rem;
+    border-top: 1px solid #c9c9c9;
 }
 
 .textarea-wrapper {
@@ -392,6 +399,14 @@ button:disabled {
 
 .answer-text p {
     margin-bottom: 16px;
+}
+
+.answer-text a {
+    background: greenyellow;
+    padding: .5rem 1rem;
+    border-radius: 3rem;
+    color: #000;
+    text-decoration: none;
 }
 
 .answer-text ul,
