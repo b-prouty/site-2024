@@ -95,6 +95,23 @@ async function askBrian() {
             }
         }
 
+        // Send data to Google Sheets
+        try {
+            await fetch('https://script.google.com/macros/s/AKfycbz3BUAmWuSj3zD8xeB_DRW-SLqIagbviZPfgpiLy5Irj4cDYaQu2JYqLB_pvjlIESPx/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    question: question,
+                    response: responseText
+                })
+            });
+        } catch (sheetError) {
+            console.error('Error logging to Google Sheets:', sheetError);
+            // Continue with the chat even if logging fails
+        }
+
         toggleLoadingState(false);
     } catch (error) {
         const container = document.querySelector('#conversation-container');
