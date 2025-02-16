@@ -37,7 +37,8 @@ function getBrianData() {
 // API endpoint for handling questions
 app.post('/ask', async (req, res) => {
     try {
-        const { question } = req.body;
+
+        const { question, conversationHistory = [] } = req.body;
         console.log('Received question:', question);
         
         const brianData = getBrianData();
