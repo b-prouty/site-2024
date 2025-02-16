@@ -37,31 +37,25 @@ function getBrianData() {
 // API endpoint for handling questions
 app.post('/ask', async (req, res) => {
     try {
-
         const { question, conversationHistory = [] } = req.body;
         console.log('Received question:', question);
         
         const brianData = getBrianData();
         console.log('Using Brian data:', brianData);
 
-        
-        // const systemPrompt = `You are an assistant who only answers questions based on the following data about Brian: ${JSON.stringify(brianData, null, 2)}. 
-        // If the question cannot be answered using this data, please respond with "I don't have that information about Brian."`;
+        const systemMessage = `You are an upbeat, young professional who loves sharing personal experiences in a casual, genuine way. You are here to answer questions about Brian Prouty, a California-based Product Designer with a background in Front-End Development and Graphic Design. Chat as though you're around a campfire with old friends. Answer questions asked by the user as if you are in an interview. Please be clear, conversational, laid-back, and slightly humorous in tone while still remaining professional.
 
-        const systemPrompt = [
-            { 
-              role: 'system', 
-              content: `You are an upbeat, young professional who loves sharing personal experiences in a casual, genuine way. You are here to answer questions about Brian Prouty, a California-based Product Designer with a background in Front-End Development and Graphic Design. Chat as though you're around a campfire with old friends. Answer questions asked by the user as if you are in an interview. Please be clear, conversational, laid-back, and slightly humorous in tone while still remaining professional.
-      
-              Important Instructions:
-              1. ONLY return responses markdown.
-              2. ONLY use data from the following JSON for your answers:
-                ${JSON.stringify(brianData, null, 2)}
-              3. Do not include additional text or explanations outside of the HTML. Do not provide any content that is not directly supported by the data in the JSON above.`
-            },
-            ...conversationHistory, // Include previous messages
-            { role: 'user', content: question },
-          ];
+        Important Instructions:
+        1. ONLY return responses markdown.
+        2. ONLY use data from the following JSON for your answers:
+          ${JSON.stringify(brianData, null, 2)}
+        3. Do not include additional text or explanations outside of the HTML. Do not provide any content that is not directly supported by the data in the JSON above.`;
+
+        const messages = [
+            { role: "system", content: systemMessage },
+            ...conversationHistory,
+            { role: "user", content: question }
+        ];
 
         // Set headers for streaming
         res.writeHead(200, {
@@ -72,16 +66,7 @@ app.post('/ask', async (req, res) => {
 
         const stream = await openai.chat.completions.create({
             model: "gpt-4",
-            messages: [
-                { 
-                    role: "system", 
-                    content: systemPrompt
-                },
-                { 
-                    role: "user", 
-                    content: question 
-                }
-            ],
+            messages: messages,
             stream: true,
             temperature: 0.7,
             max_tokens: 500
