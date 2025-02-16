@@ -89,7 +89,7 @@ h1 {
 
 #conversation-container.chat-active {
     display: block;
-    height: calc(100vh - 269px);
+    height: calc(100vh - 200px);
     overflow-y: scroll;
     width: 100%;
     padding: 1rem 0;
@@ -184,7 +184,7 @@ h1 {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 20px;
+    padding: .5rem 1rem;
     display: flex;
     flex-direction: column-reverse;
     gap: 0;
@@ -313,7 +313,7 @@ button:disabled {
 @media (min-width: 768px) {
     .input-container {
         background-color: #F2EFEB;
-        padding: 20px calc((100% - 1200px) / 2);
+        padding: .5rem calc((100% - 1200px) / 2);
         padding-top: 0;
     }
 
