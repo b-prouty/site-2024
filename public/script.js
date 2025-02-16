@@ -97,7 +97,7 @@ async function askBrian() {
 
         // Send data to Google Sheets
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbz3BUAmWuSj3zD8xeB_DRW-SLqIagbviZPfgpiLy5Irj4cDYaQu2JYqLB_pvjlIESPx/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbxx6tm2jZuvMxKn5ourJ7sEsyMij51XlEcMpTQIhLQGqt-yZxXeP2_QbsrrVRtuzo4/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
