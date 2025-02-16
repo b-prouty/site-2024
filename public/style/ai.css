@@ -187,8 +187,7 @@ h1 {
     padding: 20px;
     display: flex;
     flex-direction: column-reverse;
-    gap: .875rem;
-    border-top: 1px solid #c9c9c9;
+    gap: 0;
 }
 
 .textarea-wrapper {
@@ -237,8 +236,6 @@ button:hover {
     color: #F2EFEB;
 }
 
-
-
 /* Add these new styles */
 .spinner {
     display: inline-block;
@@ -263,12 +260,12 @@ button:disabled {
 
 /* Add these new styles for chips */
 .prompts {
-    margin-top: .5rem;
     display: flex;
     flex-direction: row;
-    padding: 0 2rem;
+    padding: .5rem 2rem;
     align-items: baseline;
     justify-content: center;
+    border-top: 1px solid #c9c9c9;
 }
 .chip-container {
     display: flex;
