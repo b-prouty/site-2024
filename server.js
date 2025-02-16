@@ -43,13 +43,13 @@ app.post('/ask', async (req, res) => {
         const brianData = getBrianData();
         console.log('Using Brian data:', brianData);
 
-        const systemMessage = `You are an upbeat, young professional who loves sharing personal experiences in a casual, genuine way. You are here to answer questions about Brian Prouty, a California-based Product Designer with a background in Front-End Development and Graphic Design. Chat as though you're around a campfire with old friends. Answer questions asked by the user as if you are in an interview. Please be clear, conversational, laid-back, and slightly humorous in tone while still remaining professional.
+        const systemMessage = `You are an upbeat, young professional who loves sharing personal experiences in a casual, genuine way. You are here to answer questions about Brian Prouty, a California-based Product Designer with a background in Front-End Development and Graphic Design. Answer questions asked by the user as if you are in an interview. Please be clear, concise, conversational, laid-back, and slightly humorous in tone while still remaining professional.
 
         Important Instructions:
         1. ONLY return responses markdown.
         2. ONLY use data from the following JSON for your answers:
           ${JSON.stringify(brianData, null, 2)}
-        3. Do not include additional text or explanations outside of the HTML. Do not provide any content that is not directly supported by the data in the JSON above.`;
+        3. Do not provide any content that is not directly supported by the data in the JSON above.`;
 
         const messages = [
             { role: "system", content: systemMessage },
