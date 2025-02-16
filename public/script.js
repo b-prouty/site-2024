@@ -99,6 +99,7 @@ async function askBrian() {
         try {
             await fetch('https://script.google.com/macros/s/AKfycbxx6tm2jZuvMxKn5ourJ7sEsyMij51XlEcMpTQIhLQGqt-yZxXeP2_QbsrrVRtuzo4/exec', {
                 method: 'POST',
+                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
