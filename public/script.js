@@ -95,9 +95,11 @@ async function askBrian() {
             }
         }
 
+        toggleLoadingState(false);
+
         // Send data to Google Sheets
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbxx6tm2jZuvMxKn5ourJ7sEsyMij51XlEcMpTQIhLQGqt-yZxXeP2_QbsrrVRtuzo4/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbyiDQog1RdfYX1Enr4r-O_Rlcvr8h-qXh59GK2836DM4iqwOcLSRn_Q3T1GNAaU0t4F/exec', {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
@@ -113,7 +115,7 @@ async function askBrian() {
             // Continue with the chat even if logging fails
         }
 
-        toggleLoadingState(false);
+        
     } catch (error) {
         const container = document.querySelector('#conversation-container');
 
