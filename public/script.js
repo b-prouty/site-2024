@@ -99,7 +99,11 @@ async function askBrian() {
 
         // Send data to Google Sheets
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbxQjbHzeMdRlZkcbQ6PanpjiDZTzGv18h5AeveFqagxzFZ1XeQ1-bOxwdvjk08MJUOi/exec', {
+            const deploymentUrl = 'https://script.google.com/macros/s/AKfycbz51BseTijr48lQPbSjC61tYq0q5y6xNn5Ks-gfsZ3lky5oNa8w2ccrM-HfMHh-TFFu/exec';
+            const url = new URL(deploymentUrl);
+            url.searchParams.append('origin', window.location.origin);
+
+            const response = await fetch(url.toString(), {
                 method: 'POST',
                 mode: 'cors',
                 credentials: 'omit',
@@ -120,20 +124,11 @@ async function askBrian() {
             const responseData = await response.text();
             console.log('Response data:', responseData);
             
-            // Try to parse the response
-            try {
-                const jsonResponse = JSON.parse(responseData);
-                console.log('Parsed response:', jsonResponse);
-            } catch (parseError) {
-                console.log('Raw response (not JSON):', responseData);
-            }
-            
         } catch (sheetError) {
             console.error('Error details:', {
                 message: sheetError.message,
                 name: sheetError.name,
                 stack: sheetError.stack,
-                // Add any custom properties that might be present
                 response: sheetError.response,
                 status: sheetError.status
             });
