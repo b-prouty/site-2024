@@ -99,7 +99,7 @@ async function askBrian() {
 
         // Send data to Google Sheets
         try {
-            const deploymentUrl = 'https://script.google.com/macros/s/AKfycbz51BseTijr48lQPbSjC61tYq0q5y6xNn5Ks-gfsZ3lky5oNa8w2ccrM-HfMHh-TFFu/exec';
+            const deploymentUrl = 'https://script.google.com/macros/s/AKfycbwjVfor4yeAWBEE3mr1Zin6W9_6iMTOtG20qevK2Ca5DeyzoUYg8gargH3R_YP5r_Oo/exec';
             
             // Create a hidden form
             const form = document.createElement('form');
