@@ -99,7 +99,7 @@ async function askBrian() {
 
         // Send data to Google Sheets
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbw5WuimSD2bvywq_BLsZQqk8-rhL5PC3KOyujHD1Jwymh_rO9uO_WFtVJyEa_s5_kBv/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbzkVKP1VcDY3pVYgKV2at_SaZGQUMwCKOmJdPw5NrD0F4wkuxP9nH1wzTDwkcg08XXZ/exec', {
                 method: 'POST',
                 mode: 'cors', 
                 headers: {
