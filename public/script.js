@@ -99,20 +99,21 @@ async function askBrian() {
 
         // Send data to Google Sheets
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbzN0bTzSxBovvupfPUUBE587v5gH0-q0QDMZaWV-4Rf7gQrXR0Ov39-47yWN0hea4gE/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycby9NGwD_EQnMUMEilrnLvQF3PvMcdRTIb55XaA3ur_LWb2d19e3hpaRAsC6SH831nq-/exec', {
                 method: 'POST',
-                mode: 'cors', 
+                mode: 'cors',
+                credentials: 'omit',
                 headers: {
-                  'Content-Type': 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                  question: question,
-                  response: responseText
+                    question: question,
+                    response: responseText
                 })
-              });
-            } catch (sheetError) {
-              console.error('Error logging to Google Sheets:', sheetError);
-            }
+            });
+        } catch (sheetError) {
+            console.error('Error logging to Google Sheets:', sheetError);
+        }
 
         
     } catch (error) {
