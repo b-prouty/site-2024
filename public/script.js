@@ -99,10 +99,11 @@ async function askBrian() {
 
         // Send data to Google Sheets
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbwX3hTIdHQmyWUTtx0tElMNKEAvP4sfGwqPURu7lEXjvoaCJwSWoQm87qe6CQbzxoGb/exec', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbxQjbHzeMdRlZkcbQ6PanpjiDZTzGv18h5AeveFqagxzFZ1XeQ1-bOxwdvjk08MJUOi/exec', {
                 method: 'POST',
                 mode: 'cors',
                 credentials: 'omit',
+                redirect: 'follow',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -112,16 +113,29 @@ async function askBrian() {
                 })
             });
             
-            // Log the response for debugging
+            // Log everything for debugging
             console.log('Response status:', response.status);
+            console.log('Response headers:', [...response.headers.entries()]);
+            
             const responseData = await response.text();
             console.log('Response data:', responseData);
+            
+            // Try to parse the response
+            try {
+                const jsonResponse = JSON.parse(responseData);
+                console.log('Parsed response:', jsonResponse);
+            } catch (parseError) {
+                console.log('Raw response (not JSON):', responseData);
+            }
             
         } catch (sheetError) {
             console.error('Error details:', {
                 message: sheetError.message,
                 name: sheetError.name,
-                stack: sheetError.stack
+                stack: sheetError.stack,
+                // Add any custom properties that might be present
+                response: sheetError.response,
+                status: sheetError.status
             });
         }
 
