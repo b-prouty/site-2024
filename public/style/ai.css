@@ -89,7 +89,7 @@ h1 {
 
 #conversation-container.chat-active {
     display: block;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 250px);
     overflow-y: scroll;
     width: 100%;
     padding: 1rem 0;
@@ -349,7 +349,7 @@ button:disabled {
         display: none;
     }
     #conversation-container.chat-active {
-        height: calc(100vh - 250px);
+        height: calc(100vh - 200px);
         }
 }
 
