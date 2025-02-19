@@ -100,37 +100,50 @@ async function askBrian() {
         // Send data to Google Sheets
         try {
             const deploymentUrl = 'https://script.google.com/macros/s/AKfycbz51BseTijr48lQPbSjC61tYq0q5y6xNn5Ks-gfsZ3lky5oNa8w2ccrM-HfMHh-TFFu/exec';
-            const url = new URL(deploymentUrl);
-            url.searchParams.append('origin', window.location.origin);
+            
+            // Create a hidden form
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = deploymentUrl;
+            form.target = 'hidden-iframe';
+            form.style.display = 'none';
 
-            const response = await fetch(url.toString(), {
-                method: 'POST',
-                mode: 'cors',
-                credentials: 'omit',
-                redirect: 'follow',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    question: question,
-                    response: responseText
-                })
-            });
-            
-            // Log everything for debugging
-            console.log('Response status:', response.status);
-            console.log('Response headers:', [...response.headers.entries()]);
-            
-            const responseData = await response.text();
-            console.log('Response data:', responseData);
+            // Add the data as hidden inputs
+            const questionInput = document.createElement('input');
+            questionInput.type = 'hidden';
+            questionInput.name = 'question';
+            questionInput.value = question;
+            form.appendChild(questionInput);
+
+            const responseInput = document.createElement('input');
+            responseInput.type = 'hidden';
+            responseInput.name = 'response';
+            responseInput.value = responseText;
+            form.appendChild(responseInput);
+
+            // Create hidden iframe to prevent page reload
+            const iframe = document.createElement('iframe');
+            iframe.name = 'hidden-iframe';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+
+            // Add form to body and submit
+            document.body.appendChild(form);
+            form.submit();
+
+            // Clean up after submission
+            setTimeout(() => {
+                document.body.removeChild(form);
+                document.body.removeChild(iframe);
+            }, 1000);
+
+            console.log('Data submitted via form');
             
         } catch (sheetError) {
             console.error('Error details:', {
                 message: sheetError.message,
                 name: sheetError.name,
-                stack: sheetError.stack,
-                response: sheetError.response,
-                status: sheetError.status
+                stack: sheetError.stack
             });
         }
 
