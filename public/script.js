@@ -61,6 +61,8 @@ async function askBrian() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
+        console.log('response:', response);
+
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         let responseText = '';
