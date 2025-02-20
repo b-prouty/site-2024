@@ -69,7 +69,8 @@
       {
         "name": "Checkout Flow Improvements",
         "description": "Reduced friction throughout checkout flows to drive higher conversion rates.",
-        "link": "https://www.brianprouty.com/pricing.html"
+        "link": "https://www.brianprouty.com/pricing.html",
+        "images": ["https://www.brianprouty.com/img/pricing/flow1.png", "https://www.brianprouty.com/img/pricing/flow2.png", "https://www.brianprouty.com/img/pricing/flow3.png"]
       },
       {
         "name": "B2B Order Management",
