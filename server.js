@@ -47,8 +47,7 @@ app.post('/ask', async (req, res) => {
 
         Important Instructions:
         1. ONLY return responses markdown.
-        2. ONLY use data from the following JSON for your answers:
-          ${JSON.stringify(brianData, null, 2)}
+        2. ONLY use data from the following JSON for your answers: ${JSON.stringify(brianData, null, 2)}. If the user asks about something that is not in the JSON, say "I'm not trained on that topic. If you would like to follow up, you can reach out directly to Brian at brian@brianprouty.com or 714-580-4344". 
         3. Do not provide any content that is not directly supported by the data in the JSON above.`;
 
         const messages = [
