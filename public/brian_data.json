@@ -70,7 +70,7 @@
         "name": "Checkout Flow Improvements",
         "description": "Reduced friction throughout checkout flows to drive higher conversion rates.",
         "link": "https://www.brianprouty.com/pricing.html",
-        "images": ["<img src='https://www.brianprouty.com/img/pricing/flow-01.png'>", "<img src='https://www.brianprouty.com/img/pricing/flow-02.png'>", "<img src='https://www.brianprouty.com/img/pricing/flow-03.png'>", "<img src='https://www.brianprouty.com/img/pricing/flow-04.png'>", "<img src='https://www.brianprouty.com/img/pricing/flow-05.png'>", "<img src='https://www.brianprouty.com/img/pricing/flow-06.png'>", "<img src='https://www.brianprouty.com/img/pricing/flow-07.png'>"]
+        "images": ["![Flow 1](img/pricing/flow-01.png)", "![Flow 2](img/pricing/flow-02.png)", "![Flow 3](img/pricing/flow-03.png)", "![Flow 4](img/pricing/flow-04.png)", "![Flow 5](img/pricing/flow-05.png)", "![Flow 6](img/pricing/flow-06.png)", "![Flow 7](img/pricing/flow-07.png)"]
       },
       {
         "name": "B2B Order Management",
