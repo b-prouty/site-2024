@@ -68,27 +68,32 @@
     "past_projects": [
       {
         "name": "Checkout Flow Improvements",
+        "date": "September 2024",
         "description": "Reduced friction throughout checkout flows to drive higher conversion rates.",
         "link": "https://www.brianprouty.com/pricing.html",
         "images": ["![Flow 1](img/pricing/flow-01.png)", "![Flow 2](img/pricing/flow-02.png)", "![Flow 3](img/pricing/flow-03.png)", "![Flow 4](img/pricing/flow-04.png)", "![Flow 5](img/pricing/flow-05.png)", "![Flow 6](img/pricing/flow-06.png)", "![Flow 7](img/pricing/flow-07.png)"]
       },
       {
         "name": "B2B Order Management",
+        "date": "July 2024",
         "description": "Redesign of web application to streamline order management and fulfillment processes.",
         "link": "https://www.brianprouty.com/bluonlive.html"
       },
       {
         "name": "Tech Support Platform",
+        "date": "May 2024",
         "description": "Mobile and web applications to deliver top-tier tech support for service workers.",
         "link": "https://www.brianprouty.com/basecamp.html"
       },
       {
         "name": "CPL Software",
+        "date": "February 2022",
         "description": "Designed a web application to expand the user base beyond internal companies, in addition to making the product more user-friendly.",
         "link": "https://www.brianprouty.com/ratic.html"
       },
       {
         "name": "Mobile App Ordering",
+        "date": "January 2024",
         "description": "Created an intuitive ordering process for a mobile application.",
         "link": "https://www.brianprouty.com/bluon2.html"
       }

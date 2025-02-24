@@ -434,3 +434,19 @@ button:disabled {
 .answer-text table tr:nth-child(2n) {
     background-color: #f6f8fa;
 }
+
+.answer-text img {
+    border-radius: .5rem;
+    cursor: zoom-in;
+    max-width: 12rem;
+}
+
+.answer-text img::before {
+    content: "\a";
+    white-space: pre;
+}
+
+.answer-text img::first-of-type {
+    border-radius: .5rem;
+    cursor: zoom-in;
+}
