@@ -89,60 +89,14 @@ async function askBrian() {
                             responseText += content;
                             answerText.innerHTML = marked.parse(responseText);
                             
-                            // Add lightbox functionality to images
-                            const images = answerText.querySelectorAll('img');
-                            images.forEach((img, index) => {
-                                img.onclick = () => {
-                                    const lightbox = document.createElement('div');
-                                    lightbox.className = 'lightbox';
-                                    lightbox.innerHTML = `
-                                        <div class="lightbox-overlay"></div>
-                                        <div class="lightbox-content">
-                                            <button class="lightbox-close">&times;</button>
-                                            <button class="lightbox-prev ${index === 0 ? 'hidden' : ''}">&lt;</button>
-                                            <img src="${img.src}" alt="${img.alt || ''}">
-                                            <button class="lightbox-next ${index === images.length - 1 ? 'hidden' : ''}">&gt;</button>
-                                        </div>
-                                    `;
-                                    
-                                    document.body.appendChild(lightbox);
-                                    
-                                    // Close button handler
-                                    lightbox.querySelector('.lightbox-close').onclick = () => {
-                                        document.body.removeChild(lightbox);
-                                    };
-                                    
-                                    // Overlay click handler
-                                    lightbox.querySelector('.lightbox-overlay').onclick = () => {
-                                        document.body.removeChild(lightbox);
-                                    };
-                                    
-                                    // Previous button handler
-                                    lightbox.querySelector('.lightbox-prev').onclick = () => {
-                                        if (index > 0) {
-                                            const newImg = images[index - 1];
-                                            lightbox.querySelector('img').src = newImg.src;
-                                            lightbox.querySelector('.lightbox-next').classList.remove('hidden');
-                                            if (index - 1 === 0) {
-                                                lightbox.querySelector('.lightbox-prev').classList.add('hidden');
-                                            }
-                                            index--;
-                                        }
-                                    };
-                                    
-                                    // Next button handler
-                                    lightbox.querySelector('.lightbox-next').onclick = () => {
-                                        if (index < images.length - 1) {
-                                            const newImg = images[index + 1];
-                                            lightbox.querySelector('img').src = newImg.src;
-                                            lightbox.querySelector('.lightbox-prev').classList.remove('hidden');
-                                            if (index + 1 === images.length - 1) {
-                                                lightbox.querySelector('.lightbox-next').classList.add('hidden');
-                                            }
-                                            index++;
-                                        }
-                                    };
-                                };
+                            // Add click handlers to all images in the response
+                            const images = answerText.getElementsByTagName('img');
+                            Array.from(images).forEach(img => {
+                                if (!img.hasAttribute('data-lightbox')) {
+                                    img.style.cursor = 'pointer';
+                                    img.setAttribute('data-lightbox', 'true');
+                                    img.addEventListener('click', () => openLightbox(img.src));
+                                }
                             });
                             
                             container.scrollTop = container.scrollHeight;
@@ -228,4 +182,87 @@ async function askBrian() {
         container.scrollTop = container.scrollHeight;
         toggleLoadingState(false);
     }
+}
+
+function createLightbox() {
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-nav prev">&lt;</button>
+            <img src="" alt="Lightbox image">
+            <button class="lightbox-nav next">&gt;</button>
+        </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    // Add event listeners
+    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.querySelector('.prev').addEventListener('click', showPrevImage);
+    lightbox.querySelector('.next').addEventListener('click', showNextImage);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    return lightbox;
+}
+
+let currentImageIndex = 0;
+let imagesArray = [];
+
+function openLightbox(imageSrc) {
+    let lightbox = document.getElementById('lightbox');
+    if (!lightbox) {
+        lightbox = createLightbox();
+    }
+
+    // Get all images in the conversation
+    const allImages = document.querySelectorAll('.answer-text img');
+    imagesArray = Array.from(allImages).map(img => img.src);
+    currentImageIndex = imagesArray.indexOf(imageSrc);
+
+    const lightboxImg = lightbox.querySelector('img');
+    lightboxImg.src = imageSrc;
+    
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    // Update navigation buttons visibility
+    updateNavButtons();
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function showPrevImage() {
+    if (currentImageIndex > 0) {
+        currentImageIndex--;
+        const lightboxImg = document.querySelector('.lightbox img');
+        lightboxImg.src = imagesArray[currentImageIndex];
+        updateNavButtons();
+    }
+}
+
+function showNextImage() {
+    if (currentImageIndex < imagesArray.length - 1) {
+        currentImageIndex++;
+        const lightboxImg = document.querySelector('.lightbox img');
+        lightboxImg.src = imagesArray[currentImageIndex];
+        updateNavButtons();
+    }
+}
+
+function updateNavButtons() {
+    const prevButton = document.querySelector('.lightbox .prev');
+    const nextButton = document.querySelector('.lightbox .next');
+    
+    prevButton.style.display = currentImageIndex === 0 ? 'none' : 'block';
+    nextButton.style.display = currentImageIndex === imagesArray.length - 1 ? 'none' : 'block';
 } 
