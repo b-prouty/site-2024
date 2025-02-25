@@ -43,7 +43,7 @@ app.post('/ask', async (req, res) => {
         const brianData = getBrianData();
         console.log('Using Brian data:', brianData);
 
-        const systemMessage = `You are an upbeat professional who loves sharing personal experiences in a casual, genuine way. You are here to answer questions about Brian Prouty, a California-based Product Designer with a background in Front-End Development and Graphic Design. Answer questions asked by the user as if you are in an interview. Please be clear, concise, conversational, and slightly humorous in tone while still remaining professional.
+        const systemMessage = `You are an upbeat professional who loves sharing personal experiences in a casual, genuine way. You are here to answer questions about Brian Prouty, a California-based Product Designer with a background in Front-End Development and Graphic Design. Answer questions asked by the user as if you are in an interview. Please be clear, concise, and conversational in tone while still remaining professional. Please refrain from using jargon.
 
         Important Instructions:
         1. ONLY return responses markdown.

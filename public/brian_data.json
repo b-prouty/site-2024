@@ -65,41 +65,41 @@
       "User Testing",
       "Prototyping"
     ],
-    "past_projects": [
+    "projects": [
       {
         "name": "Checkout Flow Improvements",
         "date": "September 2024",
         "description": "Reduced friction throughout checkout flows to drive higher conversion rates.",
         "link": "https://www.brianprouty.com/pricing.html",
-        "images": ["![Flow 1](img/pricing/flow-01.png)", "![Flow 2](img/pricing/flow-02.png)", "![Flow 3](img/pricing/flow-03.png)", "![Flow 4](img/pricing/flow-04.png)", "![Flow 5](img/pricing/flow-05.png)", "![Flow 6](img/pricing/flow-06.png)", "![Flow 7](img/pricing/flow-07.png)"]
+        "images": ["![Flow 1](img/pricing/flow-01.png)", "![Flow 2](img/pricing/flow-02.png)", "![Flow 3](img/pricing/flow-03.png)"]
       },
       {
         "name": "B2B Order Management",
         "date": "July 2024",
         "description": "Redesign of web application to streamline order management and fulfillment processes.",
         "link": "https://www.brianprouty.com/bluonlive.html",
-        "images": ["![Flow 1](img/bluonlive/flow-01.png)", "![Flow 2](img/bluonlive/flow-02.png)", "![Flow 3](img/bluonlive/flow-03.png)", "![Flow 4](img/bluonlive/flow-04.png)", "![Flow 5](img/bluonlive/flow-05.png)", "![Flow 6](img/bluonlive/flow-06.png)", "![Flow 7](img/bluonlive/flow-07.png)", "![Flow 8](img/bluonlive/flow-08.png)"]
+        "images": ["![Flow 1](img/bluonlive/flow-01.png)", "![Flow 2](img/bluonlive/flow-02.png)", "![Flow 3](img/bluonlive/flow-03.png)"]
       },
       {
         "name": "Tech Support Platform",
         "date": "May 2024",
         "description": "Mobile and web applications to deliver top-tier tech support for service workers.",
         "link": "https://www.brianprouty.com/basecamp.html",
-        "images":["![Flow 1](img/basecamp/flow-01.png)", "![Flow 2](img/basecamp/flow-02.png)", "![Flow 3](img/basecamp/flow-03.png)", "![Flow 4](img/basecamp/flow-04.png)", "![Flow 5](img/basecamp/flow-05.png)", "![Flow 6](img/basecamp/flow-06.png)", "![Flow 7](img/basecamp/flow-07.png)", "![Flow 8](img/basecamp/flow-08.png)"]
+        "images":["![Flow 1](img/basecamp/flow-01.png)", "![Flow 2](img/basecamp/flow-02.png)", "![Flow 3](img/basecamp/flow-03.png)"]
       },
       {
         "name": "CPL Software",
         "date": "February 2022",
         "description": "Designed a web application to expand the user base beyond internal companies, in addition to making the product more user-friendly.",
         "link": "https://www.brianprouty.com/ratic.html",
-        "images":["![Flow 1](img/ratic/flow-01.png)", "![Flow 2](img/ratic/flow-02.png)", "![Flow 3](img/ratic/flow-03.png)", "![Flow 4](img/ratic/flow-04.png)", "![Flow 5](img/ratic/flow-05.png)", "![Flow 6](img/ratic/flow-06.png)", "![Flow 7](img/ratic/flow-07.png)", "![Flow 8](img/ratic/flow-08.png)"]
+        "images":["![Flow 1](img/ratic/flow-01.png)", "![Flow 2](img/ratic/flow-02.png)", "![Flow 3](img/ratic/flow-03.png)"]
       },
       {
         "name": "Mobile App Ordering",
         "date": "January 2024",
         "description": "Created an intuitive ordering process for a mobile application.",
         "link": "https://www.brianprouty.com/bluon2.html",
-        "images":["![Flow 1](img/B2/flow-01.png)", "![Flow 2](img/B2/flow-02.png)", "![Flow 3](img/B2/flow-03.png)", "![Flow 4](img/B2/flow-04.png)", "![Flow 5](img/B2/flow-05.png)", "![Flow 6](img/B2/flow-06.png)", "![Flow 7](img/B2/flow-07.png)", "![Flow 8](img/B2/flow-08.png)"]
+        "images":["![Flow 1](img/B2/flow-01.png)", "![Flow 2](img/B2/flow-02.png)", "![Flow 3](img/B2/flow-03.png)"]
       }
     ]
   },
