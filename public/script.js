@@ -88,6 +88,63 @@ async function askBrian() {
                         if (content) {
                             responseText += content;
                             answerText.innerHTML = marked.parse(responseText);
+                            
+                            // Add lightbox functionality to images
+                            const images = answerText.querySelectorAll('img');
+                            images.forEach((img, index) => {
+                                img.onclick = () => {
+                                    const lightbox = document.createElement('div');
+                                    lightbox.className = 'lightbox';
+                                    lightbox.innerHTML = `
+                                        <div class="lightbox-overlay"></div>
+                                        <div class="lightbox-content">
+                                            <button class="lightbox-close">&times;</button>
+                                            <button class="lightbox-prev ${index === 0 ? 'hidden' : ''}">&lt;</button>
+                                            <img src="${img.src}" alt="${img.alt || ''}">
+                                            <button class="lightbox-next ${index === images.length - 1 ? 'hidden' : ''}">&gt;</button>
+                                        </div>
+                                    `;
+                                    
+                                    document.body.appendChild(lightbox);
+                                    
+                                    // Close button handler
+                                    lightbox.querySelector('.lightbox-close').onclick = () => {
+                                        document.body.removeChild(lightbox);
+                                    };
+                                    
+                                    // Overlay click handler
+                                    lightbox.querySelector('.lightbox-overlay').onclick = () => {
+                                        document.body.removeChild(lightbox);
+                                    };
+                                    
+                                    // Previous button handler
+                                    lightbox.querySelector('.lightbox-prev').onclick = () => {
+                                        if (index > 0) {
+                                            const newImg = images[index - 1];
+                                            lightbox.querySelector('img').src = newImg.src;
+                                            lightbox.querySelector('.lightbox-next').classList.remove('hidden');
+                                            if (index - 1 === 0) {
+                                                lightbox.querySelector('.lightbox-prev').classList.add('hidden');
+                                            }
+                                            index--;
+                                        }
+                                    };
+                                    
+                                    // Next button handler
+                                    lightbox.querySelector('.lightbox-next').onclick = () => {
+                                        if (index < images.length - 1) {
+                                            const newImg = images[index + 1];
+                                            lightbox.querySelector('img').src = newImg.src;
+                                            lightbox.querySelector('.lightbox-prev').classList.remove('hidden');
+                                            if (index + 1 === images.length - 1) {
+                                                lightbox.querySelector('.lightbox-next').classList.add('hidden');
+                                            }
+                                            index++;
+                                        }
+                                    };
+                                };
+                            });
+                            
                             container.scrollTop = container.scrollHeight;
                         }
                     } catch (e) {
