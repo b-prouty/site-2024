@@ -69,7 +69,7 @@ app.post('/ask', async (req, res) => {
             messages: messages,
             stream: true,
             temperature: 0.7,
-            max_tokens: 500
+            max_tokens: 1000
         });
 
         for await (const chunk of stream) {
