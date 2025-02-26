@@ -92,20 +92,34 @@ async function askBrian() {
                             // Add click handlers to all images in the response
                             const images = answerText.getElementsByTagName('img');
                             if (images.length > 0) {
-                                const imgContainer = document.createElement('div');
-                                imgContainer.className = 'sample-img-container';
+                                let currentContainer = null;
+                                let lastNode = null;
                                 
                                 Array.from(images).forEach(img => {
                                     if (!img.hasAttribute('data-lightbox')) {
+                                        // Check if this image is consecutive with the last one
+                                        const isConsecutive = lastNode && 
+                                            (lastNode.nextSibling === img || 
+                                             (lastNode.nextSibling && lastNode.nextSibling.nodeType === Node.TEXT_NODE && 
+                                              lastNode.nextSibling.textContent.trim() === '' && 
+                                              lastNode.nextSibling.nextSibling === img));
+                                        
                                         img.setAttribute('data-lightbox', 'true');
                                         img.addEventListener('click', () => openLightbox(img.src));
+                                        
+                                        // If not consecutive or no container exists, create new container
+                                        if (!isConsecutive || !currentContainer) {
+                                            currentContainer = document.createElement('div');
+                                            currentContainer.className = 'sample-img-container';
+                                            img.parentNode.insertBefore(currentContainer, img);
+                                        }
+                                        
                                         // Move image to container
                                         img.parentNode.removeChild(img);
-                                        imgContainer.appendChild(img);
+                                        currentContainer.appendChild(img);
+                                        lastNode = img;
                                     }
                                 });
-                                
-                                answerText.appendChild(imgContainer);
                             }
                             
                             container.scrollTop = container.scrollHeight;
