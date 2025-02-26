@@ -472,6 +472,18 @@ button:disabled {
     cursor: zoom-in;
 }
 
+.sample-img-container {
+    display: flex;
+    gap: .5rem;
+    margin: 1rem 0;
+}
+
+.sample-img-container img {
+    border-radius: .5rem;
+    cursor: zoom-in;
+    border: 1px solid lightgray;
+}
+
 
 
 .lightbox {
