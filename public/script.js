@@ -87,44 +87,27 @@ async function askBrian() {
                         const { content } = JSON.parse(data);
                         if (content) {
                             responseText += content;
-                            answerText.innerHTML = marked.parse(responseText);
                             
-                            // Process all images in the response
-                            const images = Array.from(answerText.getElementsByTagName('img'));
-                            let i = 0;
-                            
-                            while (i < images.length) {
-                                const img = images[i];
-                                if (!img.hasAttribute('data-lightbox')) {
-                                    // Create a new container
-                                    const container = document.createElement('div');
-                                    container.className = 'sample-img-container';
-                                    
-                                    // Insert container before the current image
-                                    img.parentNode.insertBefore(container, img);
-                                    
-                                    // Add the current image and any consecutive images
-                                    let currentImg = img;
-                                    while (currentImg) {
-                                        currentImg.setAttribute('data-lightbox', 'true');
-                                        currentImg.addEventListener('click', () => openLightbox(currentImg.src));
-                                        
-                                        // Move image to container
-                                        const nextImg = currentImg.nextElementSibling;
-                                        currentImg.parentNode.removeChild(currentImg);
-                                        container.appendChild(currentImg);
-                                        
-                                        // Check if next element is an image
-                                        if (nextImg && nextImg.tagName.toLowerCase() === 'img') {
-                                            currentImg = nextImg;
-                                            i++; // Skip this image in the outer loop since we're handling it now
-                                        } else {
-                                            currentImg = null;
-                                        }
-                                    }
+                            // Pre-process markdown to group consecutive images
+                            const processedMarkdown = responseText.replace(
+                                /(?:!\[.*?\]\(.*?\)[\n\r]*)+/g,
+                                match => {
+                                    // Remove any empty lines between images
+                                    const images = match.trim().split(/[\n\r]+/).join('\n');
+                                    return `<div class="sample-img-container">\n${images}\n</div>`;
                                 }
-                                i++;
-                            }
+                            );
+                            
+                            answerText.innerHTML = marked.parse(processedMarkdown);
+                            
+                            // Add click handlers to all images
+                            const images = answerText.getElementsByTagName('img');
+                            Array.from(images).forEach(img => {
+                                if (!img.hasAttribute('data-lightbox')) {
+                                    img.setAttribute('data-lightbox', 'true');
+                                    img.addEventListener('click', () => openLightbox(img.src));
+                                }
+                            });
                             
                             container.scrollTop = container.scrollHeight;
                         }
