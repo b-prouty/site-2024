@@ -87,30 +87,66 @@ async function askBrian() {
                         const { content } = JSON.parse(data);
                         if (content) {
                             responseText += content;
+                            answerText.innerHTML = marked.parse(responseText);
                             
-                            // Pre-process markdown to group consecutive images
-                            const processedMarkdown = responseText.replace(
-                                /(?:!\[.*?\]\(.*?\)[\n\r]*)+/g,
-                                match => {
-                                    // Parse each image markdown separately to avoid <p> tags
-                                    const images = match.trim().split(/[\n\r]+/)
-                                        .map(img => marked.parse(img.trim()))
-                                        .map(html => html.replace(/<\/?p>/g, '')) // Remove <p> tags
-                                        .join('\n');
-                                    return `<div class="sample-img-container">${images}</div>`;
-                                }
-                            );
+                            // Process images
+                            const images = Array.from(answerText.getElementsByTagName('img'));
+                            let currentGroup = [];
                             
-                            answerText.innerHTML = marked.parse(processedMarkdown);
-                            
-                            // Add click handlers to all images
-                            const images = answerText.getElementsByTagName('img');
-                            Array.from(images).forEach(img => {
+                            for (let i = 0; i < images.length; i++) {
+                                const img = images[i];
+                                
+                                // Add lightbox attributes
                                 if (!img.hasAttribute('data-lightbox')) {
                                     img.setAttribute('data-lightbox', 'true');
                                     img.addEventListener('click', () => openLightbox(img.src));
                                 }
-                            });
+                                
+                                // Check if this image is consecutive with the previous one
+                                const isConsecutive = currentGroup.length > 0 && 
+                                    Array.from(img.parentNode.childNodes)
+                                        .filter(node => {
+                                            // Filter out empty text nodes
+                                            return !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim());
+                                        })
+                                        .some((node, index, array) => {
+                                            const prevIndex = array.indexOf(currentGroup[currentGroup.length - 1]);
+                                            return prevIndex !== -1 && index === prevIndex + 1;
+                                        });
+                                
+                                if (isConsecutive) {
+                                    currentGroup.push(img);
+                                } else {
+                                    // If we have a previous group, wrap it
+                                    if (currentGroup.length > 1) {
+                                        const container = document.createElement('div');
+                                        container.className = 'sample-img-container';
+                                        currentGroup[0].parentNode.insertBefore(container, currentGroup[0]);
+                                        currentGroup.forEach(groupImg => {
+                                            // Remove from parent (usually a <p> tag)
+                                            if (groupImg.parentNode.tagName === 'P') {
+                                                groupImg.parentNode.removeChild(groupImg);
+                                            }
+                                            container.appendChild(groupImg);
+                                        });
+                                    }
+                                    // Start new group with current image
+                                    currentGroup = [img];
+                                }
+                            }
+                            
+                            // Handle the last group
+                            if (currentGroup.length > 1) {
+                                const container = document.createElement('div');
+                                container.className = 'sample-img-container';
+                                currentGroup[0].parentNode.insertBefore(container, currentGroup[0]);
+                                currentGroup.forEach(groupImg => {
+                                    if (groupImg.parentNode.tagName === 'P') {
+                                        groupImg.parentNode.removeChild(groupImg);
+                                    }
+                                    container.appendChild(groupImg);
+                                });
+                            }
                             
                             container.scrollTop = container.scrollHeight;
                         }
