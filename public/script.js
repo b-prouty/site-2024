@@ -89,37 +89,41 @@ async function askBrian() {
                             responseText += content;
                             answerText.innerHTML = marked.parse(responseText);
                             
-                            // Add click handlers to all images in the response
-                            const images = answerText.getElementsByTagName('img');
-                            if (images.length > 0) {
-                                let currentContainer = null;
-                                let lastImage = null;
-                                
-                                Array.from(images).forEach(img => {
-                                    if (!img.hasAttribute('data-lightbox')) {
-                                        img.setAttribute('data-lightbox', 'true');
-                                        img.addEventListener('click', () => openLightbox(img.src));
+                            // Process all images in the response
+                            const images = Array.from(answerText.getElementsByTagName('img'));
+                            let i = 0;
+                            
+                            while (i < images.length) {
+                                const img = images[i];
+                                if (!img.hasAttribute('data-lightbox')) {
+                                    // Create a new container
+                                    const container = document.createElement('div');
+                                    container.className = 'sample-img-container';
+                                    
+                                    // Insert container before the current image
+                                    img.parentNode.insertBefore(container, img);
+                                    
+                                    // Add the current image and any consecutive images
+                                    let currentImg = img;
+                                    while (currentImg) {
+                                        currentImg.setAttribute('data-lightbox', 'true');
+                                        currentImg.addEventListener('click', () => openLightbox(currentImg.src));
                                         
-                                        // Check if this image is consecutive with the last one
-                                        const isConsecutive = lastImage && 
-                                            (lastImage.nextSibling === img || 
-                                             (lastImage.nextSibling && lastImage.nextSibling.nodeType === Node.TEXT_NODE && 
-                                              lastImage.nextSibling.textContent.trim() === '' && 
-                                              lastImage.nextSibling.nextSibling === img));
+                                        // Move image to container
+                                        const nextImg = currentImg.nextElementSibling;
+                                        currentImg.parentNode.removeChild(currentImg);
+                                        container.appendChild(currentImg);
                                         
-                                        // Create new container if not consecutive or no container exists
-                                        if (!isConsecutive) {
-                                            currentContainer = document.createElement('div');
-                                            currentContainer.className = 'sample-img-container';
-                                            img.parentNode.insertBefore(currentContainer, img);
+                                        // Check if next element is an image
+                                        if (nextImg && nextImg.tagName.toLowerCase() === 'img') {
+                                            currentImg = nextImg;
+                                            i++; // Skip this image in the outer loop since we're handling it now
+                                        } else {
+                                            currentImg = null;
                                         }
-                                        
-                                        // Move image to current container
-                                        img.parentNode.removeChild(img);
-                                        currentContainer.appendChild(img);
-                                        lastImage = img;
                                     }
-                                });
+                                }
+                                i++;
                             }
                             
                             container.scrollTop = container.scrollHeight;
