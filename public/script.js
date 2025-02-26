@@ -91,13 +91,22 @@ async function askBrian() {
                             
                             // Add click handlers to all images in the response
                             const images = answerText.getElementsByTagName('img');
-                            Array.from(images).forEach(img => {
-                                if (!img.hasAttribute('data-lightbox')) {
-                                    img.style.cursor = 'pointer';
-                                    img.setAttribute('data-lightbox', 'true');
-                                    img.addEventListener('click', () => openLightbox(img.src));
-                                }
-                            });
+                            if (images.length > 0) {
+                                const imgContainer = document.createElement('div');
+                                imgContainer.className = 'sample-img-container';
+                                
+                                Array.from(images).forEach(img => {
+                                    if (!img.hasAttribute('data-lightbox')) {
+                                        img.setAttribute('data-lightbox', 'true');
+                                        img.addEventListener('click', () => openLightbox(img.src));
+                                        // Move image to container
+                                        img.parentNode.removeChild(img);
+                                        imgContainer.appendChild(img);
+                                    }
+                                });
+                                
+                                answerText.appendChild(imgContainer);
+                            }
                             
                             container.scrollTop = container.scrollHeight;
                         }
