@@ -92,9 +92,9 @@ async function askBrian() {
                             const processedMarkdown = responseText.replace(
                                 /(?:!\[.*?\]\(.*?\)[\n\r]*)+/g,
                                 match => {
-                                    // Remove any empty lines between images
-                                    const images = match.trim().split(/[\n\r]+/).join('\n');
-                                    return `<div class="sample-img-container">\n${images}\n</div>`;
+                                    // Parse the markdown images within the container
+                                    const parsedImages = marked.parse(match.trim());
+                                    return `<div class="sample-img-container">${parsedImages}</div>`;
                                 }
                             );
                             
