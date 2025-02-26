@@ -53,7 +53,7 @@ h1 {
     margin-top: 2rem;
 }
 
-#top-content.chat-active {
+#top-content.chat-active h1{
     font-size: 2rem;
     line-height: 100%;
     margin: auto;
