@@ -93,31 +93,31 @@ async function askBrian() {
                             const images = answerText.getElementsByTagName('img');
                             if (images.length > 0) {
                                 let currentContainer = null;
-                                let lastNode = null;
+                                let lastImage = null;
                                 
                                 Array.from(images).forEach(img => {
                                     if (!img.hasAttribute('data-lightbox')) {
-                                        // Check if this image is consecutive with the last one
-                                        const isConsecutive = lastNode && 
-                                            (lastNode.nextSibling === img || 
-                                             (lastNode.nextSibling && lastNode.nextSibling.nodeType === Node.TEXT_NODE && 
-                                              lastNode.nextSibling.textContent.trim() === '' && 
-                                              lastNode.nextSibling.nextSibling === img));
-                                        
                                         img.setAttribute('data-lightbox', 'true');
                                         img.addEventListener('click', () => openLightbox(img.src));
                                         
-                                        // If not consecutive or no container exists, create new container
-                                        if (!isConsecutive || !currentContainer) {
+                                        // Check if this image is consecutive with the last one
+                                        const isConsecutive = lastImage && 
+                                            (lastImage.nextSibling === img || 
+                                             (lastImage.nextSibling && lastImage.nextSibling.nodeType === Node.TEXT_NODE && 
+                                              lastImage.nextSibling.textContent.trim() === '' && 
+                                              lastImage.nextSibling.nextSibling === img));
+                                        
+                                        // Create new container if not consecutive or no container exists
+                                        if (!isConsecutive) {
                                             currentContainer = document.createElement('div');
                                             currentContainer.className = 'sample-img-container';
                                             img.parentNode.insertBefore(currentContainer, img);
                                         }
                                         
-                                        // Move image to container
+                                        // Move image to current container
                                         img.parentNode.removeChild(img);
                                         currentContainer.appendChild(img);
-                                        lastNode = img;
+                                        lastImage = img;
                                     }
                                 });
                             }
