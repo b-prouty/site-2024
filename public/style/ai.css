@@ -43,7 +43,7 @@ h1 {
     margin-bottom: 20px;
     text-align: center;
     text-transform: none;
-    transition: font-size 1000ms ease-in, line-height 1000ms ease-in, margin 1000ms ease-in;
+    transition: font-size 500ms ease-in, line-height 500ms ease-in, margin 500ms ease-in;
 }
 
 #top-content h1 {
