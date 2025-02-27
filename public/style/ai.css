@@ -241,17 +241,18 @@ h1 {
 
 #askButton {
     position: absolute;
-    right: 3rem;
+    right: 1rem;
     bottom: 12px;
     width: auto;
     height: 48px;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     border: none;
     border-radius: 5rem;
     font-size: 16px;
     cursor: pointer;
     font-weight: 100;
-    color: greenyellow;
+    color: white;
+    transition: all 0.5s ease;
     background: linear-gradient(
         45deg,
         #000 25%,
@@ -351,7 +352,8 @@ button:disabled {
     }
 
     #askButton {
-        right: 1rem;
+        right: 3rem;
+        padding: 1rem 2rem;
     }
 }
 
