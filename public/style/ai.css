@@ -492,6 +492,8 @@ button:disabled {
     display: flex;
     gap: .5rem;
     margin: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .sample-img-container img {
