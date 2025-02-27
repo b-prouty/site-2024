@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #F2EFEB;
+    justify-content: center;
 }
 
 .container {
@@ -305,7 +306,7 @@ button:disabled {
     background-color: #000;
     /* border: 1px solid #209320; */
     padding: .5rem .875rem;
-    border-radius: .5rem;
+    border-radius: 2rem;
     cursor: pointer;
     font-size: 0.75rem;
     text-align: center;
