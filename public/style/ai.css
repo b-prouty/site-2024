@@ -13,6 +13,10 @@ body {
     justify-content: center;
 }
 
+body.chat-active {
+    justify-content: initial;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -41,7 +45,6 @@ body {
     height: 64px;
     transition: height 500ms ease-in;
     border-bottom: 1px solid #c9c9c9;
-    height: calc(100vh - 150px);
 }
 
 h1 {
@@ -316,13 +319,13 @@ button:disabled {
     left: initial;
     line-height: .875rem;
     height: auto;
-    color: yellowgreen;
+    color: greenyellow;
     transform: translateY(0);
     letter-spacing: .25px;
 }
 
 .chip:hover {
-    background-color: yellowgreen;
+    background-color: greenyellow;
     color: #000;
 }
 
