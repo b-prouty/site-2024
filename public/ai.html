@@ -74,9 +74,13 @@
     function toggleLoadingState(loading) {
       const button = document.getElementById('askButton');
       const thinking = document.getElementById('thinking');
+      const questionInput = document.getElementById('question');
       button.disabled = loading;
       button.innerHTML = loading ? '<div class="spinner"></div>' : 'Ask';
       thinking.style.bottom = loading ? '175px' : '-100px';
+      if (!loading) {
+        questionInput.blur();
+      }
     }
 
     function askAbout(topic) {
