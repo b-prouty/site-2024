@@ -24,10 +24,10 @@ async function askBrian() {
         return;
     } else {
         toggleLoadingState(true);
-        if(!topContent.classList.contains('chat-active')) {
-            // Add chat-active classes
+        if(topContent.style.opacity !== '0%') {
+            topContent.style.opacity = '0%';
+            topContent.classList.add('chat-active')
             container.classList.add('chat-active');
-            topContent.classList.add('chat-active');
             chipsContainer.classList.add('chat-active');
             inputContainer.classList.add('chat-active');
             mainContainer.classList.add('chat-active');

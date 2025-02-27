@@ -17,6 +17,34 @@ body.chat-active {
     justify-content: initial;
 }
 
+.ai-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #F2EFEB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.ai-nav-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.ai-nav-group a {
+    text-decoration: none;
+    color: #262421;
+    transition: color 0.3s ease, letter-spacing 1s ease;
+}
+
+.ai-nav-group a:hover {
+    color: #209320;
+    letter-spacing: 0.1rem;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -57,7 +85,7 @@ h1 {
 #top-content h1 {
     font-size: 5rem;
     line-height: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     margin-top: -1.5rem;
 }
 
@@ -83,10 +111,9 @@ h1 {
 }
 
 #top-content h3 {
-    margin-top: 1.2rem;
-    font-size: 1rem;
+    padding-bottom: 3rem;
+    font-size: 1.25rem;
     font-weight: 300;
-    max-width: 625px;
 }
 
 #top-content h3 span {
@@ -394,12 +421,11 @@ button:disabled {
 
     #top-content h1 {
         font-size: 3.5rem;
-        line-height: 150%;
+        line-height: 100%;
         margin: 0;
         margin-bottom: 2rem;
     }
 }
-
 
 
 
