@@ -19,7 +19,7 @@ async function askBrian() {
     const mainContainer = document.querySelector('#container');
     const body = document.querySelector('body');
 
-    if (!question) {
+    if (!question || question.trim() === '') {
         alert('Please enter a question.');
         return;
     } else {
