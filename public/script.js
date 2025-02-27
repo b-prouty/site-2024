@@ -1,5 +1,5 @@
 async function askBrian() {
-    toggleLoadingState(true);
+    
     const question = document.getElementById('question').value;
     const container = document.querySelector('#conversation-container');
     const topContent = document.querySelector('#top-content');
@@ -12,7 +12,7 @@ async function askBrian() {
         alert('Please enter a question.');
         return;
     } else {
-        
+        toggleLoadingState(true);
         if(!topContent.classList.contains('chat-active')) {
             // Add chat-active classes
             container.classList.add('chat-active');
