@@ -193,11 +193,22 @@ async function askBrian() {
             sessionInput.value = sessionId;
             form.appendChild(sessionInput);
 
-            // Add timestamp to the form data
+            // Format timestamp as MM/DD/YYYY HH:MM:SS
+            const now = new Date();
+            const formattedTimestamp = now.toLocaleString('en-US', {
+                month: '2-digit',
+                day: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            }).replace(',', '');
+
             const timestampInput = document.createElement('input');
             timestampInput.type = 'hidden';
             timestampInput.name = 'timestamp';
-            timestampInput.value = new Date().toISOString();
+            timestampInput.value = formattedTimestamp;
             form.appendChild(timestampInput);
 
             // Existing form inputs
