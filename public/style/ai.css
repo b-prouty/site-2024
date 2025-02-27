@@ -239,7 +239,7 @@ h1 {
     line-height: 150%;
 }
 
-button {
+#askButton {
     position: absolute;
     right: 1rem;
     bottom: 12px;
@@ -247,16 +247,32 @@ button {
     height: 48px;
     padding: 1rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 5rem;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     font-weight: 100;
-    background-color: #209320;
-    color: #F2EFEB;
+    background-color: greenyellow;
+    color: #000;
     transition: background-color 0.5s ease;
     top: 50%;
     transform: translateY(-50%);
+    background: linear-gradient(greenyellow, greenyellow) padding-box,
+                linear-gradient(90deg, #000 0%, #eee 100%) border-box;
+    border: 2px solid transparent;
+    animation: gradientBorder 3s ease infinite;
+}
+
+@keyframes gradientBorder {
+    0% {
+        border-image: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) 1;
+    }
+    50% {
+        border-image: linear-gradient(270deg, #00C9FF 0%, #92FE9D 100%) 1;
+    }
+    100% {
+        border-image: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) 1;
+    }
 }
 
 button:hover {
