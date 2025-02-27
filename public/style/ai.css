@@ -239,6 +239,13 @@ h1 {
     line-height: 150%;
 }
 
+#question:focus,
+#question:active {
+    outline: none;
+    border: 1px solid greenyellow;
+    box-shadow: 0 0 .5rem #8ed521;
+}
+
 #askButton {
     position: absolute;
     right: 1rem;
