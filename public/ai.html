@@ -11,11 +11,10 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="container">
     <div id="top-content">
-        <p class="overline">Welcome to</p>
-        <h1>Brian Prouty A.I. </h1>
-        <h2>An A.I. based portfolio <em style="color: #209320;">exclusively</em> trained on info about Brian Prouty</h2>
+        <h1>Ask about Brian Prouty</h1>
+        <h2>This A.I. based portfolio is <em style="color: #209320;">exclusively</em> trained on Brian</h2>
         <h3>Brian is a California based Product Designer with a background in Front-End Development and Graphic Design. Please ask me anything about Brian.</h3>
     </div>
     <div id="conversation-container">
@@ -39,21 +38,22 @@
         </div>
     </div>
   </div>
-  <div class="input-container">
+  <div class="input-container" id="input-container">
     <div class="textarea-wrapper">
+        <div class="prompts">
+            <p class="chips-title">Ask about Brian's:</p>
+            <div id="chips-container" class="chip-container">
+                <button class="chip" onclick="askAbout('Recent Projects')">Recent Projects</button>
+                <button class="chip" onclick="askAbout('Personality')">Personality</button>
+                <button class="chip" onclick="askAbout('Design Process')">Design Process</button>
+                <button class="chip" onclick="askAbout('Leadership Style')">Leadership Style</button>
+                <!-- <button class="chip" onclick="askAbout('Research Methods')">Research Methods</button>
+                <button class="chip" onclick="askAbout('Collaboration Approach')">Collaboration Approach</button> -->
+        </div>
       <textarea id="question" placeholder="Or type your question here..."></textarea>
       <button onclick="askBrian()" id="askButton">Ask</button>
     </div>
-    <div class="prompts">
-        <p class="chips-title">Ask about Brian's:</p>
-        <div id="chips-container" class="chip-container">
-            <button class="chip" onclick="askAbout('Recent Projects')">Recent Projects</button>
-            <button class="chip" onclick="askAbout('Personality')">Personality</button>
-            <button class="chip" onclick="askAbout('Design Process')">Design Process</button>
-            <button class="chip" onclick="askAbout('Leadership Style')">Leadership Style</button>
-            <!-- <button class="chip" onclick="askAbout('Research Methods')">Research Methods</button>
-            <button class="chip" onclick="askAbout('Collaboration Approach')">Collaboration Approach</button> -->
-    </div>
+    
   </div>
   
   <script>

@@ -13,7 +13,6 @@ body {
 }
 
 .container {
-    flex: 1;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -22,13 +21,17 @@ body {
     width: 100%;
 }
 
+.container.chat-active {
+   flex: 1;
+}
+
 #top-content {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 150px);
+    /* height: calc(100vh - 150px); */
     transition: height 500ms ease-in;
 }
 
@@ -37,6 +40,7 @@ body {
     height: 64px;
     transition: height 500ms ease-in;
     border-bottom: 1px solid #c9c9c9;
+    height: calc(100vh - 150px);
 }
 
 h1 {
@@ -47,10 +51,10 @@ h1 {
 }
 
 #top-content h1 {
-    font-size: 14rem;
-    line-height: 8rem;
-    margin-bottom: 7rem;
-    margin-top: 2rem;
+    font-size: 5rem;
+    line-height: 100%;
+    margin-bottom: 4rem;
+    margin-top: -1.5rem;
 }
 
 #top-content.chat-active h1{
@@ -192,7 +196,8 @@ h1 {
 }
 
 .input-container {
-    position: fixed;
+    position: relative;
+    align-items: center;
     bottom: 0;
     left: 0;
     right: 0;
@@ -202,9 +207,14 @@ h1 {
     gap: 0;
 }
 
+.input-container.chat-active {
+    position: fixed;
+}
+
 .textarea-wrapper {
     position: relative;
     width: 100%;
+    max-width: 900px;
 }
 
 #question {
@@ -213,7 +223,7 @@ h1 {
     padding: 12px;
     padding-right: 5rem;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 1rem;
     resize: none;
     font-size: 16px;
     font-family: Helvetica;
@@ -277,7 +287,7 @@ button:disabled {
     padding: .5rem 2rem;
     align-items: baseline;
     justify-content: center;
-    border-top: 1px solid #c9c9c9;
+    /* border-top: 1px solid #c9c9c9; */
 }
 
 .chip-container {
@@ -292,27 +302,27 @@ button:disabled {
 } */
 
 .chip {
-    background-color: #F2EFEB;
-    border: 1px solid #209320;
+    background-color: #000;
+    /* border: 1px solid #209320; */
     padding: .5rem .875rem;
     border-radius: .5rem;
     cursor: pointer;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     text-align: center;
-    transition: background-color 0.5s ease, border-color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
     position: initial;
     top: initial;
     left: initial;
     line-height: .875rem;
     height: auto;
-    color: #209320;
+    color: yellowgreen;
     transform: translateY(0);
+    letter-spacing: .25px;
 }
 
 .chip:hover {
-    background-color: #262421;
-    color: #F2EFEB;
-    border-color: #262421;
+    background-color: yellowgreen;
+    color: #000;
 }
 
 .chips-title {

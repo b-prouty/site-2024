@@ -4,6 +4,8 @@ async function askBrian() {
     const container = document.querySelector('#conversation-container');
     const topContent = document.querySelector('#top-content');
     const chipsContainer = document.querySelector('#chips-container');
+    const inputContainer = document.querySelector('#input-container');
+    const mainContainer = document.querySelector('#container');
 
     if (!question) {
         alert('Please enter a question.');
@@ -15,6 +17,8 @@ async function askBrian() {
             container.classList.add('chat-active');
             topContent.classList.add('chat-active');
             chipsContainer.classList.add('chat-active');
+            inputContainer.classList.add('chat-active');
+            mainContainer.classList.add('chat-active');
         }
 
         // Create new conversation element
