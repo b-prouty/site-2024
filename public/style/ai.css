@@ -241,37 +241,47 @@ h1 {
 
 #askButton {
     position: absolute;
-    right: 1rem;
+    right: 3rem;
     bottom: 12px;
     width: auto;
     height: 48px;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border: none;
     border-radius: 5rem;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     font-weight: 100;
-    background-color: greenyellow;
+    background: greenyellow;
     color: #000;
     transition: background-color 0.5s ease;
     top: 50%;
     transform: translateY(-50%);
-    background: linear-gradient(greenyellow, greenyellow) padding-box,
-                linear-gradient(90deg, #000 0%, #eee 100%) border-box;
-    border: 2px solid transparent;
+    position: relative;
+}
+
+#askButton::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, #000 0%, #eee 100%);
+    border-radius: 5rem;
+    z-index: -1;
     animation: gradientBorder 3s ease infinite;
 }
 
 @keyframes gradientBorder {
     0% {
-        border-image: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) 1;
+        background: linear-gradient(90deg, #000 0%, #eee 100%);
     }
     50% {
-        border-image: linear-gradient(270deg, #00C9FF 0%, #92FE9D 100%) 1;
+        background: linear-gradient(270deg, #000 0%, #eee 100%);
     }
     100% {
-        border-image: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) 1;
+        background: linear-gradient(90deg, #000 0%, #eee 100%);
     }
 }
 
