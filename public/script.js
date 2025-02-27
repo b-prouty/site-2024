@@ -1,4 +1,15 @@
+function generateSessionId() {
+    if (!localStorage.getItem('sessionId')) {
+        const timestamp = new Date().getTime();
+        const random = Math.random().toString(36).substring(2, 15);
+        const sessionId = `${timestamp}-${random}`;
+        localStorage.setItem('sessionId', sessionId);
+    }
+    return localStorage.getItem('sessionId');
+}
+
 async function askBrian() {
+    const sessionId = generateSessionId();
     
     const question = document.getElementById('question').value;
     const container = document.querySelector('#conversation-container');
@@ -167,16 +178,29 @@ async function askBrian() {
 
         // Send data to Google Sheets
         try {
-            const deploymentUrl = 'https://script.google.com/macros/s/AKfycbwjVfor4yeAWBEE3mr1Zin6W9_6iMTOtG20qevK2Ca5DeyzoUYg8gargH3R_YP5r_Oo/exec';
+            const deploymentUrl = 'https://script.google.com/macros/s/AKfycbykoBDjHEuJSEVe-DJaYzYx75EoRoSFbAzTx_DPhJWV77UAF58Oxxe56NVXW7VBCYgp/exec';
             
-            // Create a hidden form
             const form = document.createElement('form');
             form.method = 'POST';
             form.action = deploymentUrl;
             form.target = 'hidden-iframe';
             form.style.display = 'none';
 
-            // Add the data as hidden inputs
+            // Add sessionId to the form data
+            const sessionInput = document.createElement('input');
+            sessionInput.type = 'hidden';
+            sessionInput.name = 'sessionId';
+            sessionInput.value = sessionId;
+            form.appendChild(sessionInput);
+
+            // Add timestamp to the form data
+            const timestampInput = document.createElement('input');
+            timestampInput.type = 'hidden';
+            timestampInput.name = 'timestamp';
+            timestampInput.value = new Date().toISOString();
+            form.appendChild(timestampInput);
+
+            // Existing form inputs
             const questionInput = document.createElement('input');
             questionInput.type = 'hidden';
             questionInput.name = 'question';
