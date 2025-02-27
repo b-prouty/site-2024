@@ -6,7 +6,7 @@ async function askBrian() {
     const chipsContainer = document.querySelector('#chips-container');
     const inputContainer = document.querySelector('#input-container');
     const mainContainer = document.querySelector('#container');
-    const body = document.querySelector('body')[0];
+    const body = document.querySelector('body');
 
     if (!question) {
         alert('Please enter a question.');
