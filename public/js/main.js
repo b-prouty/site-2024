@@ -69,5 +69,16 @@ window.onpageshow = function () {
     // }, 1000);
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        // Prevent scrolling when menu is open
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    });
+});
 
 
