@@ -461,12 +461,12 @@ button:disabled {
     }
 
     #top-content {
-        padding-top: 3rem
+        padding-top: 1rem
     }
 
-    #top-content h3 {
+    /* #top-content h3 {
         display: none;
-    }
+    } */
 
     #conversation-container.chat-active {
         height: calc(100vh - 200px);
