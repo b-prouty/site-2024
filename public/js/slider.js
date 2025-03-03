@@ -1,7 +1,7 @@
 const swiper = new Swiper('.swiper', {
   slidesPerView: 'auto', 
   spaceBetween: 16, // Space between slides
-  loop: true, // Enable looping
+  loop: false, // Disable looping
   speed: 500, // Speed of the animation (lower is faster)
   effect: 'coverflow',
 
@@ -14,10 +14,11 @@ const swiper = new Swiper('.swiper', {
     el: ".swiper-pagination",
   },
 
-  autoplay: {
-      delay: 5000, // Continuous scrolling
-      disableOnInteraction: false, // Keep autoplay even on interaction
-  },
+  autoplay: false,
+  // autoplay: {
+  //     delay: 5000, // Continuous scrolling
+  //     disableOnInteraction: false, // Keep autoplay even on interaction
+  // },
 
   //freeMode: true, // Enable free mode for smooth scrolling
   });
