@@ -106,6 +106,19 @@ async function askBrian() {
                             responseText += content;
                             answerText.innerHTML = marked.parse(responseText);
                             
+                            // Add New Chat button after the response
+                            const newChatButton = document.createElement('button');
+                            newChatButton.className = 'chip';
+                            newChatButton.onclick = () => window.location.reload();
+                            newChatButton.innerHTML = '<img src="img/refresh.svg" alt="Refresh Chat">New Chat';
+                            
+                            // Remove any existing New Chat button before adding a new one
+                            const existingButton = answerDiv.querySelector('.chip');
+                            if (existingButton) {
+                                existingButton.remove();
+                            }
+                            answerDiv.appendChild(newChatButton);
+                            
                             // Process images
                             const images = Array.from(answerText.getElementsByTagName('img'));
                             let currentGroup = [];
@@ -175,6 +188,7 @@ async function askBrian() {
         }
 
         toggleLoadingState(false);
+        stopPlaceholderAnimation();
 
         // Send data to Google Sheets
         try {
@@ -271,6 +285,7 @@ async function askBrian() {
         container.appendChild(answerWrapper);
         container.scrollTop = container.scrollHeight;
         toggleLoadingState(false);
+        // stopPlaceholderAnimation();
     }
 }
 
