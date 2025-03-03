@@ -410,7 +410,7 @@ button:disabled {
 
 @media (min-height: 750px) {
     #top-content {
-        height: calc(100vh - 150px);
+        height: calc(100vh - 150px);   
     }
 
     #top-content img {
@@ -457,6 +457,14 @@ button:disabled {
 
 @media (max-width: 600px) {
     .prompts {
+        display: none;
+    }
+
+    #top-content {
+        padding-top: 2rem
+    }
+
+    #top-content h3 {
         display: none;
     }
 
