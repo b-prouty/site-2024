@@ -429,9 +429,9 @@ button:disabled {
         display: none;
     }
 
-    #top-content {
+    /* #top-content {
         margin-top: -2rem;
-    }
+    } */
 
     .input-container {
         position: fixed;
