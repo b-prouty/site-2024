@@ -153,7 +153,7 @@ body.chat-active {
 
 #conversation-container.chat-active {
     display: block;
-    height: calc(100vh - 233px);
+    height: calc(100vh - 258px);
     overflow-y: scroll;
     width: 100%;
     padding: 1rem 0;

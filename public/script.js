@@ -110,8 +110,9 @@ async function askBrian() {
                             const newChatButton = document.createElement('button');
                             newChatButton.className = 'chip';
                             newChatButton.onclick = () => window.location.reload();
-                            newChatButton.style.marginLeft = '1rem';
-                            newChatButton.style.marginTop = '-0.5rem';
+                            newChatButton.style.marginLeft = '.5rem';
+                            newChatButton.style.marginTop = '-0.75rem';
+                            newChatButton.style.border = 'none';
                             newChatButton.innerHTML = '<img src="img/refresh.svg" alt="Refresh Chat">New Chat';
                             
                             // Remove any existing New Chat button before adding a new one
