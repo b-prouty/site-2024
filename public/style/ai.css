@@ -480,6 +480,8 @@ button:disabled {
     }
 
     #top-content img {height: initial;}
+
+    #question {padding-bottom: 1.5rem;}
 }
 
 
