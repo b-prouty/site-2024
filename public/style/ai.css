@@ -481,6 +481,10 @@ button:disabled {
 
     #top-content img {height: initial;}
 
+    .container {
+        padding: 0 1rem;
+    }
+
     #question {padding-bottom: 1.5rem;}
 }
 
