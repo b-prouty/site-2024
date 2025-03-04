@@ -4,11 +4,13 @@
     "Email": "brian@brianprouty.com",
     "Phone": "+1 (714) 580-4344",
     "Location": "Irvine, CA",
-    "Website": "https://www.brianprouty.com",
+    "Link to Case Studies": "https://www.brianprouty.com/work.html",
     "professional_experience": [
       {
-        "role": [
-          "Lead Product Designer"
+        "roles": [
+          "Lead Product Designer",
+          "Webflow Developer",
+          "AssistantProduct Manager"
         ],
         "company": "Bluon",
         "duration": "September 2022 - Present",
@@ -24,7 +26,7 @@
         ]
       },
       {
-        "role": [
+        "roles": [
           "Product Designer",
           "Front-End Developer"
         ],
@@ -70,40 +72,56 @@
         "name": "Checkout Flow Improvements",
         "date": "September 2024",
         "description": "Reduced friction throughout checkout flows to drive higher conversion rates.",
+        "link": "https://www.brianprouty.com/pricing.html",
+        "sample images": ["![Flow 1](img/pricing/flow-01.png)", "![Flow 2](img/pricing/flow-02.png)", "![Flow 3](img/pricing/flow-03.png)"],
         "roles": ["Project Owner", "Design Lead", "UX Researcher", "UI Designer"],
         "teams": ["Product Management", "Web Development", "Sales", "Internal Operations"],
         "duration": "3 months",
-        "summary": "A project aimed to optimize the checkout flow for Bluon for Business, a SaaS product targeting HVAC contractors. The initial solution, which reduced friction and improved user experience, led to unqualified leads and a lack of customization. The final solution, which required a demo before sign-up, addressed these issues and resulted in a 25% decrease in pricing confusion, a 14% increase in sign-ups, and a $56k increase in Annual Recurring Revenue within the first month.",
-        "link": "https://www.brianprouty.com/pricing.html",
-        "sample images": ["![Flow 1](img/pricing/flow-01.png)", "![Flow 2](img/pricing/flow-02.png)", "![Flow 3](img/pricing/flow-03.png)"]
+        "summary": "A project aimed to optimize the checkout flow for Bluon for Business, a SaaS product targeting HVAC contractors. The initial solution, which reduced friction and improved user experience, led to unqualified leads and a lack of customization. The final solution, which required a demo before sign-up, addressed these issues and resulted in a 25% decrease in pricing confusion, a 14% increase in sign-ups, and a $56k increase in Annual Recurring Revenue within the first month."
       },
       {
         "name": "B2B Order Management",
         "date": "July 2024",
         "description": "Redesign of web application to streamline order management and fulfillment processes.",
         "link": "https://www.brianprouty.com/bluonlive.html",
-        "sample images": ["![Flow 1](img/bluonlive/flow-01.png)", "![Flow 2](img/bluonlive/flow-02.png)", "![Flow 3](img/bluonlive/flow-03.png)"]
+        "sample images": ["![Flow 1](img/bluonlive/flow-01.png)", "![Flow 2](img/bluonlive/flow-02.png)", "![Flow 3](img/bluonlive/flow-03.png)"],
+        "roles": ["Product Design Lead", "UX Researcher", "Prototype & Testing", "Design Handoff"],
+        "teams": ["Jr. Product Designers", "Product Managers", "Web Developers", "C-Level Stakeholders"],
+        "duration": "8 months",
+        "summary": "BluonLive, an order management system, underwent a redesign to address user confusion and streamline the request-to-order process. Key improvements included consolidating order information, implementing notifications, eliminating double data entry, and optimizing the order claiming process. While the redesign received positive feedback and improved key metrics, a lack of customer reactivation strategy ultimately led to the product's sunset."
       },
       {
         "name": "Tech Support Platform",
         "date": "May 2024",
         "description": "Mobile and web applications to deliver top-tier tech support for service workers.",
         "link": "https://www.brianprouty.com/basecamp.html",
-        "sample images":["![Flow 1](img/basecamp/flow-01.png)", "![Flow 2](img/basecamp/flow-02.png)", "![Flow 3](img/basecamp/flow-03.png)"]
+        "sample images":["![Flow 1](img/basecamp/flow-01.png)", "![Flow 2](img/basecamp/flow-02.png)", "![Flow 3](img/basecamp/flow-03.png)"],
+        "roles": ["Product Design Lead", "UX Researcher", "Prototype & Testing", "Design System"],
+        "teams": ["Jr. Product Designers", "Product Managers", "Web Developers", "Internal Support Team", "C-Level Stakeholders"],
+        "duration": "8 months",
+        "summary": "Basecamp, a custom VOIP web application, revolutionizes customer service by providing a platform for support agents to engage with users through various mediums.  Key features include issue tracking, prioritization, and a user-friendly interface, resulting in a 1.5x increase in tech support usage and a 14% decrease in negative feedback.  The application addresses user pain points such as delayed communication, repetitive work, and lack of record-keeping, leading to improved efficiency and user experience."
       },
       {
         "name": "CPL Software",
         "date": "February 2022",
         "description": "Designed a web application to expand the user base beyond internal companies, in addition to making the product more user-friendly.",
         "link": "https://www.brianprouty.com/ratic.html",
-        "sample images":["![Flow 1](img/ratic/flow-01.png)", "![Flow 2](img/ratic/flow-02.png)", "![Flow 3](img/ratic/flow-03.png)"]
+        "sample images":["![Flow 1](img/ratic/flow-01.png)", "![Flow 2](img/ratic/flow-02.png)", "![Flow 3](img/ratic/flow-03.png)"],
+        "roles": ["User Research", "Interaction Design", "Visual Design", "Prototyping & Testing", "Front-end Development"],
+        "teams": ["Product Managers", "Back-end Developers", "VP Level Stakeholders"],
+        "duration": "2 months",
+        "summary": "Real Advantage Title Insurance Company (RATIC) needed a web application overhaul to accommodate third-party users and address usability issues. The redesigned application includes functionality for adding outside entities, tiered user rankings, and reference libraries.  The goal was to streamline the process for creating Cover Protection Letters (CPLs) while maintaining a user-friendly experience."
       },
       {
         "name": "Mobile App Ordering",
         "date": "January 2024",
         "description": "Created an intuitive ordering process for a mobile application.",
         "link": "https://www.brianprouty.com/bluon2.html",
-        "sample images":["![Flow 1](img/B2/flow-01.png)", "![Flow 2](img/B2/flow-02.png)", "![Flow 3](img/B2/flow-03.png)"]
+        "sample images":["![Flow 1](img/B2/flow-01.png)", "![Flow 2](img/B2/flow-02.png)", "![Flow 3](img/B2/flow-03.png)"],
+        "roles": ["Process improvements", "User Research", "Interaction Design", "Visual Design", "Prototyping & Testing", "Handoff"],
+        "teams": ["Jr. Product Designers", "Product Managers", "Web Developers", "C-Level Stakeholders"],
+        "duration": "10 months",
+        "summary": "A redesigned B2B ordering process, focusing on field technician needs, led to a 300% increase in availability requests and a 225% increase in request-to-order conversions. User research revealed pain points, including difficulty finding availability and lack of clarity on order status, which were addressed through intuitive design solutions."
       }
     ]
   },
