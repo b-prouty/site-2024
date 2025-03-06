@@ -240,6 +240,9 @@ nav {
 .nav-group .nav-item.work svg {
   fill: #45C5EB;
 }
+.nav-group .nav-item.ai svg {
+  fill: #209320;
+}
 .nav-group .nav-item.person svg {
   fill: #CB8BD0;
 }
@@ -257,6 +260,16 @@ nav {
   color: #F2EFEB !important;
 }
 .nav-group .nav-item.work.active svg {
+  fill: #F2EFEB;
+}
+.nav-group .nav-item.ai.active {
+  background: #209320;
+  border: 1px solid #209320;
+}
+.nav-group .nav-item.ai.active p {
+  color: #F2EFEB !important;
+}
+.nav-group .nav-item.ai.active svg {
   fill: #F2EFEB;
 }
 .nav-group .nav-item.person.active {

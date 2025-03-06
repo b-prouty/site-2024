@@ -5,30 +5,26 @@ const purple = "#CB8BD0";
 const yellow = "#E2C541";
 const red = "#ED6262";
 
-function includeHTML() {
-    var z, i, elmnt, file, xhttp;
-    /* Loop through a collection of all HTML elements: */
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("include-html");
+// Function to include HTML components
+async function includeHTML() {
+    const elements = document.getElementsByTagName("*");
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        const file = element.getAttribute("include-html");
         if (file) {
-            /* Make an HTTP request using the attribute value as the file name: */
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4) {
-                    if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                    if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                    /* Remove the attribute, and call this function once more: */
-                    elmnt.removeAttribute("include-html");
-                    includeHTML();
+            try {
+                const response = await fetch(file);
+                if (response.ok) {
+                    const html = await response.text();
+                    element.innerHTML = html;
+                } else {
+                    element.innerHTML = "Page not found.";
                 }
+            } catch (error) {
+                console.error("Error loading the HTML file:", error);
+                element.innerHTML = "Error loading the page.";
             }
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            /* Exit the function: */
-            return;
+            element.removeAttribute("include-html");
         }
     }
 }
