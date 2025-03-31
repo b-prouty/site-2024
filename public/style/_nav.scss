@@ -179,6 +179,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba($color: #01070E, $alpha: 0.375);
+    backdrop-filter: blur(20px);
 }
 
 .ai-nav-group {
@@ -230,7 +237,7 @@ nav {
 
 .drk-bg {
     .ai-nav {
-        background-color: transparent;
+        // background-color: transparent;
         color: $white;
     }
 
