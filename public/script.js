@@ -133,33 +133,13 @@ async function askBrian() {
         }
 
         // Generate and add follow-up questions after the complete response
-        const followUpQuestions = generateFollowUpQuestions(responseText);
-        if (followUpQuestions.length > 0) {
-            const followUpSection = document.createElement('div');
-            followUpSection.className = 'follow-up-section';
-            
-            const followUpTitle = document.createElement('p');
-            followUpTitle.className = 'follow-up-title';
-            followUpTitle.textContent = 'Potential follow-up questions:';
-            followUpSection.appendChild(followUpTitle);
-            
-            const chipContainer = document.createElement('div');
-            chipContainer.className = 'chip-container';
-            
-            followUpQuestions.forEach(question => {
-                const chip = document.createElement('button');
-                chip.className = 'chip';
-                chip.textContent = question;
-                chip.onclick = () => {
-                    const questionInput = document.getElementById('question');
-                    questionInput.value = question;
-                    askBrian();
-                    questionInput.value = '';  // Clear the input after asking
-                };
-                chipContainer.appendChild(chip);
-            });
-            
-            followUpSection.appendChild(chipContainer);
+        const followUpSection = generateFollowUpQuestions(responseText);
+        if (followUpSection) {
+            // Remove any existing follow-up section
+            const existingFollowUp = answerDiv.querySelector('.follow-up-section');
+            if (existingFollowUp) {
+                existingFollowUp.remove();
+            }
             answerDiv.appendChild(followUpSection);
         }
         
@@ -431,63 +411,167 @@ function updateNavButtons() {
 // Add this new function to generate follow-up questions
 function generateFollowUpQuestions(content) {
     // Define categories and their related follow-up patterns
-    const followUpPatterns = {
+    const categories = {
         projects: {
             trigger: /(project|case study|redesign|improved|developed)/i,
-            questions: [
+            related: [
                 "What were the key results of this project?",
                 "What teams were involved in this project?",
                 "How long did this project take?",
                 "What was your specific role in this project?"
+            ],
+            explore: [
+                "Tell me about your design process",
+                "What design tools do you use?",
+                "How do you measure success?"
             ]
         },
         experience: {
             trigger: /(experience|worked|role|position|job)/i,
-            questions: [
-                "What were your main responsibilities in this role?",
-                "What skills did you use most in this position?",
-                "Can you tell me about a specific project from this time?",
+            related: [
+                "What were your main responsibilities?",
+                "What skills did you use most?",
+                "Can you tell me about a specific project?",
                 "What teams did you collaborate with?"
+            ],
+            explore: [
+                "What are your career goals?",
+                "Tell me about your ideal role",
+                "What industries interest you most?"
             ]
         },
         design_process: {
             trigger: /(design process|methodology|approach|research|testing)/i,
-            questions: [
+            related: [
                 "How do you validate your design decisions?",
-                "What research methods do you typically use?",
+                "What research methods do you use?",
                 "How do you collaborate with developers?",
-                "How do you measure the success of your designs?"
+                "How do you measure success?"
+            ],
+            explore: [
+                "Tell me about your recent projects",
+                "What design tools do you use?",
+                "How do you handle design systems?"
             ]
         },
         leadership: {
             trigger: /(lead|mentor|manage|team)/i,
-            questions: [
-                "How do you approach mentoring junior designers?",
-                "What's your philosophy on team collaboration?",
+            related: [
+                "How do you approach mentoring?",
+                "What's your collaboration style?",
                 "How do you handle design reviews?",
-                "How do you maintain design consistency across teams?"
+                "How do you maintain design consistency?"
+            ],
+            explore: [
+                "Tell me about your design process",
+                "What are your strengths?",
+                "How do you measure KPIs?"
+            ]
+        },
+        tools: {
+            trigger: /(tool|figma|sketch|software|prototype)/i,
+            related: [
+                "How do you use these tools in your workflow?",
+                "What prototyping tools do you prefer?",
+                "How do you handle design handoff?",
+                "Do you have experience with other tools?"
+            ],
+            explore: [
+                "Tell me about your design process",
+                "How do you collaborate with developers?",
+                "What's your approach to design systems?"
             ]
         },
         personal: {
             trigger: /(hobby|interest|personal|value|life)/i,
-            questions: [
-                "What are some of your favorite hobbies?",
-                "What values drive your work?",
-                "How do you maintain work-life balance?",
-                "What inspires you in your design work?"
+            related: [
+                "What inspires your designs?",
+                "How do these interests influence your work?",
+                "What are your core values?",
+                "How do you maintain work-life balance?"
+            ],
+            explore: [
+                "Tell me about your background",
+                "What's your ideal role?",
+                "What are your strengths?"
             ]
         }
     };
 
     // Find matching categories based on the content
-    const matchingCategories = Object.entries(followUpPatterns)
-        .filter(([_, pattern]) => pattern.trigger.test(content))
-        .map(([_, pattern]) => pattern.questions)
-        .flat();
+    const matchingCategories = Object.entries(categories)
+        .filter(([_, pattern]) => pattern.trigger.test(content));
 
-    // Select up to 4 unique questions
-    const selectedQuestions = [...new Set(matchingCategories)]
-        .slice(0, 4);
+    // If no categories match, return some default exploratory questions
+    if (matchingCategories.length === 0) {
+        return [
+            "Tell me about your background",
+            "What are your recent projects?",
+            "What's your design process?",
+            "What are your strengths?"
+        ];
+    }
 
-    return selectedQuestions;
+    // Get related and exploratory questions from matching categories
+    const relatedQuestions = matchingCategories
+        .flatMap(([_, pattern]) => pattern.related)
+        .slice(0, 2); // Get 2 related questions
+
+    const exploreQuestions = matchingCategories
+        .flatMap(([_, pattern]) => pattern.explore)
+        .slice(0, 2); // Get 2 exploratory questions
+
+    // Create the follow-up section with both types of questions
+    const followUpSection = document.createElement('div');
+    followUpSection.className = 'follow-up-section';
+
+    // Add related questions
+    const relatedGroup = document.createElement('div');
+    relatedGroup.className = 'follow-up-group';
+    
+    const relatedTitle = document.createElement('p');
+    relatedTitle.className = 'follow-up-title';
+    relatedTitle.textContent = 'Related questions:';
+    relatedGroup.appendChild(relatedTitle);
+
+    const relatedContainer = document.createElement('div');
+    relatedContainer.className = 'chip-container';
+    relatedQuestions.forEach(question => {
+        const chip = document.createElement('button');
+        chip.className = 'chip related';
+        chip.textContent = question;
+        chip.onclick = () => {
+            document.getElementById('question').value = question;
+            askBrian();
+        };
+        relatedContainer.appendChild(chip);
+    });
+    relatedGroup.appendChild(relatedContainer);
+    followUpSection.appendChild(relatedGroup);
+
+    // Add exploratory questions
+    const exploreGroup = document.createElement('div');
+    exploreGroup.className = 'follow-up-group';
+    
+    const exploreTitle = document.createElement('p');
+    exploreTitle.className = 'follow-up-title';
+    exploreTitle.textContent = 'Explore more:';
+    exploreGroup.appendChild(exploreTitle);
+
+    const exploreContainer = document.createElement('div');
+    exploreContainer.className = 'chip-container';
+    exploreQuestions.forEach(question => {
+        const chip = document.createElement('button');
+        chip.className = 'chip explore';
+        chip.textContent = question;
+        chip.onclick = () => {
+            document.getElementById('question').value = question;
+            askBrian();
+        };
+        exploreContainer.appendChild(chip);
+    });
+    exploreGroup.appendChild(exploreContainer);
+    followUpSection.appendChild(exploreGroup);
+
+    return followUpSection;
 } 

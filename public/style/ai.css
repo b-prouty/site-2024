@@ -695,6 +695,15 @@ button:disabled {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid #ffdb3d6e;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.follow-up-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .follow-up-title {
@@ -702,6 +711,12 @@ button:disabled {
     color: #ffdb3d;
     margin-bottom: 0.5rem;
     font-weight: 500;
+}
+
+.follow-up-subtitle {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.25rem;
 }
 
 .follow-up-section .chip-container {
@@ -720,7 +735,16 @@ button:disabled {
     animation: none;
     margin: 0;
     opacity: 1;
-    
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.follow-up-section .chip.related {
+    background: #262421;
+    border-color: rgba(255, 219, 61, 0.3);
+}
+
+.follow-up-section .chip.explore {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .follow-up-section .chip:hover {

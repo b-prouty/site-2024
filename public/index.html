@@ -10,7 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/ai.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+        // Initialize lucide
+        lucide.createIcons();
+    </script>
 
 </head>
 <!-- Google tag (gtag.js) -->
@@ -212,25 +216,26 @@
                 prompts.forEach((promptData, index) => {
                     const chip = document.createElement('button');
                     chip.className = 'chip';
-                    chip.style.animationDelay = `${index * 0.1}s`; // Add 0.1s delay for each subsequent chip
+                    chip.style.animationDelay = `${index * 0.1}s`;
                     
-                    // Create icon element
-                    const icon = document.createElement('i');
-                    icon.dataset.lucide = iconMapping[promptData.item] || 'help-circle';
+                    // Create icon element using Lucide's createIcons method
+                    const iconName = iconMapping[promptData.item] || 'help-circle';
+                    const iconSvg = document.createElement('i');
+                    iconSvg.setAttribute('data-lucide', iconName);
                     
                     // Create text span
                     const text = document.createElement('span');
                     text.textContent = promptData.item;
                     
                     // Add icon and text to button
-                    chip.appendChild(icon);
+                    chip.appendChild(iconSvg);
                     chip.appendChild(text);
                     
                     chip.onclick = () => askAbout(promptData.prompt);
                     chipsContainer.appendChild(chip);
                 });
 
-                // Initialize Lucide icons
+                // Create icons for all newly added elements
                 lucide.createIcons();
             } catch (error) {
                 console.error('Error loading prompts:', error);
