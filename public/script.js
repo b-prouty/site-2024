@@ -8,6 +8,9 @@ function generateSessionId() {
     return localStorage.getItem('sessionId');
 }
 
+// Add conversation history tracking
+let conversationHistory = [];
+
 async function askBrian() {
     const sessionId = generateSessionId();
     
@@ -62,10 +65,16 @@ async function askBrian() {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 30000); // Increased to 30 seconds
 
+        // Add the current question to conversation history
+        conversationHistory.push({ role: "user", content: question });
+
         const response = await fetch('/ask', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question }),
+            body: JSON.stringify({ 
+                question,
+                conversationHistory 
+            }),
             signal: controller.signal
         });
         
@@ -101,15 +110,25 @@ async function askBrian() {
                     if (data === '[DONE]') continue;
 
                     try {
-                        const { content } = JSON.parse(data);
+                        const parsedData = JSON.parse(data);
+                        const { content, conversationHistory: updatedHistory } = parsedData;
+                        
                         if (content) {
                             responseText += content;
                             answerText.innerHTML = marked.parse(responseText);
                             
+                            // Update conversation history if provided in the response
+                            if (updatedHistory) {
+                                conversationHistory = updatedHistory;
+                            }
+                            
                             // Add New Chat button after the response
                             const newChatButton = document.createElement('button');
                             newChatButton.className = 'chip';
-                            newChatButton.onclick = () => window.location.reload();
+                            newChatButton.onclick = () => {
+                                conversationHistory = []; // Clear conversation history
+                                window.location.reload();
+                            };
                             newChatButton.style.marginLeft = '.5rem';
                             newChatButton.style.marginTop = '-0.75rem';
                             newChatButton.style.border = 'none';
