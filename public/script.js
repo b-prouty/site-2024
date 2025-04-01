@@ -11,6 +11,10 @@ function generateSessionId() {
 // Add conversation history tracking
 let conversationHistory = [];
 
+// Add these at the top of the file, before the generateFollowUpQuestions function
+let previousRelatedQuestions = new Set();
+let previousExploreQuestions = new Set();
+
 async function askBrian() {
     const sessionId = generateSessionId();
     
@@ -502,24 +506,71 @@ function generateFollowUpQuestions(content) {
     const matchingCategories = Object.entries(categories)
         .filter(([_, pattern]) => pattern.trigger.test(content));
 
-    // If no categories match, return some default exploratory questions
+    // If no categories match, use default questions but avoid repeats
     if (matchingCategories.length === 0) {
-        return [
+        const defaultQuestions = [
             "Tell me about his background",
             "What are his recent projects?",
             "What's his design process?",
-            "What are his strengths?"
-        ];
+            "What are his strengths?",
+            "What inspires his designs?",
+            "How does he approach innovation?",
+            "Tell me about his leadership style",
+            "What industries has he worked in?"
+        ].filter(q => !previousRelatedQuestions.has(q) && !previousExploreQuestions.has(q));
+
+        // If all questions have been used, reset the tracking
+        if (defaultQuestions.length < 4) {
+            previousRelatedQuestions.clear();
+            previousExploreQuestions.clear();
+            return generateFollowUpQuestions(content); // Retry with cleared history
+        }
+
+        // Randomly select 4 questions
+        const selectedQuestions = defaultQuestions
+            .sort(() => Math.random() - 0.5)
+            .slice(0, 4);
+
+        // Update tracking
+        selectedQuestions.forEach(q => previousRelatedQuestions.add(q));
+        return selectedQuestions;
     }
 
-    // Get related and exploratory questions from matching categories
-    const relatedQuestions = matchingCategories
-        .flatMap(([_, pattern]) => pattern.related)
-        .slice(0, 2); // Get 2 related questions
+    // Get all possible questions from matching categories
+    const allRelatedQuestions = matchingCategories.flatMap(([_, pattern]) => pattern.related)
+        .filter(q => !previousRelatedQuestions.has(q));
+    const allExploreQuestions = matchingCategories.flatMap(([_, pattern]) => pattern.explore)
+        .filter(q => !previousExploreQuestions.has(q));
 
-    const exploreQuestions = matchingCategories
-        .flatMap(([_, pattern]) => pattern.explore)
-        .slice(0, 2); // Get 2 exploratory questions
+    // If we're running low on unique questions, reset the tracking
+    if (allRelatedQuestions.length < 2 || allExploreQuestions.length < 2) {
+        previousRelatedQuestions.clear();
+        previousExploreQuestions.clear();
+        return generateFollowUpQuestions(content); // Retry with cleared history
+    }
+
+    // Randomly select questions to add variety
+    const relatedQuestions = allRelatedQuestions
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 2);
+
+    const exploreQuestions = allExploreQuestions
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 2);
+
+    // Update tracking of shown questions
+    relatedQuestions.forEach(q => previousRelatedQuestions.add(q));
+    exploreQuestions.forEach(q => previousExploreQuestions.add(q));
+
+    // Limit the size of tracking sets to prevent memory bloat
+    if (previousRelatedQuestions.size > 20) {
+        const oldestQuestions = Array.from(previousRelatedQuestions).slice(0, 10);
+        oldestQuestions.forEach(q => previousRelatedQuestions.delete(q));
+    }
+    if (previousExploreQuestions.size > 20) {
+        const oldestQuestions = Array.from(previousExploreQuestions).slice(0, 10);
+        oldestQuestions.forEach(q => previousExploreQuestions.delete(q));
+    }
 
     // Create the follow-up section with both types of questions
     const followUpSection = document.createElement('div');
