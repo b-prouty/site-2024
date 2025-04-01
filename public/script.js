@@ -594,6 +594,7 @@ function generateFollowUpQuestions(content) {
         chip.onclick = () => {
             document.getElementById('question').value = question;
             askBrian();
+            document.getElementById('question').value = '';  // Clear the textarea
         };
         relatedContainer.appendChild(chip);
     });
@@ -618,6 +619,7 @@ function generateFollowUpQuestions(content) {
         chip.onclick = () => {
             document.getElementById('question').value = question;
             askBrian();
+            document.getElementById('question').value = '';  // Clear the textarea
         };
         exploreContainer.appendChild(chip);
     });
