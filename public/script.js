@@ -415,85 +415,85 @@ function generateFollowUpQuestions(content) {
         projects: {
             trigger: /(project|case study|redesign|improved|developed)/i,
             related: [
-                "What were the key results of this project?",
-                "What teams were involved in this project?",
-                "How long did this project take?",
-                "What was your specific role in this project?"
+                "What were the key results?",
+                "Which teams were involved?",
+                "How long did it take?",
+                "What was his specific role?"
             ],
             explore: [
-                "Tell me about your design process",
-                "What design tools do you use?",
-                "How do you measure success?"
+                "Tell me about his design process",
+                "What design tools does he use?",
+                "How does he measure success?"
             ]
         },
         experience: {
             trigger: /(experience|worked|role|position|job)/i,
             related: [
-                "What were your main responsibilities?",
-                "What skills did you use most?",
+                "What were his main responsibilities?",
+                "Which skills did he use most?",
                 "Can you tell me about a specific project?",
-                "What teams did you collaborate with?"
+                "Who did he collaborate with?"
             ],
             explore: [
-                "What are your career goals?",
-                "Tell me about your ideal role",
-                "What industries interest you most?"
+                "What are his career goals?",
+                "What's his ideal role?",
+                "Which industries interest him most?"
             ]
         },
         design_process: {
             trigger: /(design process|methodology|approach|research|testing)/i,
             related: [
-                "How do you validate your design decisions?",
-                "What research methods do you use?",
-                "How do you collaborate with developers?",
-                "How do you measure success?"
+                "How does he validate design decisions?",
+                "What research methods does he prefer?",
+                "How does he work with developers?",
+                "How does he measure success?"
             ],
             explore: [
-                "Tell me about your recent projects",
-                "What design tools do you use?",
-                "How do you handle design systems?"
+                "Tell me about his recent projects",
+                "What tools does he use?",
+                "How does he handle design systems?"
             ]
         },
         leadership: {
             trigger: /(lead|mentor|manage|team)/i,
             related: [
-                "How do you approach mentoring?",
-                "What's your collaboration style?",
-                "How do you handle design reviews?",
-                "How do you maintain design consistency?"
+                "How does he approach mentoring?",
+                "What's his collaboration style?",
+                "How does he run design reviews?",
+                "How does he maintain consistency?"
             ],
             explore: [
-                "Tell me about your design process",
-                "What are your strengths?",
-                "How do you measure KPIs?"
+                "Tell me about his design process",
+                "What are his strengths?",
+                "How does he measure KPIs?"
             ]
         },
         tools: {
             trigger: /(tool|figma|sketch|software|prototype)/i,
             related: [
-                "How do you use these tools in your workflow?",
-                "What prototyping tools do you prefer?",
-                "How do you handle design handoff?",
-                "Do you have experience with other tools?"
+                "How does he use these in his workflow?",
+                "What prototyping tools does he prefer?",
+                "How does he handle design handoff?",
+                "Does he have experience with other tools?"
             ],
             explore: [
-                "Tell me about your design process",
-                "How do you collaborate with developers?",
-                "What's your approach to design systems?"
+                "Tell me about his design process",
+                "How does he work with developers?",
+                "What's his approach to design systems?"
             ]
         },
         personal: {
             trigger: /(hobby|interest|personal|value|life)/i,
             related: [
-                "What inspires your designs?",
-                "How do these interests influence your work?",
-                "What are your core values?",
-                "How do you maintain work-life balance?"
+                "What inspires his designs?",
+                "How do his interests influence his work?",
+                "What are his core values?",
+                "How does he balance work and life?"
             ],
             explore: [
-                "Tell me about your background",
-                "What's your ideal role?",
-                "What are your strengths?"
+                "Tell me about his background",
+                "What's his ideal role?",
+                "What are his strengths?"
             ]
         }
     };
@@ -505,10 +505,10 @@ function generateFollowUpQuestions(content) {
     // If no categories match, return some default exploratory questions
     if (matchingCategories.length === 0) {
         return [
-            "Tell me about your background",
-            "What are your recent projects?",
-            "What's your design process?",
-            "What are your strengths?"
+            "Tell me about his background",
+            "What are his recent projects?",
+            "What's his design process?",
+            "What are his strengths?"
         ];
     }
 

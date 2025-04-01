@@ -703,7 +703,7 @@ button:disabled {
 .follow-up-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0rem;
 }
 
 .follow-up-title {
