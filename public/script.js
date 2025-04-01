@@ -157,31 +157,15 @@ async function askBrian() {
         newChatButton.style.marginLeft = '.5rem';
         newChatButton.style.marginTop = '-0.75rem';
         newChatButton.style.border = 'none';
-        newChatButton.style.display = 'flex';
+        newChatButton.style.display = 'inline-flex';
         newChatButton.style.alignItems = 'center';
         newChatButton.style.gap = '0.5rem';
         
-        // Create icon element using Lucide
-        const iconSvg = document.createElement('i');
-        iconSvg.setAttribute('data-lucide', 'refresh-ccw');
-        iconSvg.style.width = '1rem';
-        iconSvg.style.height = '1rem';
-        
-        // Create text span
-        const text = document.createElement('span');
-        text.textContent = 'New Chat';
-        
-        // Add icon and text to button
-        newChatButton.appendChild(iconSvg);
-        newChatButton.appendChild(text);
-        
-        // Initialize the Lucide icon
-        lucide.createIcons({
-            attrs: {
-                'stroke-width': 2,
-                'class': 'lucide-icon'
-            }
-        });
+        // Create the button content with Lucide icon
+        newChatButton.innerHTML = `
+            <i data-lucide="rotate-ccw" class="lucide-icon" style="width: 1rem; height: 1rem;"></i>
+            <span>New Chat</span>
+        `;
         
         // Remove any existing New Chat button before adding a new one
         const existingButton = answerWrapper.querySelector('.chip');
@@ -189,6 +173,13 @@ async function askBrian() {
             existingButton.remove();
         }
         answerWrapper.appendChild(newChatButton);
+        
+        // Initialize Lucide icons after adding to DOM
+        lucide.createIcons({
+            attrs: {
+                'stroke-width': 2
+            }
+        });
         
         // Process images
         const images = Array.from(answerText.getElementsByTagName('img'));
