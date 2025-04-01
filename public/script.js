@@ -157,10 +157,15 @@ async function askBrian() {
         newChatButton.style.marginLeft = '.5rem';
         newChatButton.style.marginTop = '-0.75rem';
         newChatButton.style.border = 'none';
+        newChatButton.style.display = 'flex';
+        newChatButton.style.alignItems = 'center';
+        newChatButton.style.gap = '0.5rem';
         
         // Create icon element using Lucide
         const iconSvg = document.createElement('i');
         iconSvg.setAttribute('data-lucide', 'refresh-ccw');
+        iconSvg.style.width = '1rem';
+        iconSvg.style.height = '1rem';
         
         // Create text span
         const text = document.createElement('span');
@@ -171,7 +176,12 @@ async function askBrian() {
         newChatButton.appendChild(text);
         
         // Initialize the Lucide icon
-        lucide.createIcons();
+        lucide.createIcons({
+            attrs: {
+                'stroke-width': 2,
+                'class': 'lucide-icon'
+            }
+        });
         
         // Remove any existing New Chat button before adding a new one
         const existingButton = answerWrapper.querySelector('.chip');
