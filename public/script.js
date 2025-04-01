@@ -122,7 +122,11 @@ async function askBrian() {
                         
                         if (content) {
                             responseText += content;
-                            answerText.innerHTML = marked.parse(responseText);
+                            // Use textContent first to sanitize the content
+                            const sanitizedContent = marked.parse(responseText);
+                            if (sanitizedContent) {
+                                answerText.innerHTML = sanitizedContent;
+                            }
                             
                             // Update conversation history if provided in the response
                             if (updatedHistory) {
@@ -133,6 +137,7 @@ async function askBrian() {
                         }
                     } catch (e) {
                         console.error('Error parsing chunk:', e);
+                        throw new Error('Failed to parse response data');
                     }
                 }
             }
@@ -323,8 +328,6 @@ async function askBrian() {
 
         
     } catch (error) {
-        const container = document.querySelector('#conversation-container');
-
         console.error('Error:', error);
         let errorMessage = 'Sorry, there was an error processing your request. Please try asking your question again. ';
         
@@ -335,14 +338,14 @@ async function askBrian() {
             errorMessage += error.message;
         }
 
-        answerText.innerText = errorMessage;
+        // Create a text node instead of using innerText
+        const errorTextNode = document.createTextNode(errorMessage);
+        answerText.innerHTML = ''; // Clear any existing content
+        answerText.appendChild(errorTextNode);
         answerDiv.classList.add('error');
-        answerDiv.appendChild(answerText);
-        answerWrapper.appendChild(answerDiv);
-        container.appendChild(answerWrapper);
+        
         container.scrollTop = container.scrollHeight;
         toggleLoadingState(false);
-        // stopPlaceholderAnimation();
     }
 }
 
@@ -645,3 +648,5 @@ function generateFollowUpQuestions(content) {
 
     return followUpSection;
 } 
+
+
