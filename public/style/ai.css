@@ -174,9 +174,10 @@ body.chat-active {
     text-align: left;
     max-width: 800px;
     margin-bottom: 20px;
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     border-radius: 2rem;
+    border: 1px solid #ffdb3d6e ;
     padding: 2rem;
 }
 
@@ -213,14 +214,6 @@ body.chat-active {
     background-color: #e0e0e0;
 }
 
-/* .input-container {
-    position: relative;
-    align-items: center;
-    padding: .5rem 1rem;
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 0;
-} */
 
 .input-container {
     position: fixed;
@@ -362,9 +355,6 @@ button:disabled {
     justify-content: center;
 }
 
-/* .chip-container.chat-active {
-    display: none;
-} */
 
 .chip {
     display: inline-flex;
@@ -470,9 +460,6 @@ button:disabled {
         display: none;
     }
 
-    /* #top-content {
-        margin-top: -2rem;
-    } */
 
     .input-container {
         position: fixed;
@@ -504,9 +491,6 @@ button:disabled {
         padding-top: 1rem
     }
 
-    /* #top-content h3 {
-        display: none;
-    } */
 
     #conversation-container.chat-active {
         height: calc(100vh - 240px);
@@ -638,7 +622,6 @@ button:disabled {
     cursor: zoom-in;
     border: 1px solid lightgray;
 }
-
 
 
 .lightbox {

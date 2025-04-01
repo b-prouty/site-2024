@@ -52,10 +52,15 @@ app.post('/ask', async (req, res) => {
         4. Please be concise in your responses and keep them to 1-2 paragraphs where possible, unless the user asks for more detail.
         5. Do not provide any content that is not directly supported by the data in the JSON above. If the user asks about something that is not in the JSON, say "I'm not trained on that topic. If you would like to follow up, you can reach out directly to Brian at brian@brianprouty.com or 714-580-4344". `;
 
-        const messages = [
-            { role: "system", content: systemMessage },
+        // Add the new question to the conversation history
+        const updatedHistory = [
             ...conversationHistory,
             { role: "user", content: question }
+        ];
+
+        const messages = [
+            { role: "system", content: systemMessage },
+            ...updatedHistory
         ];
 
         // Set headers for streaming
@@ -73,10 +78,19 @@ app.post('/ask', async (req, res) => {
             max_tokens: 1000
         });
 
+        let fullResponse = '';
+
         for await (const chunk of stream) {
             const content = chunk.choices[0]?.delta?.content || '';
             if (content) {
-                res.write(`data: ${JSON.stringify({ content })}\n\n`);
+                fullResponse += content;
+                res.write(`data: ${JSON.stringify({ 
+                    content,
+                    conversationHistory: [
+                        ...updatedHistory,
+                        { role: "assistant", content: fullResponse }
+                    ]
+                })}\n\n`);
             }
         }
 
