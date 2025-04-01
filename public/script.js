@@ -122,113 +122,6 @@ async function askBrian() {
                                 conversationHistory = updatedHistory;
                             }
                             
-                            // Generate and add follow-up questions
-                            const followUpQuestions = generateFollowUpQuestions(responseText);
-                            if (followUpQuestions.length > 0) {
-                                const followUpSection = document.createElement('div');
-                                followUpSection.className = 'follow-up-section';
-                                
-                                const followUpTitle = document.createElement('p');
-                                followUpTitle.className = 'follow-up-title';
-                                followUpTitle.textContent = 'Potential follow-up questions:';
-                                followUpSection.appendChild(followUpTitle);
-                                
-                                const chipContainer = document.createElement('div');
-                                chipContainer.className = 'chip-container';
-                                
-                                followUpQuestions.forEach(question => {
-                                    const chip = document.createElement('button');
-                                    chip.className = 'chip';
-                                    chip.textContent = question;
-                                    chip.onclick = () => {
-                                        document.getElementById('question').value = question;
-                                        askBrian();
-                                    };
-                                    chipContainer.appendChild(chip);
-                                });
-                                
-                                followUpSection.appendChild(chipContainer);
-                                answerDiv.appendChild(followUpSection);
-                            }
-                            
-                            // Add New Chat button after the response
-                            const newChatButton = document.createElement('button');
-                            newChatButton.className = 'chip';
-                            newChatButton.onclick = () => {
-                                conversationHistory = []; // Clear conversation history
-                                window.location.reload();
-                            };
-                            newChatButton.style.marginLeft = '.5rem';
-                            newChatButton.style.marginTop = '-0.75rem';
-                            newChatButton.style.border = 'none';
-                            newChatButton.innerHTML = '<img src="img/refresh.svg" alt="Refresh Chat">New Chat';
-                            
-                            // Remove any existing New Chat button before adding a new one
-                            const existingButton = answerWrapper.querySelector('.chip');
-                            if (existingButton) {
-                                existingButton.remove();
-                            }
-                            answerWrapper.appendChild(newChatButton);
-                            
-                            // Process images
-                            const images = Array.from(answerText.getElementsByTagName('img'));
-                            let currentGroup = [];
-                            
-                            for (let i = 0; i < images.length; i++) {
-                                const img = images[i];
-                                
-                                // Add lightbox attributes
-                                if (!img.hasAttribute('data-lightbox')) {
-                                    img.setAttribute('data-lightbox', 'true');
-                                    img.addEventListener('click', () => openLightbox(img.src));
-                                }
-                                
-                                // Check if this image is consecutive with the previous one
-                                const isConsecutive = currentGroup.length > 0 && 
-                                    Array.from(img.parentNode.childNodes)
-                                        .filter(node => {
-                                            // Filter out empty text nodes
-                                            return !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim());
-                                        })
-                                        .some((node, index, array) => {
-                                            const prevIndex = array.indexOf(currentGroup[currentGroup.length - 1]);
-                                            return prevIndex !== -1 && index === prevIndex + 1;
-                                        });
-                                
-                                if (isConsecutive) {
-                                    currentGroup.push(img);
-                                } else {
-                                    // If we have a previous group, wrap it
-                                    if (currentGroup.length > 1) {
-                                        const container = document.createElement('div');
-                                        container.className = 'sample-img-container';
-                                        currentGroup[0].parentNode.insertBefore(container, currentGroup[0]);
-                                        currentGroup.forEach(groupImg => {
-                                            // Remove from parent (usually a <p> tag)
-                                            if (groupImg.parentNode.tagName === 'P') {
-                                                groupImg.parentNode.removeChild(groupImg);
-                                            }
-                                            container.appendChild(groupImg);
-                                        });
-                                    }
-                                    // Start new group with current image
-                                    currentGroup = [img];
-                                }
-                            }
-                            
-                            // Handle the last group
-                            if (currentGroup.length > 1) {
-                                const container = document.createElement('div');
-                                container.className = 'sample-img-container';
-                                currentGroup[0].parentNode.insertBefore(container, currentGroup[0]);
-                                currentGroup.forEach(groupImg => {
-                                    if (groupImg.parentNode.tagName === 'P') {
-                                        groupImg.parentNode.removeChild(groupImg);
-                                    }
-                                    container.appendChild(groupImg);
-                                });
-                            }
-                            
                             container.scrollTop = container.scrollHeight;
                         }
                     } catch (e) {
@@ -237,6 +130,115 @@ async function askBrian() {
                 }
             }
         }
+
+        // Generate and add follow-up questions after the complete response
+        const followUpQuestions = generateFollowUpQuestions(responseText);
+        if (followUpQuestions.length > 0) {
+            const followUpSection = document.createElement('div');
+            followUpSection.className = 'follow-up-section';
+            
+            const followUpTitle = document.createElement('p');
+            followUpTitle.className = 'follow-up-title';
+            followUpTitle.textContent = 'Potential follow-up questions:';
+            followUpSection.appendChild(followUpTitle);
+            
+            const chipContainer = document.createElement('div');
+            chipContainer.className = 'chip-container';
+            
+            followUpQuestions.forEach(question => {
+                const chip = document.createElement('button');
+                chip.className = 'chip';
+                chip.textContent = question;
+                chip.onclick = () => {
+                    document.getElementById('question').value = question;
+                    askBrian();
+                };
+                chipContainer.appendChild(chip);
+            });
+            
+            followUpSection.appendChild(chipContainer);
+            answerDiv.appendChild(followUpSection);
+        }
+        
+        // Add New Chat button after the response
+        const newChatButton = document.createElement('button');
+        newChatButton.className = 'chip';
+        newChatButton.onclick = () => {
+            conversationHistory = []; // Clear conversation history
+            window.location.reload();
+        };
+        newChatButton.style.marginLeft = '.5rem';
+        newChatButton.style.marginTop = '-0.75rem';
+        newChatButton.style.border = 'none';
+        newChatButton.innerHTML = '<img src="img/refresh.svg" alt="Refresh Chat">New Chat';
+        
+        // Remove any existing New Chat button before adding a new one
+        const existingButton = answerWrapper.querySelector('.chip');
+        if (existingButton) {
+            existingButton.remove();
+        }
+        answerWrapper.appendChild(newChatButton);
+        
+        // Process images
+        const images = Array.from(answerText.getElementsByTagName('img'));
+        let currentGroup = [];
+        
+        for (let i = 0; i < images.length; i++) {
+            const img = images[i];
+            
+            // Add lightbox attributes
+            if (!img.hasAttribute('data-lightbox')) {
+                img.setAttribute('data-lightbox', 'true');
+                img.addEventListener('click', () => openLightbox(img.src));
+            }
+            
+            // Check if this image is consecutive with the previous one
+            const isConsecutive = currentGroup.length > 0 && 
+                Array.from(img.parentNode.childNodes)
+                    .filter(node => {
+                        // Filter out empty text nodes
+                        return !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim());
+                    })
+                    .some((node, index, array) => {
+                        const prevIndex = array.indexOf(currentGroup[currentGroup.length - 1]);
+                        return prevIndex !== -1 && index === prevIndex + 1;
+                    });
+            
+            if (isConsecutive) {
+                currentGroup.push(img);
+            } else {
+                // If we have a previous group, wrap it
+                if (currentGroup.length > 1) {
+                    const container = document.createElement('div');
+                    container.className = 'sample-img-container';
+                    currentGroup[0].parentNode.insertBefore(container, currentGroup[0]);
+                    currentGroup.forEach(groupImg => {
+                        // Remove from parent (usually a <p> tag)
+                        if (groupImg.parentNode.tagName === 'P') {
+                            groupImg.parentNode.removeChild(groupImg);
+                        }
+                        container.appendChild(groupImg);
+                    });
+                }
+                // Start new group with current image
+                currentGroup = [img];
+            }
+        }
+        
+        // Handle the last group
+        if (currentGroup.length > 1) {
+            const container = document.createElement('div');
+            container.className = 'sample-img-container';
+            currentGroup[0].parentNode.insertBefore(container, currentGroup[0]);
+            currentGroup.forEach(groupImg => {
+                if (groupImg.parentNode.tagName === 'P') {
+                    groupImg.parentNode.removeChild(groupImg);
+                }
+                container.appendChild(groupImg);
+            });
+        }
+        
+        container.scrollTop = container.scrollHeight;
 
         toggleLoadingState(false);
         stopPlaceholderAnimation();
