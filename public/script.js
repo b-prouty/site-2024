@@ -122,6 +122,35 @@ async function askBrian() {
                                 conversationHistory = updatedHistory;
                             }
                             
+                            // Generate and add follow-up questions
+                            const followUpQuestions = generateFollowUpQuestions(responseText);
+                            if (followUpQuestions.length > 0) {
+                                const followUpSection = document.createElement('div');
+                                followUpSection.className = 'follow-up-section';
+                                
+                                const followUpTitle = document.createElement('p');
+                                followUpTitle.className = 'follow-up-title';
+                                followUpTitle.textContent = 'Potential follow-up questions:';
+                                followUpSection.appendChild(followUpTitle);
+                                
+                                const chipContainer = document.createElement('div');
+                                chipContainer.className = 'chip-container';
+                                
+                                followUpQuestions.forEach(question => {
+                                    const chip = document.createElement('button');
+                                    chip.className = 'chip';
+                                    chip.textContent = question;
+                                    chip.onclick = () => {
+                                        document.getElementById('question').value = question;
+                                        askBrian();
+                                    };
+                                    chipContainer.appendChild(chip);
+                                });
+                                
+                                followUpSection.appendChild(chipContainer);
+                                answerDiv.appendChild(followUpSection);
+                            }
+                            
                             // Add New Chat button after the response
                             const newChatButton = document.createElement('button');
                             newChatButton.className = 'chip';
@@ -392,4 +421,68 @@ function updateNavButtons() {
     
     prevButton.style.display = currentImageIndex === 0 ? 'none' : 'block';
     nextButton.style.display = currentImageIndex === imagesArray.length - 1 ? 'none' : 'block';
+}
+
+// Add this new function to generate follow-up questions
+function generateFollowUpQuestions(content) {
+    // Define categories and their related follow-up patterns
+    const followUpPatterns = {
+        projects: {
+            trigger: /(project|case study|redesign|improved|developed)/i,
+            questions: [
+                "What were the key results of this project?",
+                "What teams were involved in this project?",
+                "How long did this project take?",
+                "What was your specific role in this project?"
+            ]
+        },
+        experience: {
+            trigger: /(experience|worked|role|position|job)/i,
+            questions: [
+                "What were your main responsibilities in this role?",
+                "What skills did you use most in this position?",
+                "Can you tell me about a specific project from this time?",
+                "What teams did you collaborate with?"
+            ]
+        },
+        design_process: {
+            trigger: /(design process|methodology|approach|research|testing)/i,
+            questions: [
+                "How do you validate your design decisions?",
+                "What research methods do you typically use?",
+                "How do you collaborate with developers?",
+                "How do you measure the success of your designs?"
+            ]
+        },
+        leadership: {
+            trigger: /(lead|mentor|manage|team)/i,
+            questions: [
+                "How do you approach mentoring junior designers?",
+                "What's your philosophy on team collaboration?",
+                "How do you handle design reviews?",
+                "How do you maintain design consistency across teams?"
+            ]
+        },
+        personal: {
+            trigger: /(hobby|interest|personal|value|life)/i,
+            questions: [
+                "What are some of your favorite hobbies?",
+                "What values drive your work?",
+                "How do you maintain work-life balance?",
+                "What inspires you in your design work?"
+            ]
+        }
+    };
+
+    // Find matching categories based on the content
+    const matchingCategories = Object.entries(followUpPatterns)
+        .filter(([_, pattern]) => pattern.trigger.test(content))
+        .map(([_, pattern]) => pattern.questions)
+        .flat();
+
+    // Select up to 4 unique questions
+    const selectedQuestions = [...new Set(matchingCategories)]
+        .slice(0, 4);
+
+    return selectedQuestions;
 } 

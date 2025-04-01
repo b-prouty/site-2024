@@ -177,7 +177,7 @@ body.chat-active {
     background-color: #000;
     color: #fff;
     border-radius: 2rem;
-    border: 1px solid #ffdb3d6e ;
+    border: 1px solid #ffdb3d6e;
     padding: 2rem;
 }
 
@@ -687,4 +687,40 @@ button:disabled {
 
 .lightbox-nav.next {
     right: -60px;
+}
+
+.follow-up-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ffdb3d6e;
+}
+
+.follow-up-title {
+    font-size: 0.9rem;
+    color: #ffdb3d;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.follow-up-section .chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.follow-up-section .chip {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: #262421;
+    border: 1px solid #ffdb3d6e;
+    color: #fff;
+    animation: none;
+    margin: 0;
+}
+
+.follow-up-section .chip:hover {
+    background: #ffdb3d;
+    color: #000;
+    border-color: #ffdb3d;
 }
