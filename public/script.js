@@ -66,6 +66,12 @@ async function askBrian() {
     
     const answerText = document.createElement('div');
     answerText.className = 'answer-text';
+
+    // Initialize the DOM structure first
+    answerDiv.appendChild(answerText);
+    answerWrapper.appendChild(answerDiv);
+    container.appendChild(answerWrapper);
+
     try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 30000); // Increased to 30 seconds
@@ -97,10 +103,6 @@ async function askBrian() {
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         let responseText = '';
-
-        answerDiv.appendChild(answerText);
-        answerWrapper.appendChild(answerDiv);
-        container.appendChild(answerWrapper);
 
         while (true) {
             const { value, done } = await reader.read();
