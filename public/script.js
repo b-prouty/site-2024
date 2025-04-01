@@ -157,7 +157,21 @@ async function askBrian() {
         newChatButton.style.marginLeft = '.5rem';
         newChatButton.style.marginTop = '-0.75rem';
         newChatButton.style.border = 'none';
-        newChatButton.innerHTML = '<img src="img/refresh.svg" alt="Refresh Chat">New Chat';
+        
+        // Create icon element using Lucide
+        const iconSvg = document.createElement('i');
+        iconSvg.setAttribute('data-lucide', 'refresh-ccw');
+        
+        // Create text span
+        const text = document.createElement('span');
+        text.textContent = 'New Chat';
+        
+        // Add icon and text to button
+        newChatButton.appendChild(iconSvg);
+        newChatButton.appendChild(text);
+        
+        // Initialize the Lucide icon
+        lucide.createIcons();
         
         // Remove any existing New Chat button before adding a new one
         const existingButton = answerWrapper.querySelector('.chip');
