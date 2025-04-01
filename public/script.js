@@ -14,7 +14,8 @@ let conversationHistory = [];
 async function askBrian() {
     const sessionId = generateSessionId();
     
-    const question = document.getElementById('question').value;
+    const questionInput = document.getElementById('question');
+    const question = questionInput.value.trim();  // Use trim() to handle whitespace
     const container = document.querySelector('#conversation-container');
     const topContent = document.querySelector('#top-content');
     const chipsContainer = document.querySelector('#chips-container');
@@ -22,7 +23,7 @@ async function askBrian() {
     const mainContainer = document.querySelector('#container');
     const body = document.querySelector('body');
 
-    if (!question || question.trim() === '') {
+    if (!question) {
         alert('Please enter a question.');
         return;
     } else {
@@ -150,8 +151,10 @@ async function askBrian() {
                 chip.className = 'chip';
                 chip.textContent = question;
                 chip.onclick = () => {
-                    document.getElementById('question').value = question;
+                    const questionInput = document.getElementById('question');
+                    questionInput.value = question;
                     askBrian();
+                    questionInput.value = '';  // Clear the input after asking
                 };
                 chipContainer.appendChild(chip);
             });
