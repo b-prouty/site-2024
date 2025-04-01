@@ -122,10 +122,24 @@ async function askBrian() {
                         
                         if (content) {
                             responseText += content;
-                            // Use textContent first to sanitize the content
-                            const sanitizedContent = marked.parse(responseText);
-                            if (sanitizedContent) {
-                                answerText.innerHTML = sanitizedContent;
+                            try {
+                                // Create a temporary div to safely parse the markdown
+                                const tempDiv = document.createElement('div');
+                                const parsedContent = marked.parse(responseText);
+                                if (parsedContent && typeof parsedContent === 'string') {
+                                    tempDiv.innerHTML = parsedContent;
+                                    // Clear existing content and append the new content
+                                    while (answerText.firstChild) {
+                                        answerText.removeChild(answerText.firstChild);
+                                    }
+                                    while (tempDiv.firstChild) {
+                                        answerText.appendChild(tempDiv.firstChild);
+                                    }
+                                }
+                            } catch (markdownError) {
+                                console.error('Error parsing markdown:', markdownError);
+                                // Fallback to plain text if markdown parsing fails
+                                answerText.textContent = responseText;
                             }
                             
                             // Update conversation history if provided in the response
@@ -338,11 +352,18 @@ async function askBrian() {
             errorMessage += error.message;
         }
 
-        // Create a text node instead of using innerText
-        const errorTextNode = document.createTextNode(errorMessage);
-        answerText.innerHTML = ''; // Clear any existing content
-        answerText.appendChild(errorTextNode);
-        answerDiv.classList.add('error');
+        try {
+            // Clear existing content
+            while (answerText.firstChild) {
+                answerText.removeChild(answerText.firstChild);
+            }
+            // Create and append error message
+            const errorTextNode = document.createTextNode(errorMessage);
+            answerText.appendChild(errorTextNode);
+            answerDiv.classList.add('error');
+        } catch (domError) {
+            console.error('Error updating DOM with error message:', domError);
+        }
         
         container.scrollTop = container.scrollHeight;
         toggleLoadingState(false);
