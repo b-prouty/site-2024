@@ -121,20 +121,40 @@ async function askBrian() {
                         const { content, conversationHistory: updatedHistory } = parsedData;
                         
                         if (content) {
+                            console.log('Received content:', content); // Debug log
                             responseText += content;
                             try {
                                 // Create a temporary div to safely parse the markdown
                                 const tempDiv = document.createElement('div');
                                 const parsedContent = marked.parse(responseText);
-                                if (parsedContent && typeof parsedContent === 'string') {
-                                    tempDiv.innerHTML = parsedContent;
-                                    // Clear existing content and append the new content
-                                    while (answerText.firstChild) {
-                                        answerText.removeChild(answerText.firstChild);
+                                console.log('Parsed markdown:', parsedContent); // Debug log
+                                
+                                if (!parsedContent) {
+                                    // If markdown parsing returns null/undefined, fallback to plain text
+                                    answerText.textContent = responseText;
+                                    continue;
+                                }
+                                
+                                if (typeof parsedContent === 'string') {
+                                    // Safely set HTML content
+                                    try {
+                                        // Clear existing content first
+                                        while (answerText.firstChild) {
+                                            answerText.removeChild(answerText.firstChild);
+                                        }
+                                        
+                                        // Create a document fragment to parse the HTML
+                                        const fragment = document.createRange().createContextualFragment(parsedContent);
+                                        answerText.appendChild(fragment);
+                                    } catch (domError) {
+                                        console.error('DOM manipulation error:', domError);
+                                        // Fallback to basic text if DOM manipulation fails
+                                        answerText.textContent = responseText;
                                     }
-                                    while (tempDiv.firstChild) {
-                                        answerText.appendChild(tempDiv.firstChild);
-                                    }
+                                } else {
+                                    // Fallback for non-string parsed content
+                                    console.warn('Unexpected markdown parse result type:', typeof parsedContent);
+                                    answerText.textContent = responseText;
                                 }
                             } catch (markdownError) {
                                 console.error('Error parsing markdown:', markdownError);
