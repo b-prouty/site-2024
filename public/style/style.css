@@ -553,6 +553,53 @@ nav {
   border-radius: 0.5rem;
 }
 
+@media screen and (max-width: 1000px) {
+  .new-home-top {
+    flex-direction: row;
+    padding: 2rem;
+    padding-top: 12rem;
+    margin-top: -8rem;
+    min-height: 600px;
+  }
+  .new-home-top .flex {
+    flex-direction: column;
+  }
+  .new-home-top h1 {
+    margin-top: 0;
+  }
+  .home-left {
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    padding-bottom: 3rem;
+  }
+  .home-left img {
+    max-width: 12rem;
+    margin: 0;
+  }
+  .home-right {
+    min-width: 4rem;
+  }
+  .home-right-top,
+  .home-right-bottom {
+    flex-wrap: wrap;
+  }
+  .home-right-top .card,
+  .home-right-bottom .card {
+    flex: 1;
+    min-width: 12rem;
+  }
+  .home-right-top .card h1,
+  .home-right-bottom .card h1 {
+    font-size: 2rem;
+  }
+  .home-right-top .card p,
+  .home-right-bottom .card p {
+    font-size: 1rem;
+  }
+}
 @media screen and (max-width: 768px) {
   .home-top {
     flex-direction: column;
@@ -570,6 +617,10 @@ nav {
 @media screen and (max-width: 480px) {
   .home-top h1 {
     font-size: 1.625rem;
+  }
+  .home-left {
+    flex-direction: column;
+    text-align: center;
   }
 }
 #work-content {
