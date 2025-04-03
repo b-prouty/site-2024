@@ -2,6 +2,12 @@
     // padding: 0 2rem;
     padding-bottom: 6rem;
 
+     h2 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
     .project-link {
         color: $green ;
     }
@@ -82,15 +88,17 @@
         margin-bottom: 6rem;
 
         a {
-            color: $white;
+            color: $dark;
             display: inline-block;
             text-decoration: none;
-            padding: .5rem;
-            border-bottom: 1px solid $white;
-            transition: padding 500ms;
+            padding: .75rem 1rem;
+            // border-bottom: 1px solid $white;
+            transition: all 500ms;
 
             &:hover {
-                padding-bottom: .7rem;
+                color: $highlight;
+                border: 1px solid $highlight;
+                background-color: $dark;
             }
         }
 
@@ -123,6 +131,42 @@
     .project-head{
         max-width: 1100px;
         margin: auto;
+    }
+
+    .table-analogy-section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 3rem 0;
+    
+        // &:nth-child(odd) {
+        //     flex-direction: row-reverse !important;
+        // }
+    
+        .heady-flexy {
+            align-items: center;
+    
+            img {
+            max-width: 30rem;
+            width: 100%;
+        }}
+    
+        .heady-flexy .table-imgs {
+            max-width: 15rem;
+            width: 100%;
+            border-radius: 1rem;
+            //background-color: rgba(0, 0, 0, 0.25);
+            // border: 1px solid $highlight;
+            //margin-bottom: 1rem;
+        }
+    
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            // color: $highlight;
+        }
+    
+        
     }
 
 }
@@ -260,4 +304,53 @@ li {
         }
         .solution { padding-left: 2rem; }
     }
+}
+
+.design-system-marquee {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  background: #000;
+  overflow: hidden;
+  position: relative;
+  padding: 5rem 0;
+  margin-top: 3rem;
+
+  .marquee-track {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    animation: scroll 40s linear infinite;
+    will-change: transform;
+    
+    // &:hover {
+    //   animation-play-state: paused;
+    // }
+  }
+
+  .marquee-content {
+    display: flex;
+    gap: 2rem;
+    padding: 0 2rem;
+    flex-shrink: 0;
+    
+    img {
+      height: 90vh;
+      max-height: 600px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 0.5rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }

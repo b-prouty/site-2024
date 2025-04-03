@@ -60,10 +60,12 @@
     gap: 1rem;
     align-items: stretch;
     justify-content: center;
-    background-color: #01070E;
-    padding: 8rem;
+    background-color: #000;
+    padding: 4rem;
+    padding-top: 12rem;
+    margin-top: -8rem;
     min-height: 600px;
-    background: linear-gradient(82deg, #01070E -91.29%, #042E0B -21.22%, #01070E 51.66%, #042E0B 95.57%);
+    //  background: linear-gradient(82deg, #01070E -91.29%, #042E0B -21.22%, #01070E 51.66%, #042E0B 95.57%);
 
     .wrapper {
         display: flex;

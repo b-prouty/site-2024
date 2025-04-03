@@ -41,6 +41,10 @@ body {
 .drk-bg {
     background-color: $dark;
     color: $white;
+
+    section:first-of-type {
+        margin-top: 5rem;
+    }
 }
 
 h1,h2{

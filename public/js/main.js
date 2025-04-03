@@ -65,16 +65,39 @@ window.onpageshow = function () {
     // }, 1000);
 };
 
-document.addEventListener('DOMContentLoaded', function() {
+// Function to initialize hamburger menu functionality
+function initializeHamburgerMenu() {
     const hamburger = document.querySelector('.hamburger-menu');
     const mobileNav = document.querySelector('.mobile-nav');
 
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-        // Prevent scrolling when menu is open
-        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    if (hamburger && mobileNav) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            // Prevent scrolling when menu is open
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+    }
+}
+
+// Create a MutationObserver to watch for the navigation being added to the DOM
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.addedNodes.length) {
+            // Check if the navigation has been added
+            if (document.querySelector('.ai-nav')) {
+                initializeHamburgerMenu();
+                // Once we've initialized the menu, we can disconnect the observer
+                observer.disconnect();
+            }
+        }
     });
 });
+
+// Start observing the document with the configured parameters
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Also try to initialize immediately in case the nav is already loaded
+document.addEventListener('DOMContentLoaded', initializeHamburgerMenu);
 
 

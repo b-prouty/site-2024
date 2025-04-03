@@ -24,11 +24,10 @@ body.chat-active {
 .container {
     display: flex;
     flex-direction: column;
-    max-width: 1100px;
     margin: 0 auto;
     width: 100%;
-    min-height: 420px;
-    padding: 0 2rem;
+   /*  min-height: 420px;
+    padding: 0 2rem; */
 }
 
 .container.chat-active {
@@ -41,11 +40,11 @@ body.chat-active {
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
-    height: calc(100vh - 150px);
+    /* height: calc(100vh - 150px); */
     transition: height 500ms ease-in;
     /* margin-top: 8rem; */
     padding-top: 10rem;
-    padding-bottom: 4rem;
+    padding-bottom: 14rem;
     overflow-y: scroll;
 }
 
@@ -223,15 +222,15 @@ body.chat-active {
     left: 0;
     right: 0;
     width: 100%;
-    /* background: rgba(0, 0, 0, 0.95); */
+    background: #1b1b1b2f;
     backdrop-filter: blur(10px);
-    padding: 20px;
+    padding: 2rem;
+    padding-top: 0.5rem;
     /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
 }
 
 .input-wrapper {
     width: 100%;
-   
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -275,7 +274,7 @@ body.chat-active {
     line-height: 1.5;
     resize: none;
     overflow-y: auto;
-    background: transparent;
+    background: #1b1b1b6f;
     color: #fff;
     font-size: 16px;
     font-family: Helvetica;
@@ -345,7 +344,7 @@ button:disabled {
     flex-direction: column;
     align-items: baseline;
     justify-content: center;
-    /* max-width: 1100px; */
+    max-width: 1200px;
 }
 
 .chip-container {
@@ -401,14 +400,15 @@ button:disabled {
 }
 
 .chips-title {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-size: .825rem;
     color: white;
-    margin-right: 0.5rem;
     display: block;
     text-align: center;
     width: 100%;
 }
+
+.disclaimer {display: none;}
 
 .disclaimer p{
     font-size: 0.875rem;
@@ -424,10 +424,7 @@ button:disabled {
 }
 
 @media (min-width: 768px) {
-    .input-container {
-        background-color: #1b1b1b;
-        padding-top: 0;
-    }
+
 
     .textarea-wrapper {
         padding: 0 2rem;
@@ -440,12 +437,6 @@ button:disabled {
 }
 
 @media (min-height: 750px) {
-    #top-content {
-        height: calc(100vh - 150px);   
-    }
-
-    .disclaimer {display: none;}
-
     #top-content img {
         height: 200px;
     }
@@ -469,7 +460,8 @@ button:disabled {
         left: 0;
         right: 0;
         width: 100%;
-
+        padding: 1rem;
+        padding-top: 0.25rem;
     }
     
     
@@ -490,7 +482,7 @@ button:disabled {
     .chip svg {width: .75rem; height: .75rem;}
 
     #top-content {
-        padding-top: 1rem
+        padding-top: 3rem
     }
 
 
