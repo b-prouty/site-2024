@@ -614,7 +614,7 @@ nav {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .home-top h1 {
     font-size: 1.625rem;
   }
