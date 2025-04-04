@@ -127,7 +127,7 @@ async function askBrian() {
                                 // Create a temporary div to safely parse the markdown
                                 const tempDiv = document.createElement('div');
                                 const parsedContent = marked.parse(responseText);
-                                console.log('Parsed markdown:', parsedContent); // Debug log
+                                // console.log('Parsed markdown:', parsedContent); // Debug log
                                 
                                 if (!parsedContent) {
                                     // If markdown parsing returns null/undefined, fallback to plain text
