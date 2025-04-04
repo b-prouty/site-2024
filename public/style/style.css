@@ -622,6 +622,12 @@ nav {
     flex-direction: column;
     text-align: center;
   }
+  .work-cards {
+    padding: 0rem;
+  }
+  .work-cards .card .card-btm {
+    min-width: 0;
+  }
 }
 #work-content {
   display: flex;

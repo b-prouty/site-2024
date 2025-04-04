@@ -254,4 +254,13 @@
 
         text-align: center;
     }
+
+    .work-cards {
+        padding: 0rem;
+    }
+
+    .work-cards .card .card-btm {
+        min-width: 0;
+    }
+
 }
