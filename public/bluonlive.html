@@ -13,7 +13,10 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bluonlive | Brian Prouty</title>
+  <title>Bluon Live | Brian Prouty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -29,39 +32,15 @@
 </script>
 
 <body class="drk-bg project">
+    <div include-html="components/nav.html"></div>
 
-  <nav class="ai-nav">
-        <div class="ai-nav-group">
-            <!-- <div id="homeIcon"><img src="img/youProfile 1.png" alt="Brian Prouty Logo"></div> -->
-            <a href="index.html" class="logo">
-                <h2>Brian Prouty</h2>
-            </a>
-        </div>
 
-        <!-- Add hamburger menu button -->
-        <button class="hamburger-menu" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <div class="ai-nav-group mobile-nav">
-            <a href="work.html" class="nav-item work" title="Recent Work">
-                Work
-            </a>
-            <a href="resume.html" class="nav-item resume" title="resume">
-                Resume
-            </a>
-            <a href="mailto:brian@brianprouty.com" class="nav-item contact" title="contact">
-                brian@brianprouty.com
-            </a>
-        </div>
-    </nav>
-
-  <div class="project-head">
+  <section class="project-head">
+    <img src="img/bluonlive_project_header.png" alt="checkoutflow header graphic">
+    <br><br>
     <h1>B2B Order Management</h1>
     <h3>Bluon web application redesign</h3>
-  </div>
+  </section >
 
 
   <section class="project-head">
@@ -106,98 +85,6 @@
     </div>
   </section>
 
-
-  <section class="slider-section">
-    <div data-aos="fade-up" data-aos-duration="1000">
-      <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper my-thumbs">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <img src="img/bluonlive/flow-01.png" alt="View of the model profile">
-            <!-- <h4>Consolidated Task Page</h4>
-            <p>Users will now be able to see all their tasks in one place as opposed to having to toggle between 2 different
-              pages.</p> -->
-          </div>
-          <div class="swiper-slide">
-            <img src="img/bluonlive/flow-02.png" alt="View of the model profile">
-            <!-- <h4>Info Grab</h4>
-            <p>Counter staff confirms who is working on the order. 89% of the time it was the same person as the last so it
-              came preselected!</p> -->
-          </div>
-          <div class="swiper-slide">
-            <img src="img/bluonlive/flow-03.png" alt="View of the model profile">
-            <!-- <h4>Order Information (pt. 1)</h4>
-            <p>Users have a very streamlined process for checking the inventory and reporting back to the customer what they
-              have in stock and how much it will be.</p> -->
-          </div>
-          <div class="swiper-slide">
-            <img src="img/bluonlive/flow-04.png" alt="View of the model profile">
-            <!-- <h4>Order info (pt. 2)</h4>
-            <p>Users can also add attachments such as quotes and invoices to provide to customers.</p> -->
-          </div>
-          <div class="swiper-slide">
-            <img src="img/bluonlive/flow-05.png" alt="View of the model profile">
-            <!-- <h4>Review</h4>
-            <p>Prior they would send information, without the ability to see a consolidated view of what they were sending
-              which resulted in mistakes. Now users can see what they are sending before sending it!</p> -->
-          </div>
-          <div class="swiper-slide">
-            <img src="img/bluonlive/flow-06.png" alt="View of the model profile">
-            <!-- <h4>Post Approval</h4>
-            <p>After approval, the customer has the ability to add on any "last-minute" items. If those items are added this
-              is what the user will see when opening the order details.</p> -->
-          </div>
-          <div class="swiper-slide">
-            <img src="img/bluonlive/flow-07.png" alt="View of the model profile">
-            <!-- <h4>Post Approval</h4>
-            <p>Users are now <em>required</em> to add an attachment for an invoice and final total. And optionally they can
-              add the order (bid) number and order notes for their records.</p> -->
-          </div>
-          <div class="swiper-slide">
-            <img src="img/bluonlive/flow-08.png" alt="View of the model profile">
-            <!-- <h4>Order Complete</h4>
-            <p>Lastly, this is how an order looks once it is marked as complete and received from the customer!</p> -->
-          </div>
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-      
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      
-        <!-- If we need scrollbar -->
-        <!-- <div class="swiper-scrollbar"></div> -->
-        <!-- <swiper-container class="my-thumbs"> ... </swiper-container> -->
-      </div>
-    
-    </div>
-  </section>
-
-  <section class="project-results">
-    <h2 data-aos="fade-up" data-aos-duration="1000">Key Metrics</h2>
-    <div class="results">
-      <div class="result" data-aos="fade-up" data-aos-duration="1000">
-        <h2>Less confusion</h2>
-        <p>finding incoming and approved orders</p>
-      </div>
-
-      <div class="result" data-aos="fade-up" data-aos-duration="1100">
-        <h2>37% decrease</h2>
-        <p>in denied availability requests</p>
-      </div>
-      <div class="result" data-aos="fade-up" data-aos-duration="1200">
-        <h2>34% decrease</h2>
-        <p>in average turn around time</p>
-      </div>
-      <div class="result" data-aos="fade-up" data-aos-duration="1300">
-        <h2>225% increase</h2>
-        <p>request to order conversions</p>
-      </div>
-    </div>
-</section>
-  
 
   <section >
     <h2>
@@ -263,6 +150,96 @@
     </div>
 </section>
 
+<section class="project-results">
+  <h2 data-aos="fade-up" data-aos-duration="1000">Key Metrics</h2>
+  <div class="results">
+    <div class="result" data-aos="fade-up" data-aos-duration="1000">
+      <h2>Less confusion</h2>
+      <p>finding incoming and approved orders</p>
+    </div>
+
+    <div class="result" data-aos="fade-up" data-aos-duration="1100">
+      <h2>37% decrease</h2>
+      <p>in denied availability requests</p>
+    </div>
+    <div class="result" data-aos="fade-up" data-aos-duration="1200">
+      <h2>34% decrease</h2>
+      <p>in average turn around time</p>
+    </div>
+    <div class="result" data-aos="fade-up" data-aos-duration="1300">
+      <h2>225% increase</h2>
+      <p>request to order conversions</p>
+    </div>
+  </div>
+</section>
+
+<section class="project-head">
+  <h2>Designs</h2>
+</section>
+
+<section class="slider-section">
+  <div data-aos="fade-up" data-aos-duration="1000">
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper my-thumbs">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="img/bluonlive/flow-01.png" alt="View of the model profile">
+          <!-- <h4>Consolidated Task Page</h4>
+          <p>Users will now be able to see all their tasks in one place as opposed to having to toggle between 2 different
+            pages.</p> -->
+        </div>
+        <div class="swiper-slide">
+          <img src="img/bluonlive/flow-02.png" alt="View of the model profile">
+          <!-- <h4>Info Grab</h4>
+          <p>Counter staff confirms who is working on the order. 89% of the time it was the same person as the last so it
+            came preselected!</p> -->
+        </div>
+        <div class="swiper-slide">
+          <img src="img/bluonlive/flow-03.png" alt="View of the model profile">
+          <!-- <h4>Order Information (pt. 1)</h4>
+          <p>Users have a very streamlined process for checking the inventory and reporting back to the customer what they
+            have in stock and how much it will be.</p> -->
+        </div>
+        <div class="swiper-slide">
+          <img src="img/bluonlive/flow-04.png" alt="View of the model profile">
+          <!-- <h4>Order info (pt. 2)</h4>
+          <p>Users can also add attachments such as quotes and invoices to provide to customers.</p> -->
+        </div>
+        <div class="swiper-slide">
+          <img src="img/bluonlive/flow-05.png" alt="View of the model profile">
+          <!-- <h4>Review</h4>
+          <p>Prior they would send information, without the ability to see a consolidated view of what they were sending
+            which resulted in mistakes. Now users can see what they are sending before sending it!</p> -->
+        </div>
+        <div class="swiper-slide">
+          <img src="img/bluonlive/flow-06.png" alt="View of the model profile">
+          <!-- <h4>Post Approval</h4>
+          <p>After approval, the customer has the ability to add on any "last-minute" items. If those items are added this
+            is what the user will see when opening the order details.</p> -->
+        </div>
+        <div class="swiper-slide">
+          <img src="img/bluonlive/flow-07.png" alt="View of the model profile">
+          <!-- <h4>Post Approval</h4>
+          <p>Users are now <em>required</em> to add an attachment for an invoice and final total. And optionally they can
+            add the order (bid) number and order notes for their records.</p> -->
+        </div>
+        
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    
+      <!-- If we need scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+      <!-- <swiper-container class="my-thumbs"> ... </swiper-container> -->
+    </div>
+  
+  </div>
+</section>
 
   <section class="grid-container section">
           <h2 data-aos="fade-up" data-aos-duration="1000">

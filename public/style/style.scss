@@ -8,12 +8,18 @@ $green: #209320;
 //$button-outline: 1px solid #262421a9;
 $button-outline: 1px solid rgba($color: #36332F, $alpha: 0.5);
 $white: #F2EFEB;
-$dark: #262421;
-$wrap-width: 1100px;
+$dark: #1b1b1b;
+$highlight: #FFDB3D;
+$wrap-width: 1200px;
 
-@font-face { font-family: KENOKY; src: url('KENOKY-Light.woff'); } 
-@font-face { font-family: KENOKY;  src: url('KENOKY-Light.woff');}
-
+// Font configuration for Bricolage Grotesque
+.bricolage-grotesque-heading {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
 
 body, * {
     box-sizing: border-box;
@@ -26,7 +32,7 @@ body {
     height: 100vh;
     // overflow: hidden;
     color: $text-primary;
-    font-family: Helvetica;
+    font-family: "Bricolage Grotesque", sans-serif;;
     font-weight: 100;
 }
 
@@ -35,20 +41,26 @@ body {
 .drk-bg {
     background-color: $dark;
     color: $white;
+
+    section:first-of-type {
+        margin-top: 5rem;
+    }
 }
 
 h1,h2{
-    font-family: KENOKY;
-    font-weight: 100;
+    @extend .bricolage-grotesque-heading;
+    font-weight: 400;
     line-height: 150%;
 }
 
 h1 {
     font-size: 4rem;
-    text-transform: uppercase;
 }
 
-h2 {font-size: 2rem;}
+h2 {
+    font-size: 2rem;
+    color: $highlight;
+}
 
 h3 {
     // font-weight: 100;
@@ -56,10 +68,10 @@ h3 {
 }
 
 p {
-    font-family: Helvetica;
+    font-family: "Bricolage Grotesque", sans-serif;;
     font-size: 1rem;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
     line-height: 150%; /* 1.5rem */
 }
 
@@ -75,7 +87,7 @@ img {max-width: 100%;}
 .button {
     border: $button-outline;
     border-radius: .5rem;
-    background-color: transparent;
+    background-color: $highlight;
     display: flex;
     align-items: center;
     gap: .5rem;

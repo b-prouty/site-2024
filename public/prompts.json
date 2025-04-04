@@ -1,0 +1,102 @@
+[
+    {
+      "item": "Background",
+      "prompt": "what is Brian's background?"
+    },
+    {
+        "item": "Recent Projects",
+        "prompt": "Tell me about Brian's most recent projects"
+      },
+    {
+      "item": "Current role",
+      "prompt": "what is Brian's current role?"
+    },
+    {
+      "item": "Ideal role",
+      "prompt": "what is Brian's ideal role?"
+    },
+    {
+      "item": "Years of Experience",
+      "prompt": "how many years of experience does Brian have?"
+    },
+    {
+      "item": "Industries worked in",
+      "prompt": "what industries has Brian worked in?"
+    },
+    {
+      "item": "Inspirations",
+      "prompt": "what inspires Brian's brian's designs?"
+    },
+    {
+      "item": "Mentorship",
+      "prompt": "what is Brian's experience with mentorship?"
+    },
+    {
+      "item": "Prioritization",
+      "prompt": "what is Brian's approach to prioritization?"
+    },
+    {
+      "item": "Innovation",
+      "prompt": "what is Brian's approach to innovation?"
+    },
+    {
+      "item": "Design Tools",
+      "prompt": "what design tools does Brian use?"
+    },
+    {
+      "item": "Figma/Sketch",
+      "prompt": "does Brian have experience with Figma or Sketch?"
+    },
+    {
+      "item": "Design Systems",
+      "prompt": "what is Brian's approach to design systems?"
+    },
+    {
+      "item": "Delivery",
+      "prompt": "what is Brian's approach to delivery?"
+    },
+    {
+      "item": "Ops strategy",
+      "prompt": "what is Brian's ops strategy?"
+    },
+    {
+      "item": "Measuring KPI's",
+      "prompt": "how does Brian measure KPI's?"
+    },
+    {
+      "item": "Collaboration",
+      "prompt": "what is Brian's approach to collaboration?"
+    },
+    {
+      "item": "Design Process",
+      "prompt": "what is Brian's design process?"
+    },
+    {
+      "item": "Workflow",
+      "prompt": "what is Brian's workflow?"
+    },
+    {
+      "item": "User Research",
+      "prompt": "what is Brian's experience with user research?"
+    },
+    {
+      "item": "Business Impacts",
+      "prompt": "What are some of the business impacts of Brian's work?"
+    },
+    {
+      "item": "Hobbies",
+      "prompt": "what are Brian's hobbies?"
+    },
+    {
+      "item": "Salary",
+      "prompt": "what salary does Brian expect to receive?"
+    },
+    {
+      "item": "Strengths",
+      "prompt": "what are Brian's strengths?"
+    },
+    {
+      "item": "Weaknesses",
+      "prompt": "what are Brian's weaknesses?"
+    }
+  ]

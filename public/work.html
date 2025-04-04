@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian Prouty | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/ai.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -20,96 +23,153 @@
   gtag('config', 'G-ZE91SLFDMH');
 </script>
 
-<body class="wht-bg">
-    <nav class="ai-nav">
-        <div class="ai-nav-group">
-            <!-- <div id="homeIcon"><img src="img/youProfile 1.png" alt="Brian Prouty Logo"></div> -->
-            <a href="index.html" class="logo">
-                <h2>Brian Prouty</h2>
-            </a>
-        </div>
 
-        <!-- Add hamburger menu button -->
-        <button class="hamburger-menu" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+<body class="drk-bg">
+    <div include-html="components/nav.html"></div>
 
-        <div class="ai-nav-group mobile-nav">
-            <a href="work.html" class="nav-item work" title="Recent Work">
-                Work
-            </a>
-            <a href="resume.html" class="nav-item resume" title="resume">
-                Resume
-            </a>
-            <a href="mailto:brian@brianprouty.com" class="nav-item contact" title="contact">
-                brian@brianprouty.com
-            </a>
-        </div>
-    </nav>
-    <section id="home-content" class="wrapper">
+    <section>
+        <div class="new-home-top">
+            <div class="wrapper flex">
+                <div class="home-left">
+                    <img id="homeImg" src="img/youProfile 1.png" alt="Image of Brian Prouty">
+                    <div>
+                        <h1>Brian Prouty</h1>
+                        <p class="overline">Definition:</p>
+                        <h2>Product Designer</h2>
+                        <h3> with a background in front-end development and graphic design</h3>
+                    </div>
+                    
+                </div>
+                <div class="home-right">
+                    <div class="home-right-top">
+                        <div class="card">
+                            <h1>30+</h1>
+                            <p>Features Shipped</p>
+                        </div>
+                        <div class="card">
+                            <h1>4+</h1>
+                            <p>Design Systems Created</p>
+                        </div>
+                        <div class="card">
+                            <h1>100+</h1>
+                            <p>Workshops Facilitated</p>
+                        </div>
+                    </div>
+                    <div class="home-right-bottom">
+                        <div class="card">
+                            <h1>20+</h1>
+                            <p>Websites Designed & Developed</p>
+                        </div>
+                        <div class="card">
+                            <h1>~2 million</h1>
+                            <p>Peace signs thrown at the end of meetings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+    </section>
+
+    <!-- <section id="home-content" class="wrapper">
         <div class="home-top">
             <img id="homeImg" src="img/youProfile 1.png" alt="Image of Brian Prouty">
             <div>
                 <p>Hey, my name is</p>
                 <h1>Brian Prouty</h1>
             
-            <p>I am a California based <span class="home-highlight"> product designer</span> with a background in <span class="home-highlight">front-end development</span> and <span class="home-highlight">graphic design</span></p>
+            <h1><span class="home-highlight"> product designer</span> <br> &nbsp; &#11153; with a background in <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="home-highlight">front-end development</span> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and <span class="home-highlight">graphic design</span></h1>
         </div>
             
         </div>
-
-    </section>
+    </section> -->
 
     <section id="work-content" class="wrapper">
         <h1>Recent Work</h1>
         <div class="work-cards">
-            <div class="card" data-aos="fade-up" data-aos-duration="1000">
-                <div class="card-img pricing">
+            <div class="card" data-aos="fade-right" data-aos-duration="1000">
+                <div class="card-img pricing" >
                     <!-- img here -->
                 </div>
-                <div class="card-btm">
+                <div class="card-btm" data-aos="fade-left" data-aos-duration="1000">
                     <div class="txt">
-                        <h2>Improving checkout experiences to increase conversion rates</h2>
+                        <h2>Conversion Rate Optimization</h2>
                         <p>A study showing how reducing friction throughout checkout flows leads to higher conversion rates.</p>
+
+                        <div class="home-kpis">
+                            <div class="kpi">
+                                <h3>25%</h3>
+                                <p>Decrease in complaints</p>
+                            </div>
+                            <div class="kpi">
+                                <h3>300+</h3>
+                                <p>Leads generated</p>
+                            </div>
+                            <div class="kpi">
+                                <h3>14%</h3>
+                                <p>Increase in Signups</p>
+                            </div>
+                            <div class="kpi">
+                                <h3>56k</h3>
+                                <p>Increase in MRR</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="btn-container">
                         <a href="pricing.html">View Case Study <span>&rarr;</span> </a>
                     </div>
                 </div>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-duration="1000">
+            <div class="card" data-aos="fade-left" data-aos-duration="1000">
                 <div class="card-img blive">
                     <!-- img here -->
                 </div>
-                <div class="card-btm">
+                <div class="card-btm" data-aos="fade-right" data-aos-duration="1000">
                     <div class="txt">
                         <h2>B2B Order Management</h2>
                         <p>Redesign of web application to streamline order management and fulfillment processes.</p>
+
+                        <div class="home-kpis">
+                            <!-- <div class="kpi">
+                                <h3>Less confusion</h3>
+                                <p>finding incoming and approved orders</p>
+                            </div> -->
+                            <div class="kpi">
+                                <h3>37%</h3>
+                                <p>decrease in denied availability requests</p>
+                            </div>
+                            <div class="kpi">
+                                <h3>34%</h3>
+                                <p>decrease in average turn around time</p>
+                            </div>
+                            <div class="kpi">
+                                <h3>225%</h3>
+                                <p>Increase inrequest to order conversions</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="btn-container">
                         <a href="bluonlive.html">View Case Study <span>&rarr;</span> </a>
                     </div>
                 </div>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-duration="1000">
+            <!-- <div class="card" data-aos="fade-up" data-aos-duration="1000">
                 <div class="card-img basecamp">
-                    <!-- img here -->
+                    
                 </div>
                 <div class="card-btm">
                     <div class="txt">
                         <h2>Tech Support Platform</h2>
-                        <p>Mobile and web applications to deliver top-tier tech support for service workers.</p>
+                        <p> Mobile and web applications to deliver top-tier tech support for service workers. </p>
                     </div>
                     <div class="btn-container">
                         <a href="basecamp.html">View Case Study <span>&rarr;</span> </a>
                     </div>
                 </div>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-duration="1000">
+            </div> -->
+            <!-- <div class="card" data-aos="fade-up" data-aos-duration="1000">
                 <div class="card-img ratic">
-                    <!-- img here -->
+                   
                 </div>
                 <div class="card-btm">
                     <div class="txt">
@@ -120,18 +180,36 @@
                         <a href="ratic.html">View Case Study <span>&rarr;</span> </a>
                     </div>
                 </div>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-duration="1000">
+            </div> -->
+            <div class="card" data-aos="fade-right" data-aos-duration="1000">
                 <div class="card-img bluon2">
                     <!-- img here -->
                 </div>
-                <div class="card-btm">
+                <div class="card-btm" data-aos="fade-left" data-aos-duration="1000">
                     <div class="txt">
-                        <h2>B2B Ordering Process</h2>
-                        <p>Created an intuitive ordering process for a mobile application.</p>
+                        <h2>Mobile Application Redesign</h2>
+                        <p>New mobile app design system to streamline design and development processes.</p>
+                        <div class="home-kpis">
+                            <!-- <div class="kpi">
+                                <h3>Less confusion</h3>
+                                <p>finding incoming and approved orders</p>
+                            </div> -->
+                            <div class="kpi">
+                                <h3>85%</h3>
+                                <p>screens redesigned using system components</p>
+                            </div>
+                            <div class="kpi">
+                                <h3> < 5 </h3>
+                                <p>UI related bugs reported</p>
+                            </div>
+                            <div class="kpi">
+                                <h3>Reliable</h3>
+                                <p>components built improving speed of designs</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="btn-container">
-                        <a href="bluon2.html">View Case Study <span>&rarr;</span> </a>
+                        <a href="bluonapp.html">View Case Study <span>&rarr;</span> </a>
                     </div>
                 </div>
             </div>
