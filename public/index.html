@@ -247,14 +247,6 @@
             document.getElementById('question').focus();
             loadPromptChips();
         });
-
-        document.getElementById('question').addEventListener('keydown', function(event) {
-            if (event.key === 'Enter' && !event.shiftKey) {
-                event.preventDefault();
-                askBrian();
-                this.value = '';
-            }
-        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
