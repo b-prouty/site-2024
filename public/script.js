@@ -756,9 +756,9 @@ function closeFloatingCard() {
 // Check if the card should be hidden on page load
 document.addEventListener('DOMContentLoaded', function() {
     const card = document.getElementById('floating-card');
-    if (localStorage.getItem('floatingCardClosed') === 'true') {
-        card.classList.add('hidden');
-    }
+    // if (localStorage.getItem('floatingCardClosed') === 'true') {
+    //     card.classList.add('hidden');
+    // }
 });
 
 
