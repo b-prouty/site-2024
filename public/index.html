@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ask Brian</title>
+    <title>Brian Prouty | AI Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
@@ -79,6 +79,17 @@
             <div class="disclaimer">
                 <p>If you would like to view Brian's more traditional portfolio, please click <a href="work.html">here</a>.</p>
             </div>
+        </div>
+    </div>
+
+    <div id="floating-card" class="floating-card">
+        <button class="close-button" onclick="closeFloatingCard()">
+            <i data-lucide="x"></i>
+        </button>
+        <h3>Looking for Brian's <em>traditional</em> portfolio?</h3>
+        <div class="button-group">
+            <a href="work.html" class="primary-button">Take me there</a>
+            <button class="secondary-button" onclick="closeFloatingCard()">No thanks</button>
         </div>
     </div>
 
@@ -251,6 +262,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
     <script src="js/main.js"></script>
+    
 </body>
 
 </html>

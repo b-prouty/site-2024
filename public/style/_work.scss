@@ -12,6 +12,61 @@
     }
 }
 
+.btn-container {    
+    display: flex;
+    justify-content: flex-end;
+    // width: 100%;
+
+    a {
+        background: $highlight;
+        display: flex;
+        padding: .75rem 1rem;
+        align-items: center;
+        text-decoration: none;
+        gap: 0.25rem;
+        color: $dark;
+        border-radius: .25rem;
+        border: none;
+        transition: 500ms;
+        height: fit-content;
+
+        &:hover {
+            gap: .75rem;
+            border-radius: 0rem;
+        }
+    }
+
+    &.left {
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+.highlighted-work {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: $highlight;
+    border-radius: 1rem;
+    color: $dark ;
+    align-items: center;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+
+    .card { flex: 1;}
+    
+    h2 {
+        color: $dark;
+    }
+    
+    .btn-container a {
+        background-color: $dark;
+        color: $highlight;
+    }
+    
+}
+
 
 
 .work-cards {
@@ -128,30 +183,7 @@
             }
             
 
-            .btn-container {    
-                display: flex;
-                justify-content: flex-end;
-                // width: 100%;
-
-                a {
-                    background: $highlight;
-                    display: flex;
-                    padding: .75rem 1rem;
-                    align-items: center;
-                    text-decoration: none;
-                    gap: 0.25rem;
-                    color: $dark;
-                    border-radius: .25rem;
-                    border: none;
-                    transition: 500ms;
-                    height: fit-content;
-
-                    &:hover {
-                        gap: .75rem;
-                        border-radius: 0rem;
-                    }
-                }
-            }
+            
         }
     }
 }

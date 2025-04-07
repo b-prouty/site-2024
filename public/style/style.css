@@ -641,6 +641,56 @@ nav {
   text-align: center;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-container a {
+  background: #FFDB3D;
+  display: flex;
+  padding: 0.75rem 1rem;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.25rem;
+  color: #1b1b1b;
+  border-radius: 0.25rem;
+  border: none;
+  transition: 500ms;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.btn-container a:hover {
+  gap: 0.75rem;
+  border-radius: 0rem;
+}
+.btn-container.left {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.highlighted-work {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #FFDB3D;
+  border-radius: 1rem;
+  color: #1b1b1b;
+  align-items: center;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+.highlighted-work .card {
+  flex: 1;
+}
+.highlighted-work h2 {
+  color: #1b1b1b;
+}
+.highlighted-work .btn-container a {
+  background-color: #1b1b1b;
+  color: #FFDB3D;
+}
+
 .work-cards {
   display: flex;
   flex-direction: row;
@@ -744,28 +794,6 @@ nav {
   line-height: 100%;
   font-family: "Bricolage Grotesque", sans-serif;
 }
-.work-cards .card .card-btm .btn-container {
-  display: flex;
-  justify-content: flex-end;
-}
-.work-cards .card .card-btm .btn-container a {
-  background: #FFDB3D;
-  display: flex;
-  padding: 0.75rem 1rem;
-  align-items: center;
-  text-decoration: none;
-  gap: 0.25rem;
-  color: #1b1b1b;
-  border-radius: 0.25rem;
-  border: none;
-  transition: 500ms;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.work-cards .card .card-btm .btn-container a:hover {
-  gap: 0.75rem;
-  border-radius: 0rem;
-}
 
 @media screen and (max-width: 768px) {
   #work-content h1 {
@@ -861,6 +889,17 @@ nav {
   font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 1rem;
+}
+.project blockquote {
+  border-left: 4px solid rgba(242, 239, 235, 0.25);
+  padding: 0.125rem;
+  padding-left: 2rem;
+  margin: 1rem 0;
+  color: rgba(242, 239, 235, 0.75);
+  letter-spacing: 0.0125rem;
+}
+.project blockquote p {
+  font-style: italic;
 }
 .project .project-link {
   color: #209320;
@@ -1383,4 +1422,6 @@ li {
   .swiper-slide h4, .swiper-slide p {
     padding: 0 0.5rem;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

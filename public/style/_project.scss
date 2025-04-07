@@ -8,6 +8,16 @@
         margin-bottom: 1rem;
     }
 
+    blockquote {
+        border-left: 4px solid rgba($color: $white, $alpha: 0.25);
+        padding: .125rem;
+        padding-left: 2rem;
+        margin: 1rem 0;
+        color: rgba($color: $white, $alpha: 0.75);
+        letter-spacing: 0.0125rem;
+        p {font-style: italic ;}
+    }
+
     .project-link {
         color: $green ;
     }
