@@ -123,13 +123,13 @@
       {
         "name": "Mobile App Ordering",
         "date": "January 2024",
-        "description": "Created an intuitive ordering process for a mobile application.",
+        "description": "Created an intuitive Design System for a mobile application.",
         "link": "",
         "sample images":["![Flow 1](img/B2/flow-01.png)", "![Flow 2](img/B2/flow-02.png)", "![Flow 3](img/B2/flow-03.png)"],
         "roles": ["Process improvements", "User Research", "Interaction Design", "Visual Design", "Prototyping & Testing", "Handoff"],
         "teams": ["Jr. Product Designers", "Product Managers", "Web Developers", "C-Level Stakeholders"],
         "duration": "10 months",
-        "summary": "A redesigned B2B ordering process, focusing on field technician needs, led to a 300% increase in availability requests and a 225% increase in request-to-order conversions. User research revealed pain points, including difficulty finding availability and lack of clarity on order status, which were addressed through intuitive design solutions."
+        "summary": "Bluon Mobile App Design System Implementation. The Bluon mobile application had expanded rapidly, resulting in inconsistent UI elements, duplicated components, and significant design debt due to contributions from multiple teams with varying design practices. To address these challenges, a scalable design system was developed and implemented over a four-month period. Key components of the design system included: Design Tokens: Established foundational elements such as color variables, text styles, spacing, and icon sizes to ensure consistency across the application. Reusable Components: Developed standardized buttons, input fields, dropdowns, cards, and modals, enabling designers and developers to assemble screens efficiently. Usage Patterns: Created guidelines for navigation, form layouts, list views, and onboarding flows to provide clear instructions on component arrangement based on context. Governance Framework: Implemented contribution guidelines, a request process for new components, and regular audits to maintain system integrity and consistency. Impact: 85% of screens were redesigned using system components within the first three months of rollout. Fewer than five UI-related bugs were reported in the same period. The introduction of reliable components significantly accelerated the redesign process for new screens. Enhanced design handoff processes improved team alignment and efficiency in building new features. The implementation of the design system resulted in a more consistent, maintainable, and visually cohesive mobile application, aligning with the company's branding and improving overall user experience."
       }
     ]
   },
