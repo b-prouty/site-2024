@@ -3,7 +3,7 @@ const PH_PROJECT_API_KEY = 'phc_oEMOxaQpUpSsiQMkUb0pSZAYOicVbsyBKVOOdULdBeM';
 const PH_COOKIE_KEY = `ph_${PH_PROJECT_API_KEY}_posthog`;
 
 // Function to get or create a user ID
-async function getOrCreateUserId() {
+function getOrCreateUserId() {
     const cookie = document.cookie.split(';').find(c => c.trim().startsWith(PH_COOKIE_KEY + '='));
     
     if (cookie) {
@@ -63,27 +63,3 @@ async function captureExposure(distinctId, flagValue) {
         console.error('Error capturing exposure:', e);
     }
 }
-
-// Main redirect function
-async function handleRedirect() {
-    // Only run on the root path
-    if (window.location.pathname !== '/') {
-        return;
-    }
-
-    const distinctId = await getOrCreateUserId();
-    const flagValue = await evaluateFeatureFlag(distinctId);
-
-    // Capture the exposure
-    await captureExposure(distinctId, flagValue);
-
-    // Redirect based on flag value
-    if (flagValue === 'work') {
-        window.location.href = '/work.html';
-    } else if (flagValue === 'index') {
-        window.location.href = '/index.html';
-    }
-}
-
-// Run the redirect logic when the page loads
-window.addEventListener('load', handleRedirect);
