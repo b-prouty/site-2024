@@ -7,7 +7,8 @@
     h1 {
         text-transform: none;
         font-size: 3rem;
-        padding: 6rem 1rem;
+        padding: 3rem 1rem;
+        padding-top: 6rem;
         text-align: center;
     }
 }
@@ -48,13 +49,13 @@
     gap: 2rem;
     padding: 2rem;
     background-color: $highlight;
-    border-radius: 1rem;
+    border-radius: 0rem !important;
     color: $dark ;
     align-items: center;
-    margin-top: 8rem;
-    margin-bottom: 8rem;
+    justify-content: center;
 
-    .card { flex: 1;}
+
+
     
     h2 {
         color: $dark;
@@ -73,35 +74,42 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 8rem;
+    gap: 1rem;
     padding: 0 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-bottom: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
 
     .card {
         flex: 1;
-        min-width: 100%;
         border-radius: 1.5rem;
         padding-bottom: 1rem;
         align-items: center;
         display: flex;
-        flex-direction: row;
-        gap: 1rem;
+        flex-direction: column;
+        gap: 0rem;
+        transition: 500ms !important;
 
-        &:nth-child(even) {
-            flex-direction: row-reverse;
+        &:hover {
+            cursor: pointer;
+            scale: 1.02;
         }
-       
+
 
         .card-img {
             flex: 2;
             width: 100%;
-            //min-width: 24rem;
-            height: 40rem;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            border-radius: 2rem;
+            border-radius: 0;
             transition: background-size 500ms;
             background-color: #1b1b1b;
+            aspect-ratio: 14 / 8 !important;
+            object-fit: cover;
 
             &.pricing{background-image: url('../img/checkout_main.png');}
             &.blive{background-image: url('../img/bluonlive_main.png');}
@@ -119,7 +127,8 @@
         .card-btm {
             background-color: #01070E;
             height: 100%;
-            border-radius: 2rem;
+            width: 100%;
+
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -141,7 +150,7 @@
 
             h2 {
                 color: $white;
-                font-size: 2rem;
+                font-size: 1.5rem;
                 line-height: 100%;
                 margin-bottom: 1rem;
             }
@@ -153,10 +162,11 @@
                 color: $white;
                 flex-wrap: wrap;
                 margin-top: 1rem;
+                display: none;
                
 
                 .kpi {
-                    background-color: $dark;
+                    border: 0.5px solid rgba($color: $highlight, $alpha: 0.2);
                     padding: 0.5rem 1rem;
                     border-radius: 0.25rem;
                     color: $white;
@@ -166,7 +176,7 @@
                     min-width: 10rem;
 
                     h3 {
-                        font-size: 1.5rem;
+                        font-size: 1rem;
                         font-weight: 300;
                         line-height: 90%;
                         color: $highlight;
@@ -175,7 +185,7 @@
                     }
 
                     p {
-                        font-size: 1rem;
+                        font-size: .875rem;
                         line-height: 100%;
                         font-family: 'Bricolage Grotesque', sans-serif;
                     }
