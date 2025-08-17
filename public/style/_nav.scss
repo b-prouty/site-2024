@@ -190,7 +190,7 @@ nav {
         margin: 0 !important;
         padding: 0 !important;
         transition: color 0.3s ease-in;
-        font-size: 1.25rem;
+        font-size: 1.25rem !important;
 
         &:hover {
             color: $highlight;
