@@ -1,6 +1,7 @@
 // PostHog project API key
 const PH_PROJECT_API_KEY = 'phc_oEMOxaQpUpSsiQMkUb0pSZAYOicVbsyBKVOOdULdBeM';
 const PH_COOKIE_KEY = `ph_${PH_PROJECT_API_KEY}_posthog`;
+const REDIRECT_PREFERENCE_KEY = 'landing_page_preference';
 
 // Function to get or create a user ID
 function getOrCreateUserId() {
@@ -61,5 +62,44 @@ async function captureExposure(distinctId, flagValue) {
         await fetch('https://us.i.posthog.com/capture', eventOptions);
     } catch (e) {
         console.error('Error capturing exposure:', e);
+    }
+}
+
+// Function to check if this is a direct navigation to index.html
+function isDirectNavigation() {
+    // Get the referrer
+    const referrer = document.referrer;
+    
+    // If there's no referrer, it's not a direct navigation
+    if (!referrer) return false;
+    
+    // Parse the referrer URL
+    try {
+        const referrerUrl = new URL(referrer);
+        const currentUrl = new URL(window.location.href);
+        
+        // If they're from the same domain, it's a direct navigation
+        return referrerUrl.hostname === currentUrl.hostname;
+    } catch (e) {
+        return false;
+    }
+}
+
+// Function to save redirect preference
+function saveRedirectPreference(preference) {
+    try {
+        localStorage.setItem(REDIRECT_PREFERENCE_KEY, preference);
+    } catch (e) {
+        console.error('Error saving redirect preference:', e);
+    }
+}
+
+// Function to get redirect preference
+function getRedirectPreference() {
+    try {
+        return localStorage.getItem(REDIRECT_PREFERENCE_KEY);
+    } catch (e) {
+        console.error('Error getting redirect preference:', e);
+        return null;
     }
 }
