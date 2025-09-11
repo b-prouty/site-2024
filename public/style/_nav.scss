@@ -216,6 +216,18 @@ nav {
     /* letter-spacing: 0.1rem; */
 }
 
+// Active state for main nav items (work, ai, resume)
+.ai-nav-group a.active {
+    background-color: $highlight;
+    color: #000;
+}
+
+// Ensure hover doesn't override the active contrast
+.ai-nav-group a.active:hover {
+    background-color: $highlight;
+    color: #000;
+}
+
 .ai-nav-group a.logo:hover {
     color: #209320;
     background-color: transparent;

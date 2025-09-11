@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Prouty | AI Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/ai.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+        // Initialize lucide
+        lucide.createIcons();
+    </script>
+
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))} }(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init Re Cs Fs Pe Rs Ms capture Ve calculateEventProperties Ds register register_once register_for_session unregister unregister_for_session zs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty js As createPersonProfile Ns Is Us opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Os debug I Ls getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a]) },e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_oEMOxaQpUpSsiQMkUb0pSZAYOicVbsyBKVOOdULdBeM', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2025-05-24',
+            person_profiles: 'always', 
+        })
+    </script>
+    <script src="js/middleware.js"></script>
+    <script src="js/redirect.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZE91SLFDMH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZE91SLFDMH');
+</script>
+
+<body class="drk-bg">
+    <div include-html="components/nav.html"></div>
+
+    <div class="container" id="container">
+        <div id="top-content">
+           <div class="overline" style="color: #eee;">Welcome to an</div>
+            <h1><em style="color: #FFDB3D;">A.I. powered portfolio</em> based on Brian</h1>
+            <img src="img/you-plus-text.png" alt="Brian Prouty Logo" >
+            <!-- <h3>With 7+ years as a Product Designer and a background in Front-End&nbsp;Dev and Graphic&nbsp;Design. Brian's got you covered -- just ask!</h3> -->
+            <div class="prompts">
+                <p class="chips-title">I want to know about Brian's:</p>
+                <div id="chips-container" class="chip-container">
+                    <!-- <button class="chip" onclick="askAbout('Recent Projects')">Recent Projects</button>
+                    <button class="chip" onclick="askAbout('Personality')">Personality</button>
+                    <button class="chip" onclick="askAbout('Design Process')">Design Process</button>
+                    <button class="chip" onclick="askAbout('Leadership Style')">Leadership Style</button> -->
+                </div>
+            </div>
+        </div>
+        <div id="conversation-container">
+            <!-- <div class="question-wrapper">
+            <div class="question">
+                <p>Tell me about brian</p>
+            </div>
+        </div>
+        <div class="answer-wrapper">
+            <div class="answer">
+                <p>Brian has professional experience as a Product Designer and as a Beginner Developer. He has worked for Company A and Company B. As a developer, he has skills in JavaScript, HTML, and CSS. His experience as a Product Designer spans 8 years. 
+    
+                He has skills in UX/UI Design, Prototyping, Figma, and Usability Testing. Some of his past projects include a Mobile App Redesign and an AI Webpage. 
+                
+                Brian's hobbies include Sightseeing, Coffee Tasting, and Traveling. He values Empathy, Collaboration, and Curiosity.</p>
+            </div>
+        </div> -->
+            <div id="thinking">
+                <div class="spinner"></div>
+                <p>Searching Data...</p>
+            </div>
+        </div>
+    </div>
+    <div class="input-container" id="input-container">
+        <div class="input-wrapper">
+            <div class="textarea-container">
+                <textarea id="question" placeholder="Type your question here..."></textarea>
+                <button onclick="askBrian()" id="askButton">Ask</button>
+            </div>
+            
+            
+
+            <div class="disclaimer">
+                <p>If you would like to view Brian's more traditional portfolio, please click <a href="/">here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="floating-card" class="floating-card">
+        <button class="close-button" onclick="closeFloatingCard()">
+            <i data-lucide="x"></i>
+        </button>
+        <h3>Looking for Brian's <em>traditional</em> portfolio?</h3>
+        <div class="button-group">
+            <a href="/" class="primary-button">Take me there</a>
+            <button class="secondary-button" onclick="closeFloatingCard()">No thanks</button>
+        </div>
+    </div>
+
+    <script>
+        // Auto-grow textarea
+        const textarea = document.getElementById('question');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 200) + 'px';
+        });
+
+        const placeholderTexts = [
+            "Tell me about Brian's most recent case studies!",
+            "What is Brian's design process?",
+            "What type of music does Brian listen to?",
+            "What research methods does Brian use?",
+            "What are some of Brian's hobbies?",
+            "What is Brian's approach to collaboration?",
+            "How does Brian lead design teams for success?"
+        ];
+        let currentPlaceholderIndex = 0;
+        let typingIndex = -1;
+        let isDeleting = false;
+        let typingSpeed = 50; // Speed of typing in milliseconds
+        let deletingSpeed = 30; // Speed of deleting in milliseconds
+        let pauseTime = 1500; // Time to pause when text is fully typed
+        let animationActive = true; // Add this new variable
+
+        function updatePlaceholder() {
+            if (!animationActive) return; // Stop animation if not active
+            
+            const questionInput = document.getElementById('question');
+            const currentText = placeholderTexts[currentPlaceholderIndex];
+
+            if (isDeleting) {
+                // Deleting text
+                typingIndex--;
+                if (typingIndex === -1) {
+                    isDeleting = false;
+                    currentPlaceholderIndex = (currentPlaceholderIndex + 1) % placeholderTexts.length;
+                    setTimeout(updatePlaceholder, 500);
+                    return;
+                }
+                questionInput.setAttribute('placeholder', currentText.substring(0, typingIndex));
+                setTimeout(updatePlaceholder, deletingSpeed);
+            } else {
+                // Typing text
+                typingIndex++;
+                if (typingIndex > currentText.length) {
+                    isDeleting = true;
+                    setTimeout(updatePlaceholder, pauseTime);
+                    return;
+                }
+                questionInput.setAttribute('placeholder', currentText.substring(0, typingIndex));
+                setTimeout(updatePlaceholder, typingSpeed);
+            }
+        }
+
+        // Add this new function
+        function stopPlaceholderAnimation() {
+            animationActive = false;
+            document.getElementById('question').setAttribute('placeholder', 'Ask a follow up question');
+        }
+
+        // Start the typing animation when the page loads
+        updatePlaceholder();
+        
+        window.addEventListener('load', function () {
+            document.getElementById('question').focus();
+        });
+
+        document.getElementById('question').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                askBrian();
+                this.value = '';
+            }
+        });
+
+        // Add this new function
+        function toggleLoadingState(loading) {
+            const button = document.getElementById('askButton');
+            const thinking = document.getElementById('thinking');
+            const questionInput = document.getElementById('question');
+            button.disabled = loading;
+            button.innerHTML = loading ? '<div class="spinner"></div>' : 'Ask';
+            thinking.style.bottom = loading ? '175px' : '-100px';
+            // if (!loading) {
+            //     questionInput.blur();
+            // }
+        }
+
+        function askAbout(topic) {
+            const questionInput = document.getElementById('question');
+            questionInput.value = `${topic}`;
+            askBrian();
+            questionInput.value = '';
+        }
+
+        // Load and render prompt chips
+        const iconMapping = {
+            'Background': 'history',
+            'Current role': 'briefcase',
+            'Ideal role': 'target',
+            'Years of Experience': 'calendar',
+            'Industries worked in': 'building',
+            'Inspirations': 'lightbulb',
+            'Mentorship': 'users',
+            'Prioritization': 'list-ordered',
+            'Innovation': 'sparkles',
+            'Design Tools': 'drill',
+            'Figma/Sketch': 'pen-tool',
+            'Design Systems': 'layout-grid',
+            'Delivery': 'truck',
+            'Ops strategy': 'settings',
+            'Measuring KPI\'s': 'bar-chart',
+            'Collaboration': 'users-2',
+            'Design Process': 'workflow',
+            'Workflow': 'git-branch',
+            'User Research': 'microscope',
+            'Business Impacts': 'trending-up',
+            'Hobbies': 'heart',
+            'Salary': 'dollar-sign',
+            'Strengths': 'shield',
+            'Weaknesses': 'shield-question',
+            'Recent Projects': 'palette'
+        };
+
+        async function loadPromptChips() {
+            try {
+                const response = await fetch('prompts.json');
+                const prompts = await response.json();
+                const chipsContainer = document.getElementById('chips-container');
+                
+                prompts.forEach((promptData, index) => {
+                    const chip = document.createElement('button');
+                    chip.className = 'chip';
+                    chip.style.animationDelay = `${index * 0.1}s`;
+                    
+                    // Create icon element using Lucide's createIcons method
+                    const iconName = iconMapping[promptData.item] || 'help-circle';
+                    const iconSvg = document.createElement('i');
+                    iconSvg.setAttribute('data-lucide', iconName);
+                    
+                    // Create text span
+                    const text = document.createElement('span');
+                    text.textContent = promptData.item;
+                    
+                    // Add icon and text to button
+                    chip.appendChild(iconSvg);
+                    chip.appendChild(text);
+                    
+                    chip.onclick = () => askAbout(promptData.prompt);
+                    chipsContainer.appendChild(chip);
+                });
+
+                // Create icons for all newly added elements
+                lucide.createIcons();
+            } catch (error) {
+                console.error('Error loading prompts:', error);
+            }
+        }
+
+        // Call loadPromptChips when the page loads
+        window.addEventListener('load', function() {
+            document.getElementById('question').focus();
+            loadPromptChips();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+    <script src="js/main.js"></script>
+    
+    
+</body>
+
+
+</html>
+

@@ -238,6 +238,48 @@ img {max-width: 100%;}
     }
 }
 
+
+/* Custom hover cursor for work cards */
+.custom-card-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: #FFDB3D;
+    color: #1b1b1b;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 9999px;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    // transition: opacity 150ms ease, transform 150ms ease;
+  }
+  
+  .custom-card-cursor.visible {
+    opacity: 1;
+    // transform: translate(-50%, -50%) scale(1);
+  }
+  
+  /* Hide native cursor only while hovering cards */
+  .work-cards .card:hover,
+  .work-cards .card:hover * {
+    cursor: none !important;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .custom-card-cursor {
+      transition: none;
+    }
+  }
+
+
 @import '_nav.scss';
 @import '_home.scss';
 @import '_work.scss';
