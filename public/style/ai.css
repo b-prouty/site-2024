@@ -746,3 +746,71 @@ button:disabled {
     color: #000;
     border-color: #ffdb3d;
 }
+.floating-card {
+    position: fixed;
+    top: 5rem;
+    right: 1rem;
+    background: #262421;
+    border: 1px solid rgba(255, 219, 61, 0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    max-width: 320px;
+    z-index: 1000;
+    animation: slideIn 0.5sease-out;
+}
+
+
+.floating-card .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity 0.3sease;
+}
+.floating-card h3 {
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    padding-right: 1.5rem;
+}
+.floating-card .button-group {
+    display: flex
+;
+    gap: 0.5rem;
+    flex-direction: row;
+}
+.floating-card .primary-button {
+    background: #FFDB3D;
+    color: #1b1b1b;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3sease;
+    flex: 1;
+}
+.floating-card .secondary-button {
+    display: none;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    /* border: none; */
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3sease;
+}

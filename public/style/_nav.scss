@@ -190,6 +190,7 @@ nav {
         margin: 0 !important;
         padding: 0 !important;
         transition: color 0.3s ease-in;
+        font-size: 1.25rem !important;
 
         &:hover {
             color: $highlight;
@@ -214,18 +215,6 @@ nav {
     color: $highlight;
     background-color: rgba(0, 0, 0, 0.5);
     /* letter-spacing: 0.1rem; */
-}
-
-// Active state for main nav items (work, ai, resume)
-.ai-nav-group a.active {
-    background-color: $highlight;
-    color: #000;
-}
-
-// Ensure hover doesn't override the active contrast
-.ai-nav-group a.active:hover {
-    background-color: $highlight;
-    color: #000;
 }
 
 .ai-nav-group a.logo:hover {
