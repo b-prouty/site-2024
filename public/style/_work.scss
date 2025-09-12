@@ -352,6 +352,20 @@
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
+
+    /* Theme modifiers */
+    &.theme-yellow {
+        background: $highlight;
+        color: $dark;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    &.theme-invert {
+        background: $dark;
+        color: $highlight;
+        border: 1px solid $highlight;
+        box-shadow: 0 0 0 2px rgba($highlight, 0.25), 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
 }
 
 /* Hide native cursor only while hovering cards */

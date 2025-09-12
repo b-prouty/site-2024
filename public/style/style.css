@@ -220,6 +220,20 @@ img {
   opacity: 1;
 }
 
+/* Theme modifiers */
+.custom-card-cursor.theme-yellow {
+  background: #FFDB3D;
+  color: #1b1b1b;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.custom-card-cursor.theme-invert {
+  background: #1b1b1b;
+  color: #FFDB3D;
+  border: 1px solid #FFDB3D;
+  box-shadow: 0 0 0 2px rgba(255, 219, 61, 0.25), 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
 /* Hide native cursor only while hovering cards */
 .work-cards .card:hover,
 .work-cards .card:hover * {
@@ -1012,10 +1026,22 @@ nav {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transition: opacity 150ms ease, transform 150ms ease;
+  /* Theme modifiers */
 }
 .custom-card-cursor.visible {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+}
+.custom-card-cursor.theme-yellow {
+  background: #FFDB3D;
+  color: #1b1b1b;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.custom-card-cursor.theme-invert {
+  background: #1b1b1b;
+  color: #FFDB3D;
+  border: 1px solid #FFDB3D;
+  box-shadow: 0 0 0 2px rgba(255, 219, 61, 0.25), 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Hide native cursor only while hovering cards */

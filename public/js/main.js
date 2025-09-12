@@ -141,6 +141,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let active = false;
     let currentCard = null;
 
+    // Theme handling: default to yellow if unset; otherwise toggle when entering a new card
+    function toggleCursorTheme() {
+        const hasYellow = cursorEl.classList.contains('theme-yellow');
+        const hasInvert = cursorEl.classList.contains('theme-invert');
+
+        if (!hasYellow && !hasInvert) {
+            cursorEl.classList.add('theme-yellow');
+            console.log('adding yellow');
+            return;
+        }
+
+        if (hasYellow) {
+            cursorEl.classList.remove('theme-yellow');
+            cursorEl.classList.add('theme-invert');
+            console.log('adding invert');
+        } else {
+            cursorEl.classList.remove('theme-invert');
+            cursorEl.classList.add('theme-yellow');
+            console.log('adding yellow');
+        }
+    }
+
     function getCardTitle(card) {
         if (!card) return '';
         const titleEl = card.querySelector('h2');
@@ -166,11 +188,17 @@ document.addEventListener('DOMContentLoaded', () => {
         cursorEl.style.top = y + 'px';
     }
 
-    // Delegate events for all current/future .card elements
+    // Delegate events for all current/future card elements in work grid ONLY
+    const cardSelector = '.work-cards .card';
+
     document.addEventListener('mouseover', (e) => {
-        const card = e.target.closest('.work-cards .card');
+        const card = e.target.closest(cardSelector);
         if (card) {
-            currentCard = card;
+            const isNewCard = card !== currentCard;
+            if (isNewCard) {
+                toggleCursorTheme();
+                currentCard = card;
+            }
             const name = getCardTitle(card);
             cursorEl.textContent = name ? `${name} - View Work +` : 'View Work +';
             showCursor();
@@ -178,8 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('mouseout', (e) => {
-        const leaving = e.target.closest('.work-cards .card');
-        const movingTo = e.relatedTarget && e.relatedTarget.closest ? e.relatedTarget.closest('.work-cards .card') : null;
+        const leaving = e.target.closest(cardSelector);
+        const movingTo = e.relatedTarget && e.relatedTarget.closest ? e.relatedTarget.closest(cardSelector) : null;
         if (leaving && !movingTo) {
             currentCard = null;
             hideCursor();
@@ -190,8 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Keep updating position
         moveCursor(event);
         // If moving across different cards, update title accordingly
-        const card = event.target.closest && event.target.closest('.work-cards .card');
+        const card = event.target.closest && event.target.closest(cardSelector);
         if (card && card !== currentCard) {
+            toggleCursorTheme();
             currentCard = card;
             const name = getCardTitle(card);
             cursorEl.textContent = name ? `${name} - View Work +` : 'View Work +';
