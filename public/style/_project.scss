@@ -513,3 +513,32 @@ li {
     transform: translate3d(-50%, 0, 0);
   }
 }
+
+.cta-section {
+    background-color: $highlight;
+    padding: 4rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: $dark !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: $dark !important;
+        margin-bottom: 0rem;
+        padding-bottom: 0rem;
+    }
+
+    .btn-container {
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    a {
+        background-color: $dark;
+        color: $highlight;
+    }
+}

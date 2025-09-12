@@ -87,9 +87,9 @@ function setActiveNavItem() {
 
     let activeKey = '';
     if (file === 'index.html' || file === '') {
-        activeKey = 'ai';
-    } else if (file === 'work.html') {
         activeKey = 'work';
+    } else if (file === 'ai.html') {
+        activeKey = 'ai';
     } else if (file === 'resume.html') {
         activeKey = 'resume';
     }

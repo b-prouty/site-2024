@@ -217,6 +217,18 @@ nav {
     /* letter-spacing: 0.1rem; */
 }
 
+// Active state for current page link
+.ai-nav-group a.active {
+    background-color: $highlight;
+    color: #000;
+}
+
+// Preserve active colors on hover
+.ai-nav-group a.active:hover {
+    background-color: $highlight;
+    color: #000;
+}
+
 .ai-nav-group a.logo:hover {
     color: #209320;
     background-color: transparent;
