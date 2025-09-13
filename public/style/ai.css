@@ -760,6 +760,10 @@ button:disabled {
     animation: slideIn 0.5sease-out;
 }
 
+.floating-card.hidden {
+    display: none;
+}
+
 
 .floating-card .close-button {
     position: absolute;
