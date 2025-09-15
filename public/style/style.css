@@ -1581,6 +1581,7 @@ li {
 
 #resume-content {
   padding: 0 4rem;
+  padding-bottom: 20rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
