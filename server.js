@@ -49,7 +49,7 @@ app.post('/ask', async (req, res) => {
         1. ONLY return responses markdown.
         2. ONLY use data from the following JSON for your answers: ${JSON.stringify(brianData, null, 2)}.
         3. If the response references a project, include the sample images tied to the project in your response.
-        4. Please be concise in your responses and keep them to 1-2 paragraphs where possible, unless the user asks for more detail.
+        4.Keep responses to 200 to 400 words where possible, unless the user asks for a detailed response.
         5. Do not provide any content that is not directly supported by the data in the JSON above. If the user asks about something that is not in the JSON, say "I'm not trained on that topic. If you would like to follow up, you can reach out directly to Brian at brian@brianprouty.com or 714-580-4344". `;
 
         // Add the new question to the conversation history

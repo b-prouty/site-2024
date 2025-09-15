@@ -2,7 +2,7 @@
   "background summary": "I'm a senior product designer with over 6 years of experience. I've led UX initiatives that range from optimizing high-conversion checkout flows to building scalable design systems in Figma. I'm passionate about designing experiences that are both intuitive and impactful—often grounded in user research and supported by product analytics. I also really enjoy mentoring junior designers and helping foster collaborative team cultures. I also have a professional background in front end web development and graphic design.",
   "years of experience": "6+",
   "Ideal Role": "I'm looking for a role that allows me to balance hands-on design work with strategic thinking as well as leading UX initiatives and mentoring junior designers. I'm also looking for a role that involves collaborating with cross-functional teams. I'm at my best when I'm part of a team that values user-centered design, is open to experimentation, and shares a strong sense of purpose.",
-  "Salary Expectations": "I am open to discussing competitive offers that reflect the responsibilities of the position and the overall value I can bring to the team. After I learn more about your specific role's expectations and the full compensation package, we can work toward finalizing any specific numbers.",
+  "Salary Expectations": "$120,000 - $150,000 but negotiable depending on the company and role.",
   "Industries Worked In": "I've worked in a variety of industries, including but not limited to SaaS, e-commerce, and residential real estate. I'm open to new opportunities and I'm always looking for ways to improve the user experience no matter the industry.",
   "strengths": "I have attention to detail without losing the big picture, extensive experience designing for responsive and accessible UI, I am able to think beyond the pixels, open to feedback, and I'm a quick learner.",
   "weaknesses": "Early in my career, I was focused on delivering quickly, but I've learned the value of taking a step back to align with business goals and user needs. Now I'm more intentional in how I approach problems.",
@@ -99,26 +99,37 @@
         "summary": "BluonLive Web Application Redesign. The BluonLive platform, initially developed as a database access tool for suppliers to find cross-references for commonly searched HVAC parts, gradually evolved into an order management system. Over time, feature creep led to a complex and confusing user experience. The primary challenge was users' inability to navigate the system effectively, particularly in locating and processing orders. Key challenges and solutions included: Unified Order Display: Consolidated incoming requests and approved quotes into a single page to provide clear direction and reduce user confusion. Enhanced Notifications: Introduced visual and audible alerts to ensure users promptly noticed new tasks, addressing the issue of missed requests and orders. ERP Integration: Streamlined data entry by allowing users to input total quoted amounts once, with BluonLive automatically parsing and processing the information, thereby eliminating redundant manual entries. Simplified User Identification: Implemented a selection mechanism for users to claim orders by choosing their name from a list, defaulting to the most recent user, reducing errors and improving efficiency. Impact: 37% decrease in denied availability requests. 34% reduction in average turnaround time. 225% increase in request-to-order conversions. The redesign significantly improved the user experience and key performance indicators. However, the absence of a customer reactivation strategy led to low active user numbers, resulting in operational costs surpassing revenue and ultimately leading to the product's sunset."
       },
       {
+        "name": "Tech Support Platform",
+        "date": "May 2024",
+        "description": "Mobile and web applications to deliver top-tier tech support for service workers.",
+        "link": "https://www.brianprouty.com/basecamp.html",
+        "sample images":["![Flow 1](img/basecamp/flow-01.png)", "![Flow 2](img/basecamp/flow-02.png)", "![Flow 3](img/basecamp/flow-03.png)"],
+        "roles": ["Product Design Lead", "UX Researcher", "Prototype & Testing", "Design System"],
+        "teams": ["Jr. Product Designers", "Product Managers", "Web Developers", "Internal Support Team", "C-Level Stakeholders"],
+        "duration": "8 months",
+        "summary": "Basecamp, a custom VOIP web application, revolutionizes customer service by providing a platform for support agents to engage with users through various mediums.  Key features include issue tracking, prioritization, and a user-friendly interface, resulting in a 1.5x increase in tech support usage and a 14% decrease in negative feedback.  The application addresses user pain points such as delayed communication, repetitive work, and lack of record-keeping, leading to improved efficiency and user experience."
+      },
+      {
+        "name": "CPL Software",
+        "date": "February 2022",
+        "description": "Designed a web application to expand the user base beyond internal companies, in addition to making the product more user-friendly.",
+        "link": "",
+        "sample images":["![Flow 1](img/ratic/flow-01.png)", "![Flow 2](img/ratic/flow-02.png)", "![Flow 3](img/ratic/flow-03.png)"],
+        "roles": ["User Research", "Interaction Design", "Visual Design", "Prototyping & Testing", "Front-end Development"],
+        "teams": ["Product Managers", "Back-end Developers", "VP Level Stakeholders"],
+        "duration": "2 months",
+        "summary": "Real Advantage Title Insurance Company (RATIC) needed a web application overhaul to accommodate third-party users and address usability issues. The redesigned application includes functionality for adding outside entities, tiered user rankings, and reference libraries.  The goal was to streamline the process for creating Cover Protection Letters (CPLs) while maintaining a user-friendly experience."
+      },
+      {
         "name": "Mobile App Ordering",
         "date": "January 2024",
         "description": "Created an intuitive Design System for a mobile application.",
-        "link": "https://www.brianprouty.com/bluonapp.html",
-        "sample images":["![Flow 1](img/DS-Example-01.png)", "![Flow 2](img/DS-Example-02.png)", "![Flow 3](img/DS-Example-03.png)"],
+        "link": "",
+        "sample images":["![Flow 1](img/B2/flow-01.png)", "![Flow 2](img/B2/flow-02.png)", "![Flow 3](img/B2/flow-03.png)"],
         "roles": ["Process improvements", "User Research", "Interaction Design", "Visual Design", "Prototyping & Testing", "Handoff"],
         "teams": ["Jr. Product Designers", "Product Managers", "Web Developers", "C-Level Stakeholders"],
         "duration": "10 months",
         "summary": "Bluon Mobile App Design System Implementation. The Bluon mobile application had expanded rapidly, resulting in inconsistent UI elements, duplicated components, and significant design debt due to contributions from multiple teams with varying design practices. To address these challenges, a scalable design system was developed and implemented over a four-month period. Key components of the design system included: Design Tokens: Established foundational elements such as color variables, text styles, spacing, and icon sizes to ensure consistency across the application. Reusable Components: Developed standardized buttons, input fields, dropdowns, cards, and modals, enabling designers and developers to assemble screens efficiently. Usage Patterns: Created guidelines for navigation, form layouts, list views, and onboarding flows to provide clear instructions on component arrangement based on context. Governance Framework: Implemented contribution guidelines, a request process for new components, and regular audits to maintain system integrity and consistency. Impact: 85% of screens were redesigned using system components within the first three months of rollout. Fewer than five UI-related bugs were reported in the same period. The introduction of reliable components significantly accelerated the redesign process for new screens. Enhanced design handoff processes improved team alignment and efficiency in building new features. The implementation of the design system resulted in a more consistent, maintainable, and visually cohesive mobile application, aligning with the company's branding and improving overall user experience."
-      },
-      {
-        "name": "AI-Powered Portfolio",
-        "date": "January 2025",
-        "description": "AI-powered personal portfolio to showcase design work and reflect adaptability to emerging trends.",
-        "sample images":["![Flow 1](img/Portfolio-01.png)", "![Flow 2](img/Portfolio-02.png)"],
-        "link": "https://www.brianprouty.com/portfolio.html",
-        "roles": ["Developer", "Designer", "Idea Haver"],
-        "teams": ["Self"],
-        "duration": "1 month",
-        "summary": "In response to the quick evolution of AI technologies and their integration into various industries, Brian developed an AI-driven personal portfolio to showcase design work and reflect adaptability to emerging trends. The objective was to create an interactive platform that allows users to engage with an AI assistant trained specifically on personal and professional information. Key features included: AI Integration: Implemented OpenAI's API to enable users to ask questions about professional experience, skills, and projects, receiving accurate and context-aware responses. User-Centric Design: Designed an intuitive interface that encourages exploration and interaction, moving away from traditional portfolio layouts to provide a unique user experience. Personalized Content: Trained the AI assistant on curated personal data to ensure responses are relevant and reflective of individual experiences and expertise. Impact: Enhanced user engagement through interactive AI-driven conversations. Demonstrated proficiency in integrating advanced technologies into web development. Differentiated the portfolio from conventional designs, showcasing innovation and forward-thinking. This project exemplifies the application of AI in personal branding, highlighting the importance of embracing technological advancements to create dynamic and engaging user experiences."
       }
     ]
   },
