@@ -49,11 +49,41 @@
             
         </div>
     </section> -->
+    <section id="home-content" class="wrapper">
+        <div class="home-flex">
+
+            <div class="home-text">
+
+                <div class="green-pulsing-dot-container">
+                    <div class="green-pulsing-dot"></div>
+                    <p>Available for work</p>
+                </div>
+
+                <h1 class="home-web-title">Product Designer turning complex systems <br> into measurable and meaningful user experiences.</h1>
+                <h1 class="home-mobile-title">Product Designer turning complex systems into measurable and meaningful user experiences.</h1>
+               
+
+                <div class="connect-links">
+                    <p>Let's connect</p>
+                    <a href="https://www.linkedin.com/in/bprouty1/" target="_blank"><i data-lucide="linkedin"></i>/bprouty1</a>
+                    <!-- <a href="https://github.com/b-prouty" target="_blank"><i data-lucide="github"></i>/b-prouty</a> -->
+                    <a href="tel:+17145804344" target="_blank"><i data-lucide="phone"></i>(714) 580-4344</a>
+                    <a href="mailto:brian@brianprouty.com" target="_blank"><i data-lucide="mail"></i>brian@brianprouty.com</a>
+                </div>
+            </div>
+
+            <div class="home-imgs">
+                <img src="img/youProfile.jpeg" alt="Image of Brian Prouty">
+            </div>
+        
+            
+        </div>
+            </section>
 
 
     <section id="work-content"> 
 
-        <div class="work-cards">
+        <div class="work-cards wrapper">
             <div class="card blive-card" onclick="window.location.href='bluonlive.html'">
                 <div class="card-img blive">
                     <video class="video-background" autoplay muted loop playsinline>
@@ -155,6 +185,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
     <script src="js/middleware.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
+    </script>
 </body>
 
 </html>

@@ -84,7 +84,7 @@ img {
 
 .wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
 }
 
@@ -505,6 +505,121 @@ nav {
   }
   .hamburger-menu.active span:nth-child(3) {
     transform: rotate(-45deg) translate(8px, -8px);
+  }
+}
+#home-content {
+  display: flex;
+  padding: 4rem 2rem 4rem 2rem;
+  gap: 3rem;
+  flex-direction: column;
+}
+
+.home-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.home-flex .home-text {
+  width: 100%;
+}
+.home-flex .home-imgs {
+  display: none;
+  align-items: center;
+  flex-grow: 1;
+}
+.home-flex .home-imgs img {
+  max-width: 10rem;
+  border-radius: 10rem;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+}
+.home-text h1 {
+  font-size: 2rem;
+}
+.home-text .home-mobile-title {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .home-text .home-mobile-title {
+    display: block;
+  }
+  .home-web-title {
+    display: none;
+  }
+}
+.connect-links {
+  display: block;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 2rem;
+}
+.connect-links p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.connect-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  color: #F2EFEB;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem 1rem;
+  font-size: 0.825rem;
+  margin-right: 0.5rem;
+  border: 1px solid rgba(242, 239, 235, 0.2);
+  border-radius: 1rem;
+}
+.connect-links a svg {
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.825rem;
+}
+.connect-links a span {
+  font-size: 0.5rem;
+}
+.connect-links a:hover {
+  color: #FFDB3D;
+}
+
+.green-pulsing-dot-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.5rem 0;
+}
+.green-pulsing-dot-container p {
+  font-size: 0.825rem;
+}
+
+.green-pulsing-dot {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  background-color: #00ff00;
+  border-radius: 50%;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 #homeImg {
@@ -1202,6 +1317,7 @@ nav {
 .project .project-head {
   width: 100%;
   height: 80vh;
+  max-height: 700px;
   max-width: initial;
   margin: auto;
   background-size: cover;
